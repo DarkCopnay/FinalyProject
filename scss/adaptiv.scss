@@ -1,0 +1,18 @@
+@media screen and (max-width: 1440px) {}
+@media screen and (max-width: 1024px) {}
+@media screen and (max-width: 768px) {
+    .topnav {
+        .topnav_right {
+            display: none !important;
+        }
+
+        #topnan_menu_button {display: flex;}
+    }
+}
+@media screen and (max-width: 425px) {
+    .topnav {
+        padding: 0 10px;
+    }
+}
+@media screen and (max-width: 375px) {}
+@media screen and (max-width: 320px) {}
