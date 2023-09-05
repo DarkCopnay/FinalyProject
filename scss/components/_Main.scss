@@ -1,0 +1,99 @@
+.step_1 {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 100vh;
+    margin-top: 80px;
+    width: 70%;
+    max-width: 100%;
+    flex-wrap: wrap;
+
+    img {
+        object-fit: contain;
+        max-width: 100%;
+    }
+
+    .step_1_left {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+
+        h1 {
+            max-width: 510px;
+            font-size: 67px;
+            font-weight: 600;
+            line-height: 110%;
+            color: white;
+            text-transform: capitalize;
+        }
+
+        p {
+            max-width: 510px;
+            font-size: 22px;
+            line-height: 160%;
+            color: white;
+            text-transform: capitalize;
+        }
+
+        button {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 224px;
+            height: 60px;
+            background-color: #A259FF;
+            border: none;
+            border-radius: 20px;
+            color: white;
+            cursor: pointer;
+            transition: 0.5s ease;
+
+            span {font-weight: 200;}
+
+            &:hover {
+                transform: scale(1.05);
+                background-color: #7a44c1;
+            }
+        }
+
+        .step_1_left_footer {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            
+            .step_1_left_footer_box {
+                h2 {
+                    font-family: 'Space Mono', monospace;
+                    font-size: 28px;
+                    font-weight: 500;
+                    color: white;
+                    text-transform: capitalize;
+                }
+
+                h4 {
+                    font-size: 24px;
+                    font-weight: 400;
+                    text-transform: capitalize;
+                    color: white;
+                }
+            }
+        }
+    }
+
+    .step_1_right {
+        .step_1_right_footer {
+            h3 {
+                font-size: 22px;
+                font-weight: 600;
+                line-height: 140%;
+                text-transform: capitalize;
+            }
+        }
+    }
+}

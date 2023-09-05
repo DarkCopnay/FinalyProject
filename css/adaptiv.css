@@ -3,6 +3,8 @@
     display: none !important;
   }
   .topnav #topnan_menu_button {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
   }
 }
