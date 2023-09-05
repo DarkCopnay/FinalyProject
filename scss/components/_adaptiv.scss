@@ -1,0 +1,102 @@
+@media screen and (max-width: 1440px) {}
+@media screen and (max-width: 1024px) {
+    .step_1 {
+        align-items: center;
+        .step_1_left {
+            h1 {
+                font-size: 50px;
+            }
+
+            p {
+                font-size: 18px;
+            }
+
+            button {
+                width: 200px;
+                height: 50px;
+            }
+
+            .step_1_left_footer {
+                .step_1_left_footer_box {
+                    h2 {
+                        font-size: 20px;
+                    }
+    
+                    h4 {
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    .topnav {
+        .topnav_right {
+            display: none !important;
+        }
+
+        #topnan_menu_button {display: flex;}
+    }
+
+    .step_1 {
+        flex-direction: column;
+        text-align: center;
+
+        .step_1_left {
+            align-items: center;
+        }
+    }
+}
+@media screen and (max-width: 425px) {
+    .topnav {
+        padding: 0 10px;
+    }
+}
+@media screen and (max-width: 375px) {
+    .step_1 {
+        .step_1_left {
+            h1 {
+                font-size: 40px;
+            }
+    
+            p {
+                font-size: 16px;
+            }
+    
+            button {
+                width: 180px;
+                height: 40px;
+            }
+    
+            .step_1_left_footer {
+                .step_1_left_footer_box {
+                    h2 {
+                        font-size: 18px;
+                    }
+    
+                    h4 {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 320px) {
+    .step_1 {
+        .step_1_left {
+            .step_1_left_footer {
+                .step_1_left_footer_box {
+                    h2 {
+                        font-size: 18px;
+                    }
+    
+                    h4 {
+                        font-size: 11px;
+                    }
+                }
+            }
+        }
+    }
+}
