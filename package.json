@@ -1,0 +1,19 @@
+{
+  "name": "finalyproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "console.log(\"test\");"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DarkCopnay/FinalyProject.git"
+  },
+  "author": "ReMiX",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DarkCopnay/FinalyProject/issues"
+  },
+  "homepage": "https://github.com/DarkCopnay/FinalyProject#readme"
+}
