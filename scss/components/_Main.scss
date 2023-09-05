@@ -3,11 +3,11 @@
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
-    height: 100vh;
-    margin-top: 80px;
-    width: 70%;
     max-width: 100%;
-    flex-wrap: wrap;
+    width: 70%;
+    height: 704px;
+    margin-top: 80px;
+    gap: 60px;
 
     img {
         object-fit: contain;
@@ -88,11 +88,31 @@
 
     .step_1_right {
         .step_1_right_footer {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+            height: 109px;
+            background-color: #3B3B3B;
+            transform: translateY(-5px);
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            padding: 20px;
+
             h3 {
                 font-size: 22px;
                 font-weight: 600;
                 line-height: 140%;
                 text-transform: capitalize;
+                color: white;
+            }
+
+            a {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                color: white;
+                gap: 12px;
             }
         }
     }
