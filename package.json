@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/DarkCopnay/FinalyProject/issues"
   },
-  "homepage": "https://github.com/DarkCopnay/FinalyProject#readme"
+  "homepage": "https://github.com/DarkCopnay/FinalyProject#readme",
+  "dependencies": {
+    "animejs": "^3.2.1"
+  }
 }

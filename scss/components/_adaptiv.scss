@@ -1,4 +1,13 @@
 @media screen and (max-width: 1440px) {}
+
+@media screen and (max-width: 1466px) {
+    .step_2 {
+        .step_2_content {
+            justify-content: center !important;
+        }
+    }
+}
+
 @media screen and (max-width: 1024px) {
     .step_1 {
         align-items: center;
@@ -29,6 +38,19 @@
             }
         }
     }
+
+    .step_2 {
+        .step_2_content {
+            flex-wrap: wrap;
+            gap: 35px !important;
+            
+            .step_2_box {
+                .step_2_box_content {
+                    flex-wrap: wrap;
+                }
+            }
+        }
+    }
 }
 @media screen and (max-width: 768px) {
     .topnav {
@@ -45,12 +67,68 @@
 
         .step_1_left {
             align-items: center;
+            h1 {
+                font-size: 40px;
+            }
+        }
+
+        .step_1_right {
+            .step_1_right_footer {
+                text-align: start;
+            }
+        }
+    }
+
+    .step_2 {
+        .step_2_header {
+            text-align: center;
+        }
+
+        .step_2_content {
+            gap: 45px !important;
         }
     }
 }
 @media screen and (max-width: 425px) {
     .topnav {
         padding: 0 10px;
+    }
+
+    .step_1 {
+        .step_1_right {
+            .step_1_right_footer {
+                h3 {
+                    font-size: 18px;
+                }
+
+                a {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+    .step_2 {
+        .step_2_header {
+            h2 {
+                font-size: 28px;
+            }
+
+            p {
+                font-size: 18px;
+            }
+        }
+
+        .step_2_content {
+            gap: 60px !important;
+
+            .step_2_box {
+                .step_2_box_footer {
+                    text-align: center;
+                    a {justify-content: center;}
+                }
+            }
+        }
     }
 }
 @media screen and (max-width: 375px) {
@@ -85,7 +163,11 @@
 }
 @media screen and (max-width: 320px) {
     .step_1 {
+        padding: 25px 0;
         .step_1_left {
+            h1 {
+                font-size: 30px;
+            }
             .step_1_left_footer {
                 .step_1_left_footer_box {
                     h2 {
@@ -97,6 +179,12 @@
                     }
                 }
             }
+        }
+    }
+
+    .step_2 {
+        .step_2_content {
+            gap: 100px;
         }
     }
 }
