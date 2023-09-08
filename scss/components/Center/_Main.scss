@@ -150,7 +150,6 @@
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        flex-wrap: wrap;
         flex-basis: content;
         gap: 20px;
 
@@ -170,7 +169,6 @@
                 justify-content: center;
                 width: 100%;
                 gap: 15px;
-                flex-wrap: wrap;
 
                 img {
                     width: 100px;
@@ -198,6 +196,7 @@
             .step_2_box_footer {
                 display: flex;
                 flex-direction: column;
+                text-align: start;
                 gap: 10px;
 
                 h2 {
