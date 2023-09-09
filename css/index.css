@@ -120,7 +120,7 @@ main {
   top: 0px;
   left: 100%;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   z-index: 100;
   background-color: rgb(104, 104, 104);
   padding: 50px 0px;
@@ -486,6 +486,12 @@ main {
   .topnav {
     padding: 0 10px;
   }
+  .step_1 .step_1_left .step_1_left_footer .step_1_left_footer_box h2 {
+    font-size: 16px;
+  }
+  .step_1 .step_1_left .step_1_left_footer .step_1_left_footer_box h4 {
+    font-size: 16px;
+  }
   .step_1 .step_1_right .step_1_right_footer h3 {
     font-size: 18px;
   }
@@ -520,10 +526,10 @@ main {
     height: 40px;
   }
   .step_1 .step_1_left .step_1_left_footer .step_1_left_footer_box h2 {
-    font-size: 18px;
+    font-size: 16px;
   }
   .step_1 .step_1_left .step_1_left_footer .step_1_left_footer_box h4 {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 @media screen and (max-width: 320px) {
@@ -534,10 +540,10 @@ main {
     font-size: 30px;
   }
   .step_1 .step_1_left .step_1_left_footer .step_1_left_footer_box h2 {
-    font-size: 18px;
+    font-size: 14px;
   }
   .step_1 .step_1_left .step_1_left_footer .step_1_left_footer_box h4 {
-    font-size: 11px;
+    font-size: 10px;
   }
   .step_2 .step_2_content {
     gap: 100px;

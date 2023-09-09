@@ -95,6 +95,19 @@
     }
 
     .step_1 {
+        .step_1_left {
+            .step_1_left_footer {
+                .step_1_left_footer_box {
+                    h2 {
+                        font-size: 16px;
+                    }
+                    
+                    h4 {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
         .step_1_right {
             .step_1_right_footer {
                 h3 {
@@ -150,11 +163,11 @@
             .step_1_left_footer {
                 .step_1_left_footer_box {
                     h2 {
-                        font-size: 18px;
+                        font-size: 16px;
                     }
     
                     h4 {
-                        font-size: 16px;
+                        font-size: 14px;
                     }
                 }
             }
@@ -171,11 +184,11 @@
             .step_1_left_footer {
                 .step_1_left_footer_box {
                     h2 {
-                        font-size: 18px;
+                        font-size: 14px;
                     }
     
                     h4 {
-                        font-size: 11px;
+                        font-size: 10px;
                     }
                 }
             }
