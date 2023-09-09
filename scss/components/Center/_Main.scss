@@ -5,7 +5,6 @@
     justify-content: space-between;
     max-width: 100%;
     width: 70%;
-    // height: 704px;
     padding: 80px 0;
     gap: 60px;
 
@@ -87,6 +86,7 @@
     }
 
     .step_1_right {
+        transition: 0.5s ease;
         .step_1_right_footer {
             display: flex;
             flex-direction: column;
@@ -114,6 +114,11 @@
                 color: white;
                 gap: 12px;
             }
+
+        }
+
+        &:hover {
+            transform: scale(1.05);
         }
     }
 }
@@ -156,6 +161,11 @@
         img {
             max-width: 100%;
             object-fit: cover;
+            transition: 0.5s ease;
+
+            &:hover {
+                transform: scale(1.05);
+            }
         }
 
         .step_2_box {
@@ -190,6 +200,13 @@
                     font-weight: 700;
                     color: white;
                     text-transform: capitalize;
+                    transition: 0.5s ease;
+                    cursor: default;
+
+                    &:hover {
+                        transform: scale(1.05);
+                        background-color: #6b38ac;
+                    }
                 }
             }
 
@@ -214,6 +231,134 @@
                     font-size: 16px;
                     color: white;
 
+                }
+            }
+        }
+    }
+}
+
+.step_3 {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    padding: 80px 0;
+    gap: 60px;
+
+    .step_3_header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+        .step_3_header_left {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            color: white;
+
+            h2 {
+                font-size: 38px;
+                font-weight: 600;
+                text-transform: capitalize;
+            }
+
+            p {
+                font-size: 22px;
+                font-weight: 400;
+                text-transform: capitalize;
+            }
+        }
+        
+        a {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 247px;
+            height: 60px;
+            background: none;
+            border: 2px solid #A259FF;
+            border-radius: 20px;
+            color: white;
+            transition: 0.5s ease;
+
+            span {
+                color: #A259FF;
+            }
+
+            &:hover {
+                transform: scale(1.05);
+                background-color: #6b38ac;
+            }
+        }
+    }
+
+    .step_3_content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+
+        .step_3_box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            position: relative;
+            width: 240px;
+            height: 238px;
+            background-color: #3B3B3B;
+            border-radius: 20px;
+            text-align: center;
+            transition: 0.5s ease;
+            cursor: default;
+
+            &:hover {
+                transform: scale(1.09);
+            }
+
+            .step_3_box_count {
+                position: absolute;
+                width: 100%;
+                top: 0;
+                padding: 18px 20px;
+
+                span {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    width: 30px;
+                    height: 30px;
+                    color: #858584;
+                    background-color: #2B2B2B;
+                    border-radius: 50%;
+                }
+            }
+
+            .step_3_box_content {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+
+                h2 {
+                    font-size: 22px;
+                    font-weight: 600;
+                    text-transform: capitalize;
+                    color: white;
+                }
+
+                p {
+                    font-size: 16px;
+                    font-weight: 400;
+                    color: #858584;
+
+                    span {color: white;}
                 }
             }
         }
