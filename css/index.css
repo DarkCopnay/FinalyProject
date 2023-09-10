@@ -554,6 +554,76 @@ main {
   color: white;
 }
 
+.step_4 {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  padding: 80px 0;
+  width: 70%;
+}
+.step_4 h1 {
+  font-size: 38px;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: white;
+}
+.step_4 .step_4_content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+  width: 140%;
+}
+.step_4 .step_4_content .step_4_box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.step_4 .step_4_content .step_4_box .step_4_box_bg_1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-image: url(/img/MinePage/step_4/bg_box_1.png);
+  width: 240px;
+  height: 240px;
+  z-index: 0;
+  border-radius: 20px;
+  transition: 0.5s ease;
+}
+.step_4 .step_4_content .step_4_box .step_4_box_bg_1 img {
+  position: absolute;
+  top: 30%;
+  transition: 0.5s cubic-bezier(0.25, 0.1, 0.17, 0.99);
+}
+.step_4 .step_4_content .step_4_box .step_4_box_bg_1 h2 {
+  position: absolute;
+  top: 60%;
+  font-size: 22px;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: white;
+  transition: 0.5s ease;
+  opacity: 0;
+}
+.step_4 .step_4_content .step_4_box .step_4_box_bg_1 .step_4_box_bg_blur {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  backdrop-filter: blur(4px);
+  border-radius: 20px;
+}
+.step_4 .step_4_content .step_4_box:hover > .step_4_box_bg_1 img {
+  top: 25%;
+}
+.step_4 .step_4_content .step_4_box:hover > .step_4_box_bg_1 h2 {
+  top: 65%;
+  opacity: 1;
+}
+
 @media screen and (max-width: 1466px) {
   .step_2 .step_2_content {
     justify-content: center !important;
