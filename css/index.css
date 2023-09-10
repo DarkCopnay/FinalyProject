@@ -106,6 +106,7 @@ main {
   color: white;
   border-radius: 10px;
   transition: 0.2s ease;
+  cursor: pointer;
 }
 .topnav #topnan_menu_button:hover {
   background-color: gray;
@@ -207,6 +208,7 @@ main {
   border: 1.5px solid black;
   border-radius: 10px;
   transition: 0.2s ease;
+  cursor: pointer;
 }
 #topnav_menu .topnav_menu_close_mine #topnav_menu_close:hover {
   background-color: gray;
@@ -306,6 +308,9 @@ main {
   text-transform: capitalize;
   color: white;
 }
+.step_1 .step_1_right {
+  transition: 0.5s ease;
+}
 .step_1 .step_1_right .step_1_right_footer {
   display: flex;
   flex-direction: column;
@@ -331,6 +336,9 @@ main {
   align-items: center;
   color: white;
   gap: 12px;
+}
+.step_1 .step_1_right:hover {
+  transform: scale(1.05);
 }
 
 .step_2 {
@@ -368,6 +376,10 @@ main {
 .step_2 .step_2_content img {
   max-width: 100%;
   object-fit: cover;
+  transition: 0.5s ease;
+}
+.step_2 .step_2_content img:hover {
+  transform: scale(1.05);
 }
 .step_2 .step_2_content .step_2_box {
   display: flex;
@@ -400,6 +412,12 @@ main {
   font-weight: 700;
   color: white;
   text-transform: capitalize;
+  transition: 0.5s ease;
+  cursor: default;
+}
+.step_2 .step_2_content .step_2_box .step_2_box_content .step_2_box_count:hover {
+  transform: scale(1.05);
+  background-color: #6b38ac;
 }
 .step_2 .step_2_content .step_2_box .step_2_box_footer {
   display: flex;
@@ -419,6 +437,120 @@ main {
   align-items: center;
   gap: 12px;
   font-size: 16px;
+  color: white;
+}
+
+.step_3 {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  padding: 80px 0;
+  gap: 60px;
+}
+.step_3 .step_3_header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.step_3 .step_3_header .step_3_header_left {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: white;
+}
+.step_3 .step_3_header .step_3_header_left h2 {
+  font-size: 38px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.step_3 .step_3_header .step_3_header_left p {
+  font-size: 22px;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+.step_3 .step_3_header a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 247px;
+  height: 60px;
+  background: none;
+  border: 2px solid #A259FF;
+  border-radius: 20px;
+  color: white;
+  transition: 0.5s ease;
+}
+.step_3 .step_3_header a span {
+  color: #A259FF;
+}
+.step_3 .step_3_header a:hover {
+  transform: scale(1.05);
+  background-color: #6b38ac;
+}
+.step_3 .step_3_content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.step_3 .step_3_content .step_3_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+  width: 240px;
+  height: 238px;
+  background-color: #3B3B3B;
+  border-radius: 20px;
+  text-align: center;
+  transition: 0.5s ease;
+  cursor: default;
+}
+.step_3 .step_3_content .step_3_box:hover {
+  transform: scale(1.09);
+}
+.step_3 .step_3_content .step_3_box .step_3_box_count {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  padding: 18px 20px;
+}
+.step_3 .step_3_content .step_3_box .step_3_box_count span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  color: #858584;
+  background-color: #2B2B2B;
+  border-radius: 50%;
+}
+.step_3 .step_3_content .step_3_box .step_3_box_content {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.step_3 .step_3_content .step_3_box .step_3_box_content h2 {
+  font-size: 22px;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: white;
+}
+.step_3 .step_3_content .step_3_box .step_3_box_content p {
+  font-size: 16px;
+  font-weight: 400;
+  color: #858584;
+}
+.step_3 .step_3_content .step_3_box .step_3_box_content p span {
   color: white;
 }
 
@@ -454,6 +586,16 @@ main {
   .step_2 .step_2_content .step_2_box .step_2_box_content {
     flex-wrap: wrap;
   }
+  .step_3 .step_3_header .step_3_header_left h2 {
+    font-size: 30px;
+  }
+  .step_3 .step_3_header .step_3_header_left p {
+    font-size: 15px;
+  }
+  .step_3 .step_3_header a {
+    width: 247px/2;
+    height: 50px;
+  }
 }
 @media screen and (max-width: 768px) {
   .topnav .topnav_right {
@@ -480,6 +622,14 @@ main {
   }
   .step_2 .step_2_content {
     gap: 45px !important;
+  }
+  .step_3 {
+    padding: 80px 0;
+  }
+  .step_3 .step_3_header {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
   }
 }
 @media screen and (max-width: 425px) {
