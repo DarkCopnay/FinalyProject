@@ -447,3 +447,127 @@
         }
     }
 }
+
+.step_5 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 80px 0;
+    gap: 60px;
+
+    .step_5_header {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+        width: 100%;
+
+        .step_5_header_left {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            h1 {
+                font-size: 38px;
+                font-weight: 600;
+                text-transform: capitalize;
+                color: white;
+            }
+    
+            p {
+                font-size: 22px;
+                font-weight: 400;
+                text-transform: capitalize;
+                color: white;
+            }
+        }
+
+        a {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 187px;
+            height: 60px;
+            border: 2px solid #A259FF;
+            border-radius: 20px;
+            color: white;
+            transition: 0.5s ease;
+
+            span {color: #A259FF;}
+
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+    }
+
+    .step_5_content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 30px;
+        width: 100%;
+
+        .step_5_box {
+            display: flex;
+            flex-direction: column;
+
+            .step_5_box_content {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                width: 100%;
+                height: 173px;
+                background-color: #3B3B3B;
+                border-bottom-left-radius: 20px;
+                border-bottom-right-radius: 20px;
+                padding: 20px 30px;
+
+                h2 {
+                    font-size: 22px;
+                    font-weight: 600;
+                    text-transform: capitalize;
+                    color: white;
+                    padding-bottom: 10px;
+                }
+
+                a {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    font-family: 'Space Mono', monospace;
+                    gap: 12px;
+                    color: white;
+                    font-size: 16px;
+                    font-weight: 400;
+                }
+
+                .step_5_box_footer {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    font-family: 'Space Mono', monospace;
+                    width: 100%;
+
+                    h4 {
+                        font-size: 12px;
+                        font-weight: 400;
+                        color: #858584;
+                        line-height: 110%;
+                        margin-bottom: 8px;
+                    }
+
+                    p {
+                        font-size: 16px;
+                        font-weight: 400;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}
