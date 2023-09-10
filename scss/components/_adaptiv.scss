@@ -1,4 +1,12 @@
-@media screen and (max-width: 1440px) {}
+@media screen and (min-width: 1440px) {
+    .step_4 {
+        width: 70%;
+
+        .step_4_content {
+            width: 140%;
+        }
+    }
+}
 
 @media screen and (max-width: 1466px) {
     .step_2 {
@@ -118,7 +126,16 @@
             text-align: center;
         }
     }
+    
+    .step_4 {
+        align-items: center;
+        text-align: center;
+        .step_4_content {
+            justify-content: center;
+        }
+    }
 }
+
 @media screen and (max-width: 425px) {
     .topnav {
         padding: 0 10px;

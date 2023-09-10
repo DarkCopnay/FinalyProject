@@ -368,15 +368,16 @@
 .step_4 {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 60px;
     padding: 80px 0;
-    width: 70%;
 
     h1 {
         font-size: 38px;
         font-weight: 600;
         text-transform: capitalize;
         color: white;
+        // word-break: keep-all;
     }
 
     .step_4_content {
@@ -385,20 +386,15 @@
         justify-content: space-between;
         flex-wrap: wrap;
         gap: 30px;
-        width: 140%;
 
         .step_4_box {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
 
-            .step_4_box_bg_1 {
+            .step_4_box_bg {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
                 position: relative;
-                background-image: url(/img/MinePage/step_4/bg_box_1.png);
                 width: 240px;
                 height: 240px;
                 z-index: 0;
@@ -432,11 +428,20 @@
                 }
             }
 
-            &:hover > .step_4_box_bg_1 img {
+            .img_1 {background-image: url(/img/MinePage/step_4/bg_box_1.png);}
+            .img_2 {background-image: url(/img/MinePage/step_4/bg_box_2.png);}
+            .img_3 {background-image: url(/img/MinePage/step_4/bg_box_3.png);}
+            .img_4 {background-image: url(/img/MinePage/step_4/bg_box_4.png);}
+            .img_5 {background-image: url(/img/MinePage/step_4/bg_box_5.png);}
+            .img_6 {background-image: url(/img/MinePage/step_4/bg_box_6.png);}
+            .img_7 {background-image: url(/img/MinePage/step_4/bg_box_7.png);}
+            .img_8 {background-image: url(/img/MinePage/step_4/bg_box_8.png);}
+
+            &:hover > .step_4_box_bg img {
                 top: 25%;
             }
 
-            &:hover > .step_4_box_bg_1 h2 {
+            &:hover > .step_4_box_bg h2 {
                 top: 65%;
                 opacity: 1;
             }
