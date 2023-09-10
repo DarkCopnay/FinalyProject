@@ -1,4 +1,4 @@
-import { ModulNavigationMenu } from "./Coponents/ModulNavigationMenu.js";
+import { ModulNavigationMenu } from "./components/ModulNavigationMenu.js";
 
 
 ModulNavigationMenu();
