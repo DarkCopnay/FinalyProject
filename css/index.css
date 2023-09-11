@@ -6,6 +6,15 @@
   box-sizing: border-box;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
 a {
   text-decoration: none;
   color: blue;
@@ -554,7 +563,6 @@ main {
   color: white;
 }
 
-
 .step_4 {
   display: flex;
   flex-direction: column;
@@ -571,6 +579,7 @@ main {
 .step_4 .step_4_content {
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 30px;
@@ -642,6 +651,121 @@ main {
   opacity: 1;
 }
 
+.step_5 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 80px 0;
+  gap: 60px;
+}
+.step_5 .step_5_header {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+}
+.step_5 .step_5_header .step_5_header_left {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.step_5 .step_5_header .step_5_header_left h1 {
+  font-size: 38px;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: white;
+}
+.step_5 .step_5_header .step_5_header_left p {
+  font-size: 22px;
+  font-weight: 400;
+  text-transform: capitalize;
+  color: white;
+}
+.step_5 .step_5_header a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 187px;
+  height: 60px;
+  border: 2px solid #A259FF;
+  border-radius: 20px;
+  color: white;
+  transition: 0.5s ease;
+}
+.step_5 .step_5_header a span {
+  color: #A259FF;
+}
+.step_5 .step_5_header a:hover {
+  transform: scale(1.05);
+}
+.step_5 .step_5_content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+  width: 100%;
+}
+.step_5 .step_5_content .step_5_box {
+  display: flex;
+  flex-direction: column;
+}
+.step_5 .step_5_content .step_5_box > img {
+  object-fit: cover;
+  width: 100%;
+}
+.step_5 .step_5_content .step_5_box .step_5_box_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 173px;
+  background-color: #3B3B3B;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 20px 30px;
+}
+.step_5 .step_5_content .step_5_box .step_5_box_content h2 {
+  font-size: 22px;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: white;
+  padding-bottom: 10px;
+}
+.step_5 .step_5_content .step_5_box .step_5_box_content a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: "Space Mono", monospace;
+  gap: 12px;
+  color: white;
+  font-size: 16px;
+  font-weight: 400;
+}
+.step_5 .step_5_content .step_5_box .step_5_box_content .step_5_box_footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: "Space Mono", monospace;
+  width: 100%;
+}
+.step_5 .step_5_content .step_5_box .step_5_box_content .step_5_box_footer h4 {
+  font-size: 12px;
+  font-weight: 400;
+  color: #858584;
+  line-height: 110%;
+  margin-bottom: 8px;
+}
+.step_5 .step_5_content .step_5_box .step_5_box_content .step_5_box_footer p {
+  font-size: 16px;
+  font-weight: 400;
+  color: white;
+}
+
 @media screen and (min-width: 1440px) {
   .step_4 {
     width: 70%;
@@ -692,6 +816,9 @@ main {
     width: 247px/2;
     height: 50px;
   }
+  .step_5 .step_5_content {
+    justify-content: center !important;
+  }
 }
 @media screen and (max-width: 768px) {
   .topnav .topnav_right {
@@ -734,6 +861,12 @@ main {
   .step_4 .step_4_content {
     justify-content: center;
   }
+  .step_5 .step_5_header {
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 35px;
+  }
 }
 @media screen and (max-width: 425px) {
   .topnav {
@@ -766,6 +899,12 @@ main {
   .step_2 .step_2_content .step_2_box .step_2_box_footer a {
     justify-content: center;
   }
+  .step_5 .step_5_header .step_5_header_left h1 {
+    font-size: 28px;
+  }
+  .step_5 .step_5_header .step_5_header_left p {
+    font-size: 18px;
+  }
 }
 @media screen and (max-width: 375px) {
   .step_1 .step_1_left h1 {
@@ -784,6 +923,12 @@ main {
   .step_1 .step_1_left .step_1_left_footer .step_1_left_footer_box h4 {
     font-size: 14px;
   }
+  .step_5 .step_5_header .step_5_header_left h1 {
+    font-size: 26px;
+  }
+  .step_5 .step_5_header .step_5_header_left p {
+    font-size: 16px;
+  }
 }
 @media screen and (max-width: 320px) {
   .step_1 {
@@ -800,5 +945,20 @@ main {
   }
   .step_2 .step_2_content {
     gap: 100px;
+  }
+  .step_5 .step_5_header .step_5_header_left h1 {
+    font-size: 23px;
+  }
+  .step_5 .step_5_header .step_5_header_left p {
+    font-size: 15px;
+  }
+  .step_5 .step_5_content .step_5_box .step_5_box_content h2 {
+    font-size: 18px;
+  }
+  .step_5 .step_5_content .step_5_box .step_5_box_content a {
+    font-size: 14px;
+  }
+  .step_5 .step_5_content .step_5_box .step_5_box_content .step_5_box_footer p {
+    font-size: 12px;
   }
 }
