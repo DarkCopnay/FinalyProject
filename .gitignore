@@ -1,2 +1,6 @@
 node_modules
 .gitignore
+.firebaserc
+firebase.json
+public
+.firebase
