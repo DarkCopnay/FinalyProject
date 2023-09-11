@@ -567,6 +567,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 70%;
   gap: 60px;
   padding: 80px 0;
 }
@@ -582,7 +583,11 @@ main {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  width: 100%;
   gap: 30px;
+}
+.step_4 .step_4_content .step_4_box {
+  cursor: default;
 }
 .step_4 .step_4_content .step_4_box .step_4_box_bg {
   display: flex;
@@ -654,7 +659,7 @@ main {
 .step_5 {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 70%;
   padding: 80px 0;
   gap: 60px;
 }
@@ -713,10 +718,16 @@ main {
 .step_5 .step_5_content .step_5_box {
   display: flex;
   flex-direction: column;
+  cursor: default;
 }
 .step_5 .step_5_content .step_5_box > img {
   object-fit: cover;
   width: 100%;
+  transition: 0.5s ease;
+}
+.step_5 .step_5_content .step_5_box > img:hover {
+  transform: scale(1.05);
+  border-radius: 20px;
 }
 .step_5 .step_5_content .step_5_box .step_5_box_content {
   display: flex;
@@ -766,14 +777,153 @@ main {
   color: white;
 }
 
-@media screen and (min-width: 1440px) {
-  .step_4 {
-    width: 70%;
-  }
-  .step_4 .step_4_content {
-    width: 140%;
-  }
+.step_6 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  width: 100%;
+  height: 640px;
+  background-image: url(/img/MinePage/step_6/step_6_bg_1.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
 }
+.step_6 .step_6_gradient {
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(162, 89, 255);
+  background: linear-gradient(0deg, rgb(162, 89, 255) 0%, rgba(162, 89, 255, 0) 100%);
+}
+.step_6 .step_6_content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  z-index: 1;
+  width: 80%;
+  margin-bottom: 60px;
+}
+.step_6 .step_6_content .step_6_content_left {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.step_6 .step_6_content .step_6_content_left a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  gap: 12px;
+  width: 151px;
+  height: 44px;
+  border-radius: 20px;
+  background-color: #3B3B3B;
+  color: white;
+  transition: 0.5s ease;
+  overflow: hidden;
+}
+.step_6 .step_6_content .step_6_content_left a h4 {
+  font-weight: 400;
+  position: relative;
+  top: 0px;
+  transition: 0.5s ease;
+}
+.step_6 .step_6_content .step_6_content_left a span {
+  position: absolute;
+  top: -20px;
+  left: 60px;
+  transition: 0.5s ease;
+  font-weight: 600;
+}
+.step_6 .step_6_content .step_6_content_left a:hover {
+  transform: scale(1.05);
+}
+.step_6 .step_6_content .step_6_content_left a:hover h4 {
+  top: 30px;
+}
+.step_6 .step_6_content .step_6_content_left a:hover span {
+  top: 13px;
+  color: green;
+  font-size: 18px;
+}
+.step_6 .step_6_content .step_6_content_left h1 {
+  font-size: 51px;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: white;
+}
+.step_6 .step_6_content .step_6_content_left button {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 198px;
+  height: 60px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.5s ease;
+  overflow: hidden;
+}
+.step_6 .step_6_content .step_6_content_left button span {
+  color: #A259FF;
+}
+.step_6 .step_6_content .step_6_content_left button:hover {
+  transform: scale(1.05);
+}
+.step_6 .step_6_content .step_6_content_timer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  font-family: "Space Mono", monospace;
+  width: 295px;
+  height: 147px;
+  border-radius: 20px;
+  background-color: rgba(59, 59, 59, 0.5019607843);
+  backdrop-filter: blur(5px);
+  text-align: start;
+  padding: 0 30px;
+}
+.step_6 .step_6_content .step_6_content_timer > h4 {
+  font-size: 14px;
+  font-weight: 400;
+  color: white;
+}
+.step_6 .step_6_content .step_6_content_timer .step_6_content_timer_content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.step_6 .step_6_content .step_6_content_timer .step_6_content_timer_content h2 {
+  font-size: 38px;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: white;
+}
+.step_6 .step_6_content .step_6_content_timer .step_6_content_timer_content h4 {
+  font-size: 14px;
+  font-weight: 400;
+  color: white;
+}
+.step_6 .step_6_content .step_6_content_timer .step_6_content_timer_content span {
+  font-size: 28px;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: white;
+}
+
 @media screen and (max-width: 1466px) {
   .step_2 .step_2_content {
     justify-content: center !important;
