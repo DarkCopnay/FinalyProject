@@ -579,6 +579,7 @@ main {
 .step_4 .step_4_content {
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 30px;
@@ -712,6 +713,10 @@ main {
 .step_5 .step_5_content .step_5_box {
   display: flex;
   flex-direction: column;
+}
+.step_5 .step_5_content .step_5_box > img {
+  object-fit: cover;
+  width: 100%;
 }
 .step_5 .step_5_content .step_5_box .step_5_box_content {
   display: flex;
@@ -918,6 +923,12 @@ main {
   .step_1 .step_1_left .step_1_left_footer .step_1_left_footer_box h4 {
     font-size: 14px;
   }
+  .step_5 .step_5_header .step_5_header_left h1 {
+    font-size: 26px;
+  }
+  .step_5 .step_5_header .step_5_header_left p {
+    font-size: 16px;
+  }
 }
 @media screen and (max-width: 320px) {
   .step_1 {
@@ -934,5 +945,20 @@ main {
   }
   .step_2 .step_2_content {
     gap: 100px;
+  }
+  .step_5 .step_5_header .step_5_header_left h1 {
+    font-size: 23px;
+  }
+  .step_5 .step_5_header .step_5_header_left p {
+    font-size: 15px;
+  }
+  .step_5 .step_5_content .step_5_box .step_5_box_content h2 {
+    font-size: 18px;
+  }
+  .step_5 .step_5_content .step_5_box .step_5_box_content a {
+    font-size: 14px;
+  }
+  .step_5 .step_5_content .step_5_box .step_5_box_content .step_5_box_footer p {
+    font-size: 12px;
   }
 }

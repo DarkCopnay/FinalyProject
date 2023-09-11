@@ -376,12 +376,12 @@
         font-weight: 600;
         text-transform: capitalize;
         color: white;
-        // word-break: keep-all;
     }
 
     .step_4_content {
         display: flex;
         flex-direction: row;
+        align-items: center;
         justify-content: space-between;
         flex-wrap: wrap;
         gap: 30px;
@@ -427,14 +427,14 @@
                 }
             }
 
-            .img_1 {background-image: url(/FinalyProject/img/MinePage/step_4/bg_box_1.png);}
-            .img_2 {background-image: url(/FinalyProject/img/MinePage/step_4/bg_box_2.png);}
-            .img_3 {background-image: url(/FinalyProject/img/MinePage/step_4/bg_box_3.png);}
-            .img_4 {background-image: url(/FinalyProject/img/MinePage/step_4/bg_box_4.png);}
-            .img_5 {background-image: url(/FinalyProject/img/MinePage/step_4/bg_box_5.png);}
-            .img_6 {background-image: url(/FinalyProject/img/MinePage/step_4/bg_box_6.png);}
-            .img_7 {background-image: url(/FinalyProject/img/MinePage/step_4/bg_box_7.png);}
-            .img_8 {background-image: url(/FinalyProject/img/MinePage/step_4/bg_box_8.png);}
+            .img_1 {background-image: url(/img/MinePage/step_4/bg_box_1.png);}
+            .img_2 {background-image: url(/img/MinePage/step_4/bg_box_2.png);}
+            .img_3 {background-image: url(/img/MinePage/step_4/bg_box_3.png);}
+            .img_4 {background-image: url(/img/MinePage/step_4/bg_box_4.png);}
+            .img_5 {background-image: url(/img/MinePage/step_4/bg_box_5.png);}
+            .img_6 {background-image: url(/img/MinePage/step_4/bg_box_6.png);}
+            .img_7 {background-image: url(/img/MinePage/step_4/bg_box_7.png);}
+            .img_8 {background-image: url(/img/MinePage/step_4/bg_box_8.png);}
 
             &:hover > .step_4_box_bg img {
                 top: 25%;
@@ -515,6 +515,11 @@
         .step_5_box {
             display: flex;
             flex-direction: column;
+
+            & > img {
+                object-fit: cover;
+                width: 100%;
+            }
 
             .step_5_box_content {
                 display: flex;

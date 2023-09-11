@@ -249,6 +249,20 @@
             }
         }
     }
+    
+    .step_5 {
+        .step_5_header {
+            .step_5_header_left {
+                h1 {
+                    font-size: 26px;
+                }
+
+                p {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
 }
 @media screen and (max-width: 320px) {
     .step_1 {
@@ -274,6 +288,39 @@
     .step_2 {
         .step_2_content {
             gap: 100px;
+        }
+    }
+
+    .step_5 {
+        .step_5_header {
+            .step_5_header_left {
+                h1 {
+                    font-size: 23px;
+                }
+
+                p {
+                    font-size: 15px;
+                }
+            }
+        }
+        .step_5_content {
+            .step_5_box {
+                .step_5_box_content {
+                    h2 {
+                        font-size: 18px;
+                    }
+        
+                    a {
+                        font-size: 14px;
+                    }
+        
+                    .step_5_box_footer {
+                        p {
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
         }
     }
 }
