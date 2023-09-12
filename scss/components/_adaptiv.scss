@@ -1,9 +1,12 @@
-@media screen and (min-width: 1440px) {
+@media screen and (max-width: 1440px) {
     .step_4 {
-        width: 70%;
-
         .step_4_content {
-            width: 140%;
+            justify-content: center;
+        }
+    }
+    .step_5 {
+        .step_5_content {
+            justify-content: center;
         }
     }
 }
@@ -149,6 +152,18 @@
             gap: 35px;
         }
     }
+
+    .step_6 {
+        .step_6_content {
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            
+            .step_6_content_left {
+                align-items: center;
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 425px) {
@@ -219,6 +234,16 @@
             }
         }
     }
+
+    .step_6 {
+        .step_6_content {
+            .step_6_content_left {
+                h1 {
+                    font-size: 30px;
+                }
+            }
+        }
+    }
 }
 @media screen and (max-width: 375px) {
     .step_1 {
@@ -263,6 +288,7 @@
             }
         }
     }
+
 }
 @media screen and (max-width: 320px) {
     .step_1 {
@@ -319,6 +345,16 @@
                             font-size: 12px;
                         }
                     }
+                }
+            }
+        }
+    }
+
+    .step_6 {
+        .step_6_content {
+            .step_6_content_left {
+                h1 {
+                    font-size: 25px;
                 }
             }
         }
