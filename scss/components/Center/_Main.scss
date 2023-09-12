@@ -523,12 +523,6 @@
             & > img {
                 object-fit: cover;
                 width: 100%;
-                transition: 0.5s ease;
-
-                &:hover {
-                    transform: scale(1.05);
-                    border-radius: 20px;
-                }
             }
 
             .step_5_box_content {
@@ -598,8 +592,8 @@
     height: 640px;
     background-image: url(/img/MinePage/step_6/step_6_bg_1.png);
     background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: center;
+    background-size: cover;
+    background-position: center center;
 
     .step_6_gradient {
         position: absolute;
@@ -732,6 +726,7 @@
                     font-weight: 700;
                     text-transform: capitalize;
                     color: white;
+                    text-align: center;
                 }
 
                 h4 {
