@@ -920,11 +920,72 @@ main {
   color: white;
 }
 
+.step_7 {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  padding: 80px 0;
+  gap: 48px;
+}
+.step_7 .step_7_header h2 {
+  font-size: 38px;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: white;
+}
+.step_7 .step_7_header p {
+  font-size: 22px;
+  font-weight: 400;
+  text-transform: capitalize;
+  color: white;
+  line-height: 160%;
+}
+.step_7 .step_7_content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+  width: 100%;
+}
+.step_7 .step_7_content .step_7_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 330px;
+  height: 439px;
+  background-color: #3B3B3B;
+  border-radius: 20px;
+}
+.step_7 .step_7_content .step_7_box .step_7_box_content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+}
+.step_7 .step_7_content .step_7_box .step_7_box_content h2 {
+  font-size: 22px;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: white;
+}
+.step_7 .step_7_content .step_7_box .step_7_box_content p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 140%;
+  max-width: 270px;
+  color: white;
+}
+
 @media screen and (max-width: 1440px) {
   .step_4 .step_4_content {
     justify-content: center;
   }
   .step_5 .step_5_content {
+    justify-content: center;
+  }
+  .step_7 .step_7_content {
     justify-content: center;
   }
 }
@@ -1029,6 +1090,9 @@ main {
   .step_6 .step_6_content .step_6_content_left {
     align-items: center;
   }
+  .step_7 .step_7_header {
+    text-align: center;
+  }
 }
 @media screen and (max-width: 425px) {
   .topnav {
@@ -1069,6 +1133,18 @@ main {
   }
   .step_6 .step_6_content .step_6_content_left h1 {
     font-size: 30px;
+  }
+  .step_7 .step_7_header h2 {
+    font-size: 28px;
+  }
+  .step_7 .step_7_header p {
+    font-size: 18px;
+  }
+  .step_7 .step_7_content .step_7_box h2 {
+    font-size: 18px;
+  }
+  .step_7 .step_7_content .step_7_box p {
+    font-size: 14px;
   }
 }
 @media screen and (max-width: 375px) {

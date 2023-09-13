@@ -9,6 +9,12 @@
             justify-content: center;
         }
     }
+
+    .step_7 {
+        .step_7_content {
+            justify-content: center;
+        }
+    }
 }
 
 @media screen and (max-width: 1466px) {
@@ -164,6 +170,12 @@
             }
         }
     }
+
+    .step_7 {
+        .step_7_header {
+            text-align: center;
+        }
+    }
 }
 
 @media screen and (max-width: 425px) {
@@ -240,6 +252,30 @@
             .step_6_content_left {
                 h1 {
                     font-size: 30px;
+                }
+            }
+        }
+    }
+
+    .step_7 {
+        .step_7_header {
+            h2 {
+                font-size: 28px;
+            }
+
+            p {
+                font-size: 18px;
+            }
+        }
+
+        .step_7_content {
+            .step_7_box {
+                h2 {
+                    font-size: 18px;
+                }
+
+                p {
+                    font-size: 14px;
                 }
             }
         }
