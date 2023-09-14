@@ -5,6 +5,7 @@ let topnav_menu_close = document.getElementById("topnav_menu_close");
 function ModulNavigationMenu() {
     topnan_menu_button.addEventListener("click", function() {
         topnav_menu.style.display = "flex";
+        document.body.style.overflowY = "hidden";
         setTimeout(function() {
             topnav_menu.style.left = "0%";
         }, 100);
@@ -14,6 +15,7 @@ function ModulNavigationMenu() {
 
         setTimeout(function() {
             topnav_menu.style.display = "none";
+            document.body.style.overflowY = "scroll";
 
             ModulNavigationMenu();
         }, 1000)

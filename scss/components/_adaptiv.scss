@@ -343,6 +343,19 @@
             }
         }
     }
+
+    .Footer {
+        text-align: center;
+        .footer_content {
+            .footer_left {
+                text-align: center;
+            }
+
+            .footer_right {
+                text-align: center;
+            }
+        }
+    }
 }
 @media screen and (max-width: 375px) {
     .step_1 {
