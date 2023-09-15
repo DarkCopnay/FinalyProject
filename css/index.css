@@ -1199,6 +1199,16 @@ main {
 .Sing_Up .Sing_Up_content .Sing_Up_right .Sing_Up_right_content button:hover {
   transform: scale(1.06);
 }
+.Sing_Up .Sing_Up_content .Sing_Up_right .Sing_Up_right_content #input_user_valid,
+.Sing_Up .Sing_Up_content .Sing_Up_right .Sing_Up_right_content #input_email_valid,
+.Sing_Up .Sing_Up_content .Sing_Up_right .Sing_Up_right_content #input_password_valid,
+.Sing_Up .Sing_Up_content .Sing_Up_right .Sing_Up_right_content #input_password_retry_valid {
+  display: none;
+  margin: 3px 0 10px 0;
+  color: red;
+  font-weight: 400;
+  line-height: 160%;
+}
 
 .Footer {
   display: flex;

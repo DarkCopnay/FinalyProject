@@ -103,6 +103,18 @@
                         transform: scale(1.06);
                     }
                 }
+                
+                #input_user_valid,
+                #input_email_valid, 
+                #input_password_valid,
+                #input_password_retry_valid
+                {
+                    display: none;
+                    margin: 3px 0 10px 0;
+                    color: red;
+                    font-weight: 400;
+                    line-height: 160%;
+                }
             }
         }
     }
