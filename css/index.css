@@ -389,7 +389,7 @@ main {
   top: 0px;
   z-index: 80;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background: rgb(140, 0, 240);
   background: -webkit-gradient(linear, left top, right top, color-stop(14%, rgb(140, 0, 240)), to(rgb(24, 0, 47)));
   background: linear-gradient(90deg, rgb(140, 0, 240) 14%, rgb(24, 0, 47) 100%);
@@ -401,13 +401,6 @@ main {
           transition-delay: 0.5s;
   -webkit-animation: BgAnimation 10s cubic-bezier(0.49, 0.03, 0.6, 0.99) infinite;
           animation: BgAnimation 10s cubic-bezier(0.49, 0.03, 0.6, 0.99) infinite;
-}
-#welcome_preloader .welcome_preloader_blur {
-  width: 100%;
-  height: 100vh;
-  position: absolute;
-  -webkit-filter: brightness(0.1);
-          filter: brightness(0.1);
 }
 #welcome_preloader .welcome_preloader_content_top {
   display: -webkit-box;
@@ -423,6 +416,8 @@ main {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   gap: 20px;
   -webkit-transition: 0.8s ease;
   transition: 0.8s ease;
@@ -438,12 +433,15 @@ main {
   opacity: 0;
 }
 #welcome_preloader .welcome_preloader_content_top img {
+  max-width: 90%;
   width: 488px;
   -webkit-transform: translateY(-40px);
           transform: translateY(-40px);
   -webkit-transition: 0.8s ease;
   transition: 0.8s ease;
   opacity: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 #welcome_preloader .welcome_preloader_content_down {
   display: -webkit-box;
@@ -477,6 +475,7 @@ main {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  max-width: 100%;
   width: 252px;
   height: 48px;
   background-color: rgb(175, 93, 252);
