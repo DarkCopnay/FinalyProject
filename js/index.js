@@ -20,3 +20,6 @@ switch (window.location.href) {
         ModulMarketPlace();
         break;
 }
+
+ModulTimer(24, 60, 0);
+ModulWelcomePreloader();

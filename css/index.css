@@ -396,6 +396,7 @@ main {
   z-index: 80;
   width: 100%;
   height: 100%;
+  height: 100vh;
   background: rgb(140, 0, 240);
   background: -webkit-gradient(linear, left top, right top, color-stop(14%, rgb(140, 0, 240)), to(rgb(24, 0, 47)));
   background: linear-gradient(90deg, rgb(140, 0, 240) 14%, rgb(24, 0, 47) 100%);
@@ -407,6 +408,13 @@ main {
           transition-delay: 0.5s;
   -webkit-animation: BgAnimation 10s cubic-bezier(0.49, 0.03, 0.6, 0.99) infinite;
           animation: BgAnimation 10s cubic-bezier(0.49, 0.03, 0.6, 0.99) infinite;
+}
+#welcome_preloader .welcome_preloader_blur {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  -webkit-filter: brightness(0.1);
+          filter: brightness(0.1);
 }
 #welcome_preloader .welcome_preloader_content_top {
   display: -webkit-box;
@@ -1764,6 +1772,11 @@ main {
 .step_8 .step_8_form .step_8_form_right .step_8_form_right_input input[type=email]:focus::-ms-input-placeholder {
   transform: translateX(-100px);
 }
+  transform: translateX(-100px);
+}
+.step_8 .step_8_form .step_8_form_right .step_8_form_right_input input[type=email]:focus::-ms-input-placeholder {
+  transform: translateX(-100px);
+}
 .step_8 .step_8_form .step_8_form_right .step_8_form_right_input input[type=email]:focus::placeholder {
   -webkit-transform: translateX(-100px);
           transform: translateX(-100px);
@@ -1852,7 +1865,6 @@ main {
 .step_8 .step_8_form .step_8_form_right .step_8_form_right_input button:focus > section {
   top: 60px;
 }
-
 .MarketPlace {
   display: -webkit-box;
   display: -ms-flexbox;
