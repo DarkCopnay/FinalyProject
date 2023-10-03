@@ -1,0 +1,105 @@
+.Footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 40px 0;
+    background-color: #3B3B3B;
+    
+    hr {
+        width: 50%;
+        height: 1px;
+        background-color: #858584;
+        border: none;
+        margin-bottom: 20px;
+    }
+
+    span {
+        width: 50%;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 110%;
+        color: #CCCCCC;
+    }
+
+    .footer_content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        width: 70%;
+        margin-bottom: 10px;
+
+        .footer_left {
+            img {
+                max-width: 80%;
+                object-fit: cover;
+                margin-bottom: 30px;
+            }
+            
+            p {
+                max-width: 238px;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 160%;
+                color: #CCCCCC;
+                margin-bottom: 20px;
+            }
+    
+            h4 {
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 140%;
+                color: #CCCCCC;
+                margin-bottom: 10px;
+            }
+
+            .footer_left_social {
+                a {
+                    transition: 0.5s ease;
+                    img {
+                        max-width: 100%;
+                        object-fit: fill;
+                    }
+    
+                    &:hover {
+                        transform: scale(1.09);
+                    }
+                }
+            }
+        }
+
+        .footer_right {
+            font-family: 'Space Mono', monospace;
+            
+            h2 {
+                font-size: 22px;
+                font-weight: 700;
+                color: white;
+                margin-bottom: 25px;
+            }
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                li {
+                    a {
+                        font-size: 16px;
+                        font-weight: 400;
+                        line-height: 140%;
+                        color: #CCCCCC;
+                        transition: 0.5s ease;
+
+                        &:hover {
+                            color: white;
+                            font-weight: 500;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

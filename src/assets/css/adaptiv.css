@@ -1,0 +1,15 @@
+@media screen and (max-width: 768px) {
+  .topnav .topnav_right {
+    display: none !important;
+  }
+  .topnav #topnan_menu_button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+@media screen and (max-width: 425px) {
+  .topnav {
+    padding: 0 10px;
+  }
+}
