@@ -2,8 +2,13 @@
 import Icon  from "./img/icon.svg";
 import Logo from "./img/MinePage/logo.svg";
 
-//MinePage
-//Avatars
+//MinePage - footer
+import DiscordLogo from './img/MinePage/footer/DiscordLogo.svg';
+import YoutubeLogo from './img/MinePage/footer/YoutubeLogo.svg';
+import TwitterLogo from './img/MinePage/footer/TwitterLogo.svg';
+import InstagramLogo from './img/MinePage/footer/InstagramLogo.svg';
+
+//MinePage - Avatars
 import  avatar_1 from './img/MinePage/avatar/avatar_1.png';
 import  avatar_2 from './img/MinePage/avatar/avatar_2.png';
 import  avatar_3 from './img/MinePage/avatar/avatar_3.png';
@@ -34,5 +39,12 @@ export const assets = {
         avatar_10, avatar_11, avatar_12,
         avatar_13, avatar_14, avatar_15,
         avatar_16, avatar_17
+    },
+
+    SocialLogo: {
+        Discord: DiscordLogo,
+        YouTube: YoutubeLogo,
+        Twitter: TwitterLogo,
+        Instagram: InstagramLogo
     }
 }

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import { assets } from "../../../../assets/assets";
+import { urls } from "../Header";
 
 export default function NavMenu() {
 
@@ -30,11 +31,11 @@ export default function NavMenu() {
 
                     <section className="topnav_center">
                         <ul>
-                            <li><Link to="/marketplace">Marketplace <span></span></Link></li>
-                            <li><Link to="/rank">Rankings <span></span></Link></li>
-                            <li><Link to="/contact">Connect a wallet <span></span></Link></li>
+                            <li><Link to={urls.market}>Marketplace <span></span></Link></li>
+                            <li><Link to={urls.rank}>Rankings <span></span></Link></li>
+                            <li><Link to={urls.contact}>Connect a wallet <span></span></Link></li>
                         </ul>
-                        <Link className="topnav_sign_up">
+                        <Link to={urls.singup} className="topnav_sign_up">
                             <span className="material-symbols-outlined">person</span>
                             Sign Up
                         </Link>
