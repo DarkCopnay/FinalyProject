@@ -2,12 +2,6 @@
 import Icon  from "./img/icon.svg";
 import Logo from "./img/MinePage/logo.svg";
 
-//MinePage - footer
-import DiscordLogo from './img/MinePage/footer/DiscordLogo.svg';
-import YoutubeLogo from './img/MinePage/footer/YoutubeLogo.svg';
-import TwitterLogo from './img/MinePage/footer/TwitterLogo.svg';
-import InstagramLogo from './img/MinePage/footer/InstagramLogo.svg';
-
 //MinePage - Avatars
 import  avatar_1 from './img/MinePage/avatar/avatar_1.png';
 import  avatar_2 from './img/MinePage/avatar/avatar_2.png';
@@ -27,6 +21,15 @@ import  avatar_15 from './img/MinePage/avatar/avatar_15.png';
 import  avatar_16 from './img/MinePage/avatar/avatar_16.png';
 import  avatar_17 from './img/MinePage/avatar/avatar_17.png';
 
+//MinePage - step_1
+import space_box from './img/MinePage/step_1/space_box.png';
+
+
+//MinePage - footer
+import DiscordLogo from './img/MinePage/footer/DiscordLogo.svg';
+import YoutubeLogo from './img/MinePage/footer/YoutubeLogo.svg';
+import TwitterLogo from './img/MinePage/footer/TwitterLogo.svg';
+import InstagramLogo from './img/MinePage/footer/InstagramLogo.svg';
 
 export const assets = {
     icon: Icon,
@@ -39,6 +42,10 @@ export const assets = {
         avatar_10, avatar_11, avatar_12,
         avatar_13, avatar_14, avatar_15,
         avatar_16, avatar_17
+    },
+
+    Step_1: {
+        SpaceBox: space_box,
     },
 
     SocialLogo: {

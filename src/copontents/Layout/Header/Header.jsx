@@ -1,10 +1,10 @@
 import { assets } from "../../../assets/assets"
 import { Link } from "react-router-dom"
 import NavMenu from "./copontents/NavMenu"
-// import HomePage from "../../Main/HomePage/HomePage"
+import PreLoader from "./copontents/Preloader"
 
 export const urls = {
-    home: "/" ,
+    home: "" ,
     market: "/market",
     rank: "/rank",
     contact: "/contact",
@@ -13,9 +13,11 @@ export const urls = {
 
 export default function Headers() {
     return (
-        <header>
+        <>
+            <PreLoader />
+            <header>
                 <nav className="topnav">
-                <Link to={urls.home}><img src={assets.logo}/></Link>
+                <Link to="/"><img src={assets.logo}/></Link>
                 <section className="topnav_right">
                     <ul>
                         <li><Link to={urls.market}>Marketplace <span></span></Link></li>
@@ -30,6 +32,7 @@ export default function Headers() {
                 </section>
                 <NavMenu />
                 </nav>
-        </header>
+            </header>
+        </>
     )
 }
