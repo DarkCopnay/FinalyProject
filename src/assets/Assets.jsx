@@ -24,6 +24,16 @@ import  avatar_17 from './img/MinePage/avatar/avatar_17.png';
 //MinePage - step_1
 import space_box from './img/MinePage/step_1/space_box.png';
 
+//MinePage - step_2
+import Bear from './img/MinePage/step_2/Bear.png';
+import Cat from './img/MinePage/step_2/cat.png';
+import img1 from './img/MinePage/step_2/img_1.png';
+import Mushroom1 from './img/MinePage/step_2/Mushroom.png';
+import Mushroom2 from './img/MinePage/step_2/Mushrooms2.png';
+import Mushroom3 from './img/MinePage/step_2/Mushrooms3.png';
+import robot1 from './img/MinePage/step_2/robot1.png';
+import robot2 from './img/MinePage/step_2/robot2.png';
+import robot3 from './img/MinePage/step_2/robot3.png';
 
 //MinePage - footer
 import DiscordLogo from './img/MinePage/footer/DiscordLogo.svg';
@@ -44,14 +54,26 @@ export const assets = {
         avatar_16, avatar_17
     },
 
-    Step_1: {
-        SpaceBox: space_box,
-    },
-
     SocialLogo: {
         Discord: DiscordLogo,
         YouTube: YoutubeLogo,
         Twitter: TwitterLogo,
         Instagram: InstagramLogo
+    },
+
+    Step_1: {
+        SpaceBox: space_box,
+    },
+
+    Step_2: {
+        bear: Bear,
+        cat: Cat,
+        Dog: img1,
+        Mushroom_1: Mushroom1,
+        Mushroom_2: Mushroom2,
+        Mushroom_3: Mushroom3,
+        robot_1: robot1,
+        robot_2: robot2,
+        robot_3: robot3,
     }
 }

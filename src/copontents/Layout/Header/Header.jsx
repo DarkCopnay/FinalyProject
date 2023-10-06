@@ -1,5 +1,5 @@
-import { assets } from "../../../assets/assets"
 import { Link } from "react-router-dom"
+import { assets } from "../../../assets/assets"
 import NavMenu from "./copontents/NavMenu"
 import PreLoader from "./copontents/Preloader"
 
@@ -14,7 +14,7 @@ export const urls = {
 export default function Headers() {
     return (
         <>
-            <PreLoader />
+            {/* <PreLoader /> */}
             <header>
                 <nav className="topnav">
                 <Link to="/"><img src={assets.logo}/></Link>

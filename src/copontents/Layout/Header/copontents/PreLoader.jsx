@@ -24,7 +24,7 @@ export default function PreLoader() {
                 setTimeout(function() {
                     document.getElementById("OpenButton").style.opacity = 1;
                     document.getElementById("OpenButton").style.transform = "translateY(0)";
-                }, 1500);
+                }, 1200);
             }, 500);
         }, 300);
     }, 100);
