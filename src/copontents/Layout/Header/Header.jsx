@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { assets } from "../../../assets/assets"
+import { assets } from "../../../assets/Assets"
 import NavMenu from "./copontents/NavMenu"
 import PreLoader from "./copontents/Preloader"
 

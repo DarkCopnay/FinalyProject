@@ -1,4 +1,4 @@
-import { assets } from "../../../../assets/assets";
+import { assets } from "../../../../assets/Assets";
 
 export default function PreLoader() {
     document.body.style.overflow = "hidden";

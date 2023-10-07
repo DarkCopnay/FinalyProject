@@ -1,7 +1,7 @@
 import Footer from "./Footer/Footer"
 import Headers from "./Header/Header"
 
-export default function Layout({ children }) {
+export default function Root_Layout({ children }) {
     return (
         <>
             <Headers />
