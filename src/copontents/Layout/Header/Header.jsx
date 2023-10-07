@@ -4,7 +4,7 @@ import NavMenu from "./copontents/NavMenu"
 import PreLoader from "./copontents/PreLoader"
 
 export const urls = {
-    home: "" ,
+    home: "/" ,
     market: "/market",
     rank: "/rank",
     contact: "/contact",

@@ -1,7 +1,17 @@
+import { Link , useNavigate} from "react-router-dom"
+import { urls } from "../../Layout/Header/Header"
+
 export default function Page404() {
+    // const navigate = useNavigate();
+    
     return (
-        <>
-            <h1>Page Not Found 404</h1>
-        </>
+        <section className="Error404">
+            <h1 className="bg_error">404</h1>
+            <section className="Error404_content">
+                <h1>Page not found</h1>
+                <p>Cheack url on website</p>
+                <Link to={urls.home}>Return Home</Link>
+            </section>
+        </section>
     )
 }

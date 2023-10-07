@@ -1848,6 +1848,93 @@ main {
   top: 60px;
 }
 
+.Error404 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+.Error404 .bg_error {
+  position: absolute;
+  z-index: 10;
+  font-size: 250px;
+  color: #ffffff;
+  -webkit-transform: rotateX(10deg) rotateY(35deg);
+          transform: rotateX(10deg) rotateY(35deg);
+  text-shadow: -10px 8px 3px rgba(169, 169, 169, 0.2);
+  opacity: 0.2;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: default;
+}
+.Error404 .Error404_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  z-index: 12;
+  color: white;
+  text-align: center;
+}
+.Error404 .Error404_content h2 {
+  font-size: 50px;
+}
+.Error404 .Error404_content p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.Error404 .Error404_content a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 90%;
+  height: 40px;
+  font-size: 18px;
+  font-weight: 500;
+  background-color: purple;
+  border-radius: 10px;
+  color: white;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+.Error404 .Error404_content a:hover {
+  -webkit-box-shadow: -3px 7px 6px 0px rgba(0, 0, 0, 0.45);
+          box-shadow: -3px 7px 6px 0px rgba(0, 0, 0, 0.45);
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
 .Sing_Up {
   display: -webkit-box;
   display: -ms-flexbox;
