@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import { assets } from "../../../assets/Assets"
 import NavMenu from "./copontents/NavMenu"
-import PreLoader from "./copontents/Preloader"
+import PreLoader from "./copontents/PreLoader"
 
 export const urls = {
     home: "" ,

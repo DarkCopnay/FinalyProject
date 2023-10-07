@@ -35,6 +35,30 @@ import robot1 from './img/MinePage/step_2/robot1.png';
 import robot2 from './img/MinePage/step_2/robot2.png';
 import robot3 from './img/MinePage/step_2/robot3.png';
 
+//MinePage - step_3
+//None
+
+//MinePage - step_4
+
+import bgBox1 from './img/MinePage/step_4/bg_box_1.png';
+import bgBox2 from './img/MinePage/step_4/bg_box_2.png';
+import bgBox3 from './img/MinePage/step_4/bg_box_3.png';
+import bgBox4 from './img/MinePage/step_4/bg_box_4.png';
+import bgBox5 from './img/MinePage/step_4/bg_box_5.png';
+import bgBox6 from './img/MinePage/step_4/bg_box_6.png';
+import bgBox7 from './img/MinePage/step_4/bg_box_7.png';
+import bgBox8 from './img/MinePage/step_4/bg_box_8.png';
+
+//MinePage - step_4 - svg
+import svg1 from './img/MinePage/step_4/svg/svg_1.svg';
+import svg2 from './img/MinePage/step_4/svg/svg_2.svg';
+import svg3 from './img/MinePage/step_4/svg/svg_3.svg';
+import svg4 from './img/MinePage/step_4/svg/svg_4.svg';
+import svg5 from './img/MinePage/step_4/svg/svg_5.svg';
+import svg6 from './img/MinePage/step_4/svg/svg_6.svg';
+import svg7 from './img/MinePage/step_4/svg/svg_7.svg';
+import svg8 from './img/MinePage/step_4/svg/svg_8.svg';
+
 //MinePage - footer
 import DiscordLogo from './img/MinePage/footer/DiscordLogo.svg';
 import YoutubeLogo from './img/MinePage/footer/YoutubeLogo.svg';
@@ -75,5 +99,28 @@ export const assets = {
         robot_1: robot1,
         robot_2: robot2,
         robot_3: robot3,
+    },
+
+    Step_4: {
+        svg: {
+            svg_1: svg1,
+            svg_2: svg2,
+            svg_3: svg3,
+            svg_4: svg4,
+            svg_5: svg5,
+            svg_6: svg6,
+            svg_7: svg7,
+            svg_8: svg8,
+        },
+        
+        bgBox_1: bgBox1,
+        bgBox_2: bgBox2,
+        bgBox_3: bgBox3,
+        bgBox_4: bgBox4,
+        bgBox_5: bgBox5,
+        bgBox_6: bgBox6,
+        bgBox_7: bgBox7,
+        bgBox_8: bgBox8,
+        
     }
 }
