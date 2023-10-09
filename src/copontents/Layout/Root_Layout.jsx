@@ -4,11 +4,11 @@ import Headers from "./Header/Header"
 export default function Root_Layout({ children }) {
     return (
         <>
-            <Headers />
+            <Headers/>
             <main>
-                {children}
+                { children }
             </main>
-            <Footer />
+            <Footer/>
         </>
     )
 }
