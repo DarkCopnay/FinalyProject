@@ -7,13 +7,6 @@ import Root_Layout from '../../Layout/Root_Layout'
 export default function HomePage() {
     return (
         <>
-            {/* <Root_Layout>
-                <Step_1/>
-                <Step_2/>
-                <Step_3/>
-                <Step_4/>
-            </Root_Layout> */}
-
             <Step_1/>
             <Step_2/>
             <Step_3/>
