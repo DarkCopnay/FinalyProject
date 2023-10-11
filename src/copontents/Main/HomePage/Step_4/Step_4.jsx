@@ -51,14 +51,14 @@ export default function Step_4() {
                 <section className="step_4_box">
                     <section className="step_4_box_bg img_1" style={{backgroundImage: `url(${assets.Step_4.bgBox_7})`}}>
                         <img src={assets.Step_4.svg.svg_7} alt="svg_7"/>
-                        <h2>Art</h2>
+                        <h2>Virtual Worlds</h2>
                         <section className="step_4_box_bg_blur"></section>
                     </section>
                 </section>
                 <section className="step_4_box">
                     <section className="step_4_box_bg img_1" style={{backgroundImage: `url(${assets.Step_4.bgBox_8})`}}>
                         <img src={assets.Step_4.svg.svg_8} alt="svg_8"/>
-                        <h2>Art</h2>
+                        <h2>Discover More NFTs</h2>
                         <section className="step_4_box_bg_blur"></section>
                     </section>
                 </section>

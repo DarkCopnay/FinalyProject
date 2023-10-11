@@ -1,4 +1,4 @@
-export default function Home( {Layout, Content} ) {
+export default function PageTemplate( {Layout, Content} ) {
     return (
         <Layout>
             <Content />

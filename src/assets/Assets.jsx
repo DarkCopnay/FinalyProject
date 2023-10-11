@@ -59,6 +59,11 @@ import svg6 from './img/MinePage/step_4/svg/svg_6.svg';
 import svg7 from './img/MinePage/step_4/svg/svg_7.svg';
 import svg8 from './img/MinePage/step_4/svg/svg_8.svg';
 
+//MinePage - step_5
+import step_5_box_1 from './img/MinePage/step_5/step_5_box_1.png';
+import step_5_box_2 from './img/MinePage/step_5/step_5_box_2.png';
+import step_5_box_3 from './img/MinePage/step_5/step_5_box_3.png';
+
 //MinePage - footer
 import DiscordLogo from './img/MinePage/footer/DiscordLogo.svg';
 import YoutubeLogo from './img/MinePage/footer/YoutubeLogo.svg';
@@ -122,5 +127,11 @@ export const assets = {
         bgBox_7: bgBox7,
         bgBox_8: bgBox8,
         
+    },
+
+    Step_5: {
+        step_5_box1: step_5_box_1,
+        step_5_box2: step_5_box_2,
+        step_5_box3: step_5_box_3
     }
 }
