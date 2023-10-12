@@ -8,7 +8,7 @@ export default function Step_5() {
                     <h1>Discover More NFTs</h1>
                     <p>Explore new trending NFTs</p>                    
                 </section>
-                <a href="#"><span class="material-symbols-outlined">visibility</span> See All</a>
+                <a href="#"><span className="material-symbols-outlined">visibility</span> See All</a>
             </header>
 
             <section className="step_5_content">
