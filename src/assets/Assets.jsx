@@ -36,6 +36,7 @@ import robot2 from './img/MinePage/step_2/robot2.png';
 import robot3 from './img/MinePage/step_2/robot3.png';
 
 //MinePage - step_3
+
 //None
 
 //MinePage - step_4
@@ -71,6 +72,9 @@ import step_6_bg1 from './img/MinePage/step_6/step_6_bg_1.png';
 import step_7_img1 from './img/MinePage/step_7/step_7_img_1.svg';
 import step_7_img2 from './img/MinePage/step_7/step_7_img_2.svg';
 import step_7_img3 from './img/MinePage/step_7/step_7_img_3.svg';
+
+//MinePage - step_8
+import step_8_form from './img/MinePage/step_8/step_8_form.png';
 
 //MinePage - footer
 import DiscordLogo from './img/MinePage/footer/DiscordLogo.svg';
@@ -151,5 +155,9 @@ export const assets = {
         step_7_img_1: step_7_img1,
         step_7_img_2: step_7_img2,
         step_7_img_3: step_7_img3
+    }, 
+
+    Step_8: {
+        step_8_form: step_8_form
     }
 }

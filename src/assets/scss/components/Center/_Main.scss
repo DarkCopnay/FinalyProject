@@ -36,7 +36,7 @@
             text-transform: capitalize;
         }
 
-        button {
+        a {
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -880,6 +880,7 @@
                     padding: 16px 20px;
                     border-radius: 20px;
                     border: none;
+                    outline: none;
 
                     &::placeholder {
                         font-weight: 400;

@@ -27,6 +27,10 @@ li {
   list-style: none;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -389,7 +393,7 @@ main {
   top: 0px;
   z-index: 80;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background: rgb(140, 0, 240);
   background: -webkit-gradient(linear, left top, right top, color-stop(14%, rgb(140, 0, 240)), to(rgb(24, 0, 47)));
   background: linear-gradient(90deg, rgb(140, 0, 240) 14%, rgb(24, 0, 47) 100%);
@@ -568,7 +572,7 @@ main {
   color: white;
   text-transform: capitalize;
 }
-.step_1 .step_1_left button {
+.step_1 .step_1_left a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -593,10 +597,10 @@ main {
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
 }
-.step_1 .step_1_left button span {
+.step_1 .step_1_left a span {
   font-weight: 200;
 }
-.step_1 .step_1_left button:hover {
+.step_1 .step_1_left a:hover {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
   background-color: #7a44c1;
@@ -1715,6 +1719,7 @@ main {
   padding: 16px 20px;
   border-radius: 20px;
   border: none;
+  outline: none;
 }
 .step_8 .step_8_form .step_8_form_right .step_8_form_right_input input[type=email]::-webkit-input-placeholder {
   font-weight: 400;
@@ -1846,93 +1851,6 @@ main {
 }
 .step_8 .step_8_form .step_8_form_right .step_8_form_right_input button:focus > section {
   top: 60px;
-}
-
-.Error404 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  position: relative;
-  width: 100%;
-  height: 100vh;
-}
-.Error404 .bg_error {
-  position: absolute;
-  z-index: 10;
-  font-size: 400px;
-  color: #ffffff;
-  -webkit-transform: rotateX(10deg) rotateY(35deg);
-          transform: rotateX(10deg) rotateY(35deg);
-  text-shadow: -10px 8px 3px rgba(169, 169, 169, 0.2);
-  opacity: 0.2;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  cursor: default;
-}
-.Error404 .Error404_content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  position: relative;
-  z-index: 12;
-  color: white;
-  text-align: center;
-}
-.Error404 .Error404_content h2 {
-  font-size: 50px;
-}
-.Error404 .Error404_content p {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-.Error404 .Error404_content a {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: 90%;
-  height: 40px;
-  font-size: 18px;
-  font-weight: 500;
-  background-color: #a259ff;
-  border-radius: 10px;
-  color: white;
-  -webkit-transition: 0.5s ease;
-  transition: 0.5s ease;
-}
-.Error404 .Error404_content a:hover {
-  -webkit-box-shadow: -3px 7px 6px 0px rgba(0, 0, 0, 0.45);
-          box-shadow: -3px 7px 6px 0px rgba(0, 0, 0, 0.45);
-  -webkit-transform: scale(1.02);
-          transform: scale(1.02);
 }
 
 .Sing_Up {
@@ -2120,6 +2038,191 @@ main {
 .Sing_Up .Sing_Up_content .Sing_Up_right .Sing_Up_right_content button:hover {
   -webkit-transform: scale(1.06);
           transform: scale(1.06);
+}
+
+.MarketPlace {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 70%;
+  padding: 80px 0;
+}
+.MarketPlace .MarketPlace_header h1 {
+  font-size: 51px;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: white;
+}
+.MarketPlace .MarketPlace_header p {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 160%;
+  color: white;
+}
+.MarketPlace .MarktPlace_search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  width: 100%;
+  margin-top: 30px;
+  position: relative;
+}
+.MarketPlace .MarktPlace_search input[type=text] {
+  width: 100%;
+  height: 60px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  padding: 0 80px 0 20px;
+  background-color: #3B3B3B;
+  color: white;
+}
+.MarketPlace .MarktPlace_search input[type=text]::-webkit-input-placeholder {
+  color: #858584;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+.MarketPlace .MarktPlace_search input[type=text]::-moz-placeholder {
+  color: #858584;
+  -moz-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+.MarketPlace .MarktPlace_search input[type=text]:-ms-input-placeholder {
+  color: #858584;
+  -ms-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+.MarketPlace .MarktPlace_search input[type=text]::-ms-input-placeholder {
+  color: #858584;
+  -ms-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+.MarketPlace .MarktPlace_search input[type=text]::placeholder {
+  color: #858584;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+.MarketPlace .MarktPlace_search input[type=text]:focus::-webkit-input-placeholder {
+  opacity: 0;
+}
+.MarketPlace .MarktPlace_search input[type=text]:focus::-moz-placeholder {
+  opacity: 0;
+}
+.MarketPlace .MarktPlace_search input[type=text]:focus:-ms-input-placeholder {
+  opacity: 0;
+}
+.MarketPlace .MarktPlace_search input[type=text]:focus::-ms-input-placeholder {
+  opacity: 0;
+}
+.MarketPlace .MarktPlace_search input[type=text]:focus::placeholder {
+  opacity: 0;
+}
+.MarketPlace .MarktPlace_search span {
+  position: absolute;
+  padding-right: 35px;
+  font-size: 30px;
+  color: white;
+}
+
+.Error404 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+.Error404 .bg_error {
+  position: absolute;
+  z-index: 10;
+  font-size: 400px;
+  color: #ffffff;
+  -webkit-transform: rotateX(10deg) rotateY(35deg);
+          transform: rotateX(10deg) rotateY(35deg);
+  text-shadow: -10px 8px 3px rgba(169, 169, 169, 0.2);
+  opacity: 0.2;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: default;
+}
+.Error404 .Error404_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  z-index: 12;
+  color: white;
+  text-align: center;
+}
+.Error404 .Error404_content h2 {
+  font-size: 50px;
+}
+.Error404 .Error404_content p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.Error404 .Error404_content a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 90%;
+  height: 40px;
+  font-size: 18px;
+  font-weight: 500;
+  background-color: #a259ff;
+  border-radius: 10px;
+  color: white;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+.Error404 .Error404_content a:hover {
+  -webkit-box-shadow: -3px 7px 6px 0px rgba(0, 0, 0, 0.45);
+          box-shadow: -3px 7px 6px 0px rgba(0, 0, 0, 0.45);
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
 }
 
 .Footer {
