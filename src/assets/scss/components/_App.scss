@@ -22,8 +22,26 @@ li {
     list-style: none;
 }
 
-html {scroll-behavior: smooth;}
+html {
+    scroll-behavior: smooth;
+    &::-webkit-scrollbar {
+        background-color: #3B3B3B;
+        width: 10px;
+    }
 
+    &::-webkit-scrollbar-button {
+        display: none;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: #3B3B3B;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: gray;
+        border-radius: 10px;
+    }
+}
 body {
     display: flex;
     flex-direction: column;

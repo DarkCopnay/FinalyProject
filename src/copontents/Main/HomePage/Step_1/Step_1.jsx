@@ -1,6 +1,4 @@
 import { assets } from "../../../../assets/Assets";
-import { NavLink } from "react-router-dom";
-import { urls } from "../../../Layout/Header/Header";
 
 export default function Step_1() {
     return (
@@ -9,11 +7,17 @@ export default function Step_1() {
                 <h1>Discover Digital Art & Collect NFTs</h1>
                 <p>NFT marketplace UI created with Anima for Figma. Collect, 
                         buy and sell art from more than 20k NFT artists.</p>
-                
-                <NavLink to={urls.singup}>
+
+                <button onClick={() => {
+                    window.scrollTo({
+                        top: document.querySelector(".step_8").getBoundingClientRect().y,
+                        left: 0,
+                        behavior: "smooth"
+                    })
+                }}>
                         <span className="material-symbols-outlined">rocket_launch</span>
                         Get Started
-                </NavLink>
+                </button>
 
                 <section className="step_1_left_footer">
                     <section className="step_1_left_footer_box">
