@@ -1,10 +1,12 @@
 .MarketPlace {
     display: flex;
     flex-direction: column;
-    width: 70%;
+    align-items: center;
+    width: 100%;
     padding-top: 80px;
 
     .MarketPlace_header {
+        width: 70%;
         h1 {
             font-size: 51px;
             font-weight: 600;
@@ -59,15 +61,15 @@
         }
     }
 
-    .MarketPlace_content {
+    .MarketPlace_medium {
         display: flex;
         flex-direction: column;
         align-items: center;
         width: 100%;
 
-        padding: 80px 0;
+        padding-top: 80px;
 
-        .MarketPlace_content_header {
+        .MarketPlace_medium_header {
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -133,13 +135,21 @@
             }
             .activ {
                 color: white;
-                span {
-                    background-color: #858584;
-                }
-                .line {
-                    opacity: 1;
-                }
+
+                span {background-color: #858584;}
+
+                .line {opacity: 1;}
             }
+        }
+
+        .MarketPlace_medium_content {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
+            background-color: #3B3B3B;
+            border-bottom: 2px solid #2B2B2B;
+            width: 100%;
         }
     }
 }

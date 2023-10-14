@@ -2048,8 +2048,14 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 70%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
   padding-top: 80px;
+}
+.MarketPlace .MarketPlace_header {
+  width: 70%;
 }
 .MarketPlace .MarketPlace_header h1 {
   font-size: 51px;
@@ -2137,7 +2143,7 @@ main {
   font-size: 30px;
   color: white;
 }
-.MarketPlace .MarketPlace_content {
+.MarketPlace .MarketPlace_medium {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2149,9 +2155,9 @@ main {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  padding: 80px 0;
+  padding-top: 80px;
 }
-.MarketPlace .MarketPlace_content .MarketPlace_content_header {
+.MarketPlace .MarketPlace_medium .MarketPlace_medium_header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2167,7 +2173,7 @@ main {
           justify-content: center;
   width: 90%;
 }
-.MarketPlace .MarketPlace_content .MarketPlace_content_header button {
+.MarketPlace .MarketPlace_medium .MarketPlace_medium_header button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2195,7 +2201,7 @@ main {
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
 }
-.MarketPlace .MarketPlace_content .MarketPlace_content_header button span {
+.MarketPlace .MarketPlace_medium .MarketPlace_medium_header button span {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2219,7 +2225,7 @@ main {
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
 }
-.MarketPlace .MarketPlace_content .MarketPlace_content_header button .line {
+.MarketPlace .MarketPlace_medium .MarketPlace_medium_header button .line {
   position: absolute;
   width: 100%;
   height: 1px;
@@ -2229,23 +2235,40 @@ main {
   -webkit-transition: 0.2s ease;
   transition: 0.2s ease;
 }
-.MarketPlace .MarketPlace_content .MarketPlace_content_header button:hover {
+.MarketPlace .MarketPlace_medium .MarketPlace_medium_header button:hover {
   color: white;
 }
-.MarketPlace .MarketPlace_content .MarketPlace_content_header button:hover span {
+.MarketPlace .MarketPlace_medium .MarketPlace_medium_header button:hover span {
   background-color: #858584;
 }
-.MarketPlace .MarketPlace_content .MarketPlace_content_header button:hover .line {
+.MarketPlace .MarketPlace_medium .MarketPlace_medium_header button:hover .line {
   opacity: 1;
 }
-.MarketPlace .MarketPlace_content .MarketPlace_content_header .activ {
+.MarketPlace .MarketPlace_medium .MarketPlace_medium_header .activ {
   color: white;
 }
-.MarketPlace .MarketPlace_content .MarketPlace_content_header .activ span {
+.MarketPlace .MarketPlace_medium .MarketPlace_medium_header .activ span {
   background-color: #858584;
 }
-.MarketPlace .MarketPlace_content .MarketPlace_content_header .activ .line {
+.MarketPlace .MarketPlace_medium .MarketPlace_medium_header .activ .line {
   opacity: 1;
+}
+.MarketPlace .MarketPlace_medium .MarketPlace_medium_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  background-color: #3B3B3B;
+  border-bottom: 2px solid #2B2B2B;
+  width: 100%;
 }
 
 .Error404 {

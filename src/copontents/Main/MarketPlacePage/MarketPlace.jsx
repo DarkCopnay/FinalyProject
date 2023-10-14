@@ -1,9 +1,19 @@
 import { useState, useEffect } from "react"
+import NFTdata from './components/data/NFT.json'
+import NFTCatalog from "./components/NFTCatalog";
 
 
 export default function MarketPlace() {
-    const [activ, setActiv] = useState('activ');
+    const data = NFTdata;
+    const [NFTactiv, setNFTactiv] = useState(true);
+    const [CollectionsActiv, setCollectionActiv] = useState(false);
 
+    function RenderContent() {
+        return (
+            <></>
+        )
+    }
+    
     return (
         <section className="MarketPlace">
             <header className="MarketPlace_header">
@@ -14,11 +24,25 @@ export default function MarketPlace() {
                     <span className="material-symbols-outlined">search</span>
                 </section>
             </header>
-            <section className="MarketPlace_content">
-                <header className="MarketPlace_content_header">
-                    <button className="activ">NFTs <span>302</span> <span className="line"></span></button>
-                    <button>NFTs <span>302</span> <span className="line"></span></button>
+            <section className="MarketPlace_medium">
+                <header className="MarketPlace_medium_header">
+                    <button 
+                    onClick={() => {
+                        setNFTactiv(true);
+                        setCollectionActiv(false);
+                    }}
+
+                    className={NFTactiv ? "activ": ""}> NFTs <span>{data.length}</span> <span className="line"></span></button>
+                    <button onClick={() => {
+                        setCollectionActiv(true);
+                        setNFTactiv(false);
+                    }} 
+
+                    className={CollectionsActiv ? "activ": ""}>Collections <span>302</span> <span className="line"></span></button>
                 </header>
+                <section className="MarketPlace_medium_content">
+                    <NFTCatalog />
+                </section>
             </section>
         </section>
     )
