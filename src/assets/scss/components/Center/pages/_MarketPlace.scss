@@ -150,6 +150,23 @@
             background-color: #3B3B3B;
             border-bottom: 2px solid #2B2B2B;
             width: 100%;
+
+            .step_5_edit {
+                width: 60%;
+                
+                .step_5_box_edit {
+                    .step_5_box_content_edit {
+                        background-color: #2B2B2B;
+                    }
+                }
+            }
+
+            .step_2 {
+                .step_2_content_edit {
+                    flex-wrap: wrap;
+                    gap: 30px;
+                }
+            }
         }
     }
 }

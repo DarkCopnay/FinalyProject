@@ -1,19 +1,15 @@
 import { useState, useEffect } from "react"
 import NFTdata from './components/data/NFT.json'
+import CollectionsData from './components/data/Collections.json';
 import NFTCatalog from "./components/NFTCatalog";
+import CollectionsCatalog from "./components/CollectionsCatalog";
 
 
 export default function MarketPlace() {
-    const data = NFTdata;
     const [NFTactiv, setNFTactiv] = useState(true);
     const [CollectionsActiv, setCollectionActiv] = useState(false);
+    const data = NFTdata;
 
-    function RenderContent() {
-        return (
-            <></>
-        )
-    }
-    
     return (
         <section className="MarketPlace">
             <header className="MarketPlace_header">
@@ -38,10 +34,10 @@ export default function MarketPlace() {
                         setNFTactiv(false);
                     }} 
 
-                    className={CollectionsActiv ? "activ": ""}>Collections <span>302</span> <span className="line"></span></button>
+                    className={CollectionsActiv ? "activ": ""}>Collections <span>{CollectionsData.length}</span> <span className="line"></span></button>
                 </header>
                 <section className="MarketPlace_medium_content">
-                    <NFTCatalog />
+                    {NFTactiv ? <NFTCatalog/> : <CollectionsCatalog/>}
                 </section>
             </section>
         </section>

@@ -2270,6 +2270,17 @@ main {
   border-bottom: 2px solid #2B2B2B;
   width: 100%;
 }
+.MarketPlace .MarketPlace_medium .MarketPlace_medium_content .step_5_edit {
+  width: 60%;
+}
+.MarketPlace .MarketPlace_medium .MarketPlace_medium_content .step_5_edit .step_5_box_edit .step_5_box_content_edit {
+  background-color: #2B2B2B;
+}
+.MarketPlace .MarketPlace_medium .MarketPlace_medium_content .step_2 .step_2_content_edit {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 30px;
+}
 
 .Error404 {
   display: -webkit-box;
