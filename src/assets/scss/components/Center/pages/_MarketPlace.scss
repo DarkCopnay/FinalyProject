@@ -31,7 +31,7 @@
         margin-top: 30px;
         position: relative;
 
-        input[type="text"] {
+        input[type="search"] {
             width: 100%;
             height: 60px;
             border: none;
@@ -163,6 +163,7 @@
 
             .step_2 {
                 .step_2_content_edit {
+                    justify-content: center;
                     flex-wrap: wrap;
                     gap: 30px;
                 }

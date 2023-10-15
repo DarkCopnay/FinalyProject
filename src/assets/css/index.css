@@ -2101,7 +2101,7 @@ main {
   margin-top: 30px;
   position: relative;
 }
-.MarketPlace .MarktPlace_search input[type=text] {
+.MarketPlace .MarktPlace_search input[type=search] {
   width: 100%;
   height: 60px;
   border: none;
@@ -2111,44 +2111,44 @@ main {
   background-color: #3B3B3B;
   color: white;
 }
-.MarketPlace .MarktPlace_search input[type=text]::-webkit-input-placeholder {
+.MarketPlace .MarktPlace_search input[type=search]::-webkit-input-placeholder {
   color: #858584;
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
 }
-.MarketPlace .MarktPlace_search input[type=text]::-moz-placeholder {
+.MarketPlace .MarktPlace_search input[type=search]::-moz-placeholder {
   color: #858584;
   -moz-transition: 0.5s ease;
   transition: 0.5s ease;
 }
-.MarketPlace .MarktPlace_search input[type=text]:-ms-input-placeholder {
+.MarketPlace .MarktPlace_search input[type=search]:-ms-input-placeholder {
   color: #858584;
   -ms-transition: 0.5s ease;
   transition: 0.5s ease;
 }
-.MarketPlace .MarktPlace_search input[type=text]::-ms-input-placeholder {
+.MarketPlace .MarktPlace_search input[type=search]::-ms-input-placeholder {
   color: #858584;
   -ms-transition: 0.5s ease;
   transition: 0.5s ease;
 }
-.MarketPlace .MarktPlace_search input[type=text]::placeholder {
+.MarketPlace .MarktPlace_search input[type=search]::placeholder {
   color: #858584;
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
 }
-.MarketPlace .MarktPlace_search input[type=text]:focus::-webkit-input-placeholder {
+.MarketPlace .MarktPlace_search input[type=search]:focus::-webkit-input-placeholder {
   opacity: 0;
 }
-.MarketPlace .MarktPlace_search input[type=text]:focus::-moz-placeholder {
+.MarketPlace .MarktPlace_search input[type=search]:focus::-moz-placeholder {
   opacity: 0;
 }
-.MarketPlace .MarktPlace_search input[type=text]:focus:-ms-input-placeholder {
+.MarketPlace .MarktPlace_search input[type=search]:focus:-ms-input-placeholder {
   opacity: 0;
 }
-.MarketPlace .MarktPlace_search input[type=text]:focus::-ms-input-placeholder {
+.MarketPlace .MarktPlace_search input[type=search]:focus::-ms-input-placeholder {
   opacity: 0;
 }
-.MarketPlace .MarktPlace_search input[type=text]:focus::placeholder {
+.MarketPlace .MarktPlace_search input[type=search]:focus::placeholder {
   opacity: 0;
 }
 .MarketPlace .MarktPlace_search span {
@@ -2291,6 +2291,9 @@ main {
   background-color: #2B2B2B;
 }
 .MarketPlace .MarketPlace_medium .MarketPlace_medium_content .step_2 .step_2_content_edit {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: 30px;

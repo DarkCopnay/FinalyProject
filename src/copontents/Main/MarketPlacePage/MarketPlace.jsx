@@ -8,6 +8,7 @@ import CollectionsCatalog from "./components/CollectionsCatalog";
 export default function MarketPlace() {
     const [NFTactiv, setNFTactiv] = useState(true);
     const [CollectionsActiv, setCollectionActiv] = useState(false);
+    const [Search, SetSearch] = useState("");
     const data = NFTdata;
 
     return (
@@ -16,7 +17,11 @@ export default function MarketPlace() {
                 <h1>Browse Marketplace</h1>
                 <p>Browse through more than 50k NFTs on the NFT Marketplace.</p>
                 <section className="MarktPlace_search">
-                    <input type="text" placeholder="Search your favourite NFTs" />
+                    <input 
+                        type="search" 
+                        placeholder="Search your favourite NFTs" 
+                        onChange={(event) => {SetSearch(event.target.value)}}
+                        />
                     <span className="material-symbols-outlined">search</span>
                 </section>
             </header>
@@ -37,7 +42,7 @@ export default function MarketPlace() {
                     className={CollectionsActiv ? "activ": ""}>Collections <span>{CollectionsData.length}</span> <span className="line"></span></button>
                 </header>
                 <section className="MarketPlace_medium_content">
-                    {NFTactiv ? <NFTCatalog/> : <CollectionsCatalog/>}
+                    {NFTactiv ? <NFTCatalog/> : <CollectionsCatalog SearchInfo={Search}/>}
                 </section>
             </section>
         </section>

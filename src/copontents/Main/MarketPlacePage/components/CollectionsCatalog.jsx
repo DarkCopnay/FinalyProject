@@ -1,14 +1,15 @@
 import { assets } from '../../../../assets/Assets';
 import CollectionsData from './data/Collections.json';
 
-export default function CollectionsCatalog() {
+export default function CollectionsCatalog( {SearchInfo} ) {
     const data = CollectionsData;
-
+    const searchData = SearchInfo.split(" ");
+    console.log(searchData);
     return (
         <section className="step_2">
             <section className="step_2_content step_2_content_edit">
                 {
-                    data.map((data) => 
+                    data.map((data) =>
                         <section className='step_2_box' key={data.id}>
                             <img src={assets.Step_2.Dog} alt='dog'/>
                             <section className='step_2_box_content'>
