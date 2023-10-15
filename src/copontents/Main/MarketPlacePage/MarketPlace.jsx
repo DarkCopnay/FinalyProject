@@ -42,7 +42,7 @@ export default function MarketPlace() {
                     className={CollectionsActiv ? "activ": ""}>Collections <span>{CollectionsData.length}</span> <span className="line"></span></button>
                 </header>
                 <section className="MarketPlace_medium_content">
-                    {NFTactiv ? <NFTCatalog SearchInfo={Search.split("")}/> : <CollectionsCatalog SearchInfo={Search}/>}
+                    {NFTactiv ? <NFTCatalog SearchInfo={Search.split("")}/> : <CollectionsCatalog SearchInfo={Search.split("")}/>}
                 </section>
             </section>
         </section>
