@@ -153,7 +153,12 @@
 
             .step_5_edit {
                 width: 60%;
-                
+                justify-content: center;
+
+                .step_5_content_edit {
+                    justify-content: center;
+                }
+
                 .step_5_box_edit {
                     .step_5_box_content_edit {
                         background-color: #2B2B2B;

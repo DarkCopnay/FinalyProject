@@ -19,7 +19,7 @@ export default function MarketPlace() {
                 <section className="MarktPlace_search">
                     <input 
                         type="search" 
-                        placeholder="Search your favourite NFTs" 
+                        placeholder="Search your favourite NFTs and Collections" 
                         onChange={(event) => {SetSearch(event.target.value)}}
                         />
                     <span className="material-symbols-outlined">search</span>
@@ -42,7 +42,7 @@ export default function MarketPlace() {
                     className={CollectionsActiv ? "activ": ""}>Collections <span>{CollectionsData.length}</span> <span className="line"></span></button>
                 </header>
                 <section className="MarketPlace_medium_content">
-                    {NFTactiv ? <NFTCatalog/> : <CollectionsCatalog SearchInfo={Search}/>}
+                    {NFTactiv ? <NFTCatalog SearchInfo={Search.split("")}/> : <CollectionsCatalog SearchInfo={Search}/>}
                 </section>
             </section>
         </section>

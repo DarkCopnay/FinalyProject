@@ -1065,9 +1065,9 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   width: 100%;
@@ -2286,6 +2286,14 @@ main {
 }
 .MarketPlace .MarketPlace_medium .MarketPlace_medium_content .step_5_edit {
   width: 60%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.MarketPlace .MarketPlace_medium .MarketPlace_medium_content .step_5_edit .step_5_content_edit {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .MarketPlace .MarketPlace_medium .MarketPlace_medium_content .step_5_edit .step_5_box_edit .step_5_box_content_edit {
   background-color: #2B2B2B;
