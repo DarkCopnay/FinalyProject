@@ -203,7 +203,9 @@ main {
 }
 
 #topnav_menu {
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -2297,6 +2299,7 @@ main {
 }
 .MarketPlace .MarketPlace_medium .MarketPlace_medium_content .step_5_edit .step_5_box_edit .step_5_box_content_edit {
   background-color: #2B2B2B;
+  font-size: 1.32vw;
 }
 .MarketPlace .MarketPlace_medium .MarketPlace_medium_content .step_2 .step_2_content_edit {
   -webkit-box-pack: center;
@@ -2947,6 +2950,9 @@ main {
   }
   .MarketPlace .MarketPlace_medium .MarketPlace_medium_header button {
     font-size: 15px;
+  }
+  .MarketPlace .MarketPlace_medium .MarketPlace_medium_content .step_5_edit .step_5_box_edit .step_5_box_content_edit p {
+    font-size: 3.5vw;
   }
 }
 @media screen and (max-width: 320px) {

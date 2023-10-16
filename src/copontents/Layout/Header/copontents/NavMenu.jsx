@@ -1,28 +1,32 @@
+import { useState } from "react";
 import { Link } from "react-router-dom"
 import { assets } from "../../../../assets/Assets";
 import { urls } from "../Header";
 
 export default function NavMenu() {
+    const [IsOpenMenu, SetIsOpenMenu] = useState(false);
 
     function OpenMenu() {
-        document.getElementById("topnav_menu").style.display = "flex";
+        SetIsOpenMenu(true);
         setTimeout(() => {
-            document.getElementById("topnav_menu").style.left = "0%";
-        }, 200)
+            document.querySelector("#topnav_menu").style.left = "0%";
+        }, 100)
     }
 
     function CloseMenu() {
-        document.getElementById("topnav_menu").style.left = "100%";
+        document.querySelector("#topnav_menu").style.left = "100%";
         setTimeout(() => {
-            document.getElementById("topnav_menu").style.display = "none";
-        }, 1100)
+            SetIsOpenMenu(false);
+        }, 1000)
     }
-    
+
     return (
         <>
-            <span id="topnan_menu_button" className="material-symbols-outlined" onClick={OpenMenu}>menu</span>
-
-            <section id="topnav_menu">
+            <span id="topnan_menu_button" className="material-symbols-outlined" 
+            onClick={OpenMenu}> menu</span>
+            {
+                IsOpenMenu ? 
+                <section id="topnav_menu">
                     <section className="topnav_menu_close_mine">
                         <span className="material-symbols-outlined" id="topnav_menu_close" onClick={CloseMenu}>close</span>
                     </section>
@@ -31,7 +35,7 @@ export default function NavMenu() {
 
                     <section className="topnav_center">
                         <ul>
-                            <li><Link to={urls.market}>Marketplace <span></span></Link></li>
+                            <li><Link onClick={CloseMenu} to={urls.market}>Marketplace <span></span></Link></li>
                             <li><Link to={urls.rank}>Rankings <span></span></Link></li>
                             <li><Link to={urls.contact}>Connect a wallet <span></span></Link></li>
                         </ul>
@@ -40,7 +44,9 @@ export default function NavMenu() {
                             Sign Up
                         </Link>
                     </section>
-            </section> 
+            </section> :
+            null
+            } 
         </>
     )
 }

@@ -20,6 +20,7 @@ export default function MarketPlace() {
                     <input 
                         type="search" 
                         placeholder="Search your favourite NFTs and Collections" 
+                        value={Search}
                         onChange={(event) => {SetSearch(event.target.value)}}
                         />
                     <span className="material-symbols-outlined">search</span>

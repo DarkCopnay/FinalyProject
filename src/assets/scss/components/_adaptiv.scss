@@ -598,8 +598,25 @@
                     // width: 100%;
                 }
             }
+
+            .MarketPlace_medium_content {
+                .step_5_edit {    
+
+                    .step_5_box_edit {
+                        .step_5_box_content_edit {
+                            p {
+                                font-size: 3.5vw;
+                            }
+                        }
+                    }
+                }
+
+            }
         }
+        
     }
+
+
 }
 @media screen and (max-width: 320px) {
     .step_1 {

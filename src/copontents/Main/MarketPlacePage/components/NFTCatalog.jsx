@@ -5,7 +5,7 @@ export default function NFTCatalog( {SearchInfo} ) {
     const data = NFTdata;
     return (
         <section className="step_5 step_5_edit">
-            <section className="step_5_content step_5_content">
+            <section className="step_5_content step_5_content_edit">
                 {
                     data.filter(data => data.name.includes(SearchInfo.join("")) ||
                                         data.name.toLocaleLowerCase().includes(SearchInfo.join("")) ||
@@ -18,7 +18,7 @@ export default function NFTCatalog( {SearchInfo} ) {
                                         <h2>{data.name}</h2>
                                         <a href="#"><img src={assets.avatars.avatar_16} alt="avatar_16" /> {data.AuthorName}</a>
                                     </section>
-                                    <section className='step_5_box_footer'>
+                                    <section className='step_5_box_footer step_5_box_footer_edit'>
                                         <section>
                                             <h4>Price</h4>
                                             <p>{data.price} ETH</p>
