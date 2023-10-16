@@ -238,6 +238,31 @@
             }
         }
     }
+
+    .Error404 {
+        .Error404_content {
+            h1 {
+                font-size: 30px;
+            }
+
+            p {
+                font-size: 18px;
+            }
+        }
+    }
+
+    .MarketPlace {
+        .MarketPlace_header {
+            text-align: center;
+            h1 {
+                font-size: 40px;
+            }
+
+            p {
+                font-size: 20px;
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 425px) {
@@ -409,6 +434,54 @@
             }
         }
     }
+
+    .Error404 {
+        .bg_error {
+            font-size: 21vmax;
+        }
+
+        .Error404_content {
+            h1 {
+                font-size: 22px;
+            }
+
+            p {
+                font-size: 15px;
+            }
+            
+            a {
+                width: 214px / 2;
+                height: 40px / 2;
+            }
+        }
+    }
+
+    .MarketPlace {
+        .MarketPlace_header {
+            text-align: center;
+            width: 90%;
+            h1 {
+                font-size: 30px;
+            }
+
+            p {
+                font-size: 20px;
+            }
+        }
+
+        .MarketPlace_medium {
+            .MarketPlace_medium_header {
+                button {
+                    font-size: 15px;
+
+                    span {
+                        width: 50 / 2px;
+                        height: 32 / 2px;
+                    }
+                }
+            }
+        }
+    }
 }
 @media screen and (max-width: 375px) {
     .step_1 {
@@ -491,6 +564,38 @@
                     button {
                         font-size: 12px;
                     }
+                }
+            }
+        }
+    }
+
+    .MarketPlace {
+        .MarketPlace_header {
+            text-align: center;
+            width: 90%;
+            h1 {
+                font-size: 28px;
+            }
+
+            p {
+                font-size: 15px;
+            }
+        }
+
+        .MarktPlace_search {
+            input[type="search"] {
+                &::placeholder {
+                    font-size: 4vw;
+                }
+            }
+        }
+
+        .MarketPlace_medium {
+            .MarketPlace_medium_header {
+                width: 100%;
+                button {
+                    font-size: 15px;
+                    // width: 100%;
                 }
             }
         }

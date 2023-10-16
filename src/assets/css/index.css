@@ -2357,7 +2357,7 @@ main {
   text-align: center;
 }
 .Error404 .Error404_content h2 {
-  font-size: 50px;
+  font-size: 2.6vw;
 }
 .Error404 .Error404_content p {
   font-size: 18px;
@@ -2700,6 +2700,21 @@ main {
   .Sing_Up .Sing_Up_content .Sing_Up_right p {
     font-size: 18px;
   }
+  .Error404 .Error404_content h1 {
+    font-size: 30px;
+  }
+  .Error404 .Error404_content p {
+    font-size: 18px;
+  }
+  .MarketPlace .MarketPlace_header {
+    text-align: center;
+  }
+  .MarketPlace .MarketPlace_header h1 {
+    font-size: 40px;
+  }
+  .MarketPlace .MarketPlace_header p {
+    font-size: 20px;
+  }
 }
 @media screen and (max-width: 425px) {
   .topnav {
@@ -2813,6 +2828,36 @@ main {
   .Sing_Up .Sing_Up_content .Sing_Up_right .Sing_Up_right_content button {
     font-size: 14px;
   }
+  .Error404 .bg_error {
+    font-size: 21vmax;
+  }
+  .Error404 .Error404_content h1 {
+    font-size: 22px;
+  }
+  .Error404 .Error404_content p {
+    font-size: 15px;
+  }
+  .Error404 .Error404_content a {
+    width: 214px/2;
+    height: 40px/2;
+  }
+  .MarketPlace .MarketPlace_header {
+    text-align: center;
+    width: 90%;
+  }
+  .MarketPlace .MarketPlace_header h1 {
+    font-size: 30px;
+  }
+  .MarketPlace .MarketPlace_header p {
+    font-size: 20px;
+  }
+  .MarketPlace .MarketPlace_medium .MarketPlace_medium_header button {
+    font-size: 15px;
+  }
+  .MarketPlace .MarketPlace_medium .MarketPlace_medium_header button span {
+    width: 50/2px;
+    height: 32/2px;
+  }
 }
 @media screen and (max-width: 375px) {
   .step_1 .step_1_left h1 {
@@ -2871,6 +2916,37 @@ main {
   }
   .Sing_Up .Sing_Up_content .Sing_Up_right .Sing_Up_right_content button {
     font-size: 12px;
+  }
+  .MarketPlace .MarketPlace_header {
+    text-align: center;
+    width: 90%;
+  }
+  .MarketPlace .MarketPlace_header h1 {
+    font-size: 28px;
+  }
+  .MarketPlace .MarketPlace_header p {
+    font-size: 15px;
+  }
+  .MarketPlace .MarktPlace_search input[type=search]::-webkit-input-placeholder {
+    font-size: 4vw;
+  }
+  .MarketPlace .MarktPlace_search input[type=search]::-moz-placeholder {
+    font-size: 4vw;
+  }
+  .MarketPlace .MarktPlace_search input[type=search]:-ms-input-placeholder {
+    font-size: 4vw;
+  }
+  .MarketPlace .MarktPlace_search input[type=search]::-ms-input-placeholder {
+    font-size: 4vw;
+  }
+  .MarketPlace .MarktPlace_search input[type=search]::placeholder {
+    font-size: 4vw;
+  }
+  .MarketPlace .MarketPlace_medium .MarketPlace_medium_header {
+    width: 100%;
+  }
+  .MarketPlace .MarketPlace_medium .MarketPlace_medium_header button {
+    font-size: 15px;
   }
 }
 @media screen and (max-width: 320px) {
