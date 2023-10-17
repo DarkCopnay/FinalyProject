@@ -480,6 +480,14 @@
                     }
                 }
             }
+
+            .MarketPlace_medium_content {
+                width: 100%;
+                .step_5_edit {    
+                    width: 80%;
+                }
+
+            }
         }
     }
 }
@@ -601,7 +609,6 @@
 
             .MarketPlace_medium_content {
                 .step_5_edit {    
-
                     .step_5_box_edit {
                         .step_5_box_content_edit {
                             p {

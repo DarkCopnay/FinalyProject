@@ -2299,7 +2299,6 @@ main {
 }
 .MarketPlace .MarketPlace_medium .MarketPlace_medium_content .step_5_edit .step_5_box_edit .step_5_box_content_edit {
   background-color: #2B2B2B;
-  font-size: 1.32vw;
 }
 .MarketPlace .MarketPlace_medium .MarketPlace_medium_content .step_2 .step_2_content_edit {
   -webkit-box-pack: center;
@@ -2860,6 +2859,12 @@ main {
   .MarketPlace .MarketPlace_medium .MarketPlace_medium_header button span {
     width: 50/2px;
     height: 32/2px;
+  }
+  .MarketPlace .MarketPlace_medium .MarketPlace_medium_content {
+    width: 100%;
+  }
+  .MarketPlace .MarketPlace_medium .MarketPlace_medium_content .step_5_edit {
+    width: 80%;
   }
 }
 @media screen and (max-width: 375px) {
