@@ -1,0 +1,178 @@
+.MarketPlace {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-top: 80px;
+
+    .MarketPlace_header {
+        width: 70%;
+        h1 {
+            font-size: 51px;
+            font-weight: 600;
+            text-transform: capitalize;
+            color: white;
+        }
+
+        p {
+            font-size: 22px;
+            font-weight: 400;
+            line-height: 160%;
+            color: white;
+        }
+    }
+
+    .MarktPlace_search {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        width: 100%;
+        margin-top: 30px;
+        position: relative;
+
+        input[type="search"] {
+            width: 100%;
+            height: 60px;
+            border: none;
+            border-radius: 20px;
+            outline: none;
+            padding: 0 80px 0 20px;
+            background-color: #3B3B3B;
+            color: white;
+            
+            &::placeholder {
+                color: #858584;
+                transition: 0.5s ease;
+            }
+
+            &:focus {
+                &::placeholder {
+                    opacity: 0;
+                }
+            }
+        }
+
+        span {
+            position: absolute;
+            padding-right: 35px;
+            font-size: 30px;
+            color: white;
+        }
+    }
+
+    .MarketPlace_medium {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+
+        padding-top: 80px;
+
+        .MarketPlace_medium_header {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            width: 90%;
+
+            button {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                gap: 16px;
+                position: relative;
+                width: 100%;
+                height: 60px;
+                background: none;
+                font-size: 22px;
+                font-weight: 600;
+                text-transform: capitalize;
+                border: none;
+                color: gray;
+                cursor: pointer;
+                transition: 0.5s ease;
+
+                span {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 20px;
+                    width: 50px;
+                    height: 32px;
+                    font-size: 16px;
+                    font-weight: 400;
+                    color: white;
+                    background-color: #3B3B3B;
+                    transition: 0.5s ease;
+                }
+
+                .line {
+                    position: absolute;
+                    width: 100%;
+                    height: 1px;
+                    top: 58px;
+                    background-color: #858584;
+                    opacity: 0;
+                    transition: 0.2s ease;
+                }
+
+                &:hover {
+                    color: white;
+
+                    span {
+                        background-color: #858584;
+                    }
+
+                    .line {
+                        opacity: 1;
+                    }
+                }
+                
+
+            }
+            .activ {
+                color: white;
+
+                span {background-color: #858584;}
+
+                .line {opacity: 1;}
+            }
+        }
+
+        .MarketPlace_medium_content {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
+            background-color: #3B3B3B;
+            border-bottom: 2px solid #2B2B2B;
+            width: 100%;
+
+            .step_5_edit {
+                width: 60%;
+                justify-content: center;
+
+                .step_5_content_edit {
+                    justify-content: center;
+                }
+
+                .step_5_box_edit {
+                    .step_5_box_content_edit {
+                        background-color: #2B2B2B;
+                    }
+                }
+            }
+
+            .step_2 {
+                .step_2_content_edit {
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    gap: 30px;
+                }
+            }
+        }
+    }
+}

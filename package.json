@@ -1,23 +1,29 @@
 {
-  "name": "finalyproject",
-  "version": "1.0.1",
-  "description": "",
-  "main": "index.js",
+  "name": "vite-project",
+  "private": true,
+  "version": "1.1.0 beta",
+  "type": "module",
   "scripts": {
-    "test": "console.log(\"test\");"
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/DarkCopnay/FinalyProject.git"
-  },
-  "author": "ReMiX",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/DarkCopnay/FinalyProject/issues"
-  },
-  "homepage": "https://github.com/DarkCopnay/FinalyProject#readme",
   "dependencies": {
-    "animejs": "^3.2.1",
-    "firebase": "^10.3.1"
+    "firebase": "^10.5.0",
+    "firebase-tools": "^12.7.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.16.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@vitejs/plugin-react": "^4.0.3",
+    "eslint": "^8.45.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.3",
+    "vite": "^4.4.5"
   }
 }
