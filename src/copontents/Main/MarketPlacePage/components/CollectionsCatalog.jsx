@@ -7,9 +7,9 @@ export default function CollectionsCatalog( {SearchInfo} ) {
         <section className="step_2">
             <section className="step_2_content step_2_content_edit">
                 {
-                    data.filter(data => data.name.includes(SearchInfo.join("")) ||
-                                        data.name.toUpperCase().includes(SearchInfo.join("")) ||
-                                        data.name.toLowerCase().includes(SearchInfo.join(""))).map(data => 
+                    data.filter(data => data.name.includes(SearchInfo) ||
+                                        data.name.toUpperCase().includes(SearchInfo) ||
+                                        data.name.toLowerCase().includes(SearchInfo)).map(data => 
                         <section className='step_2_box' key={data.id}>
                             <img src={assets.Step_2.Dog} alt='dog'/>
                             <section className='step_2_box_content'>
