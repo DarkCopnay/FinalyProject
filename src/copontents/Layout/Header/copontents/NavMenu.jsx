@@ -31,12 +31,12 @@ export default function NavMenu() {
                         <span className="material-symbols-outlined" id="topnav_menu_close" onClick={CloseMenu}>close</span>
                     </section>
 
-                    <img src={assets.logo} />
+                    <Link onClick={CloseMenu} to={urls.home}><img src={assets.logo} /></Link>
 
                     <section className="topnav_center">
                         <ul>
                             <li><Link onClick={CloseMenu} to={urls.market}>Marketplace <span></span></Link></li>
-                            <li><Link to={urls.rank}>Rankings <span></span></Link></li>
+                            <li><Link onClick={CloseMenu} to={urls.rank}>Rankings <span></span></Link></li>
                             <li><Link to={urls.contact}>Connect a wallet <span></span></Link></li>
                         </ul>
                         <Link to={urls.singup} className="topnav_sign_up">
