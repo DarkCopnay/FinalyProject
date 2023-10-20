@@ -11,11 +11,11 @@ export default function RanksPage() {
         if (isTodayBtn) {
             return (
                 <TodayCategory/>
-            )
-        }
+            ) 
+        }        
         
         else {
-            return <h2>Not Found Categoryt</h2>
+            return <h2>Not Found Category</h2>
         }
     }
     return (
