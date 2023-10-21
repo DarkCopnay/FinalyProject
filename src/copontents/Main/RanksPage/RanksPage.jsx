@@ -1,4 +1,5 @@
 import { useState } from "react"
+import TodayCategory from "./components/TodayCategory/TodayCategory";
 
 export default function RanksPage() {
     const [isTodayBtn, setIsTodayBtn] = useState(true);
@@ -6,6 +7,17 @@ export default function RanksPage() {
     const [isMonthBtn, setIsMonthBtn] = useState(false);
     const [isTimeBtn, setTimeBtn] = useState(false);
 
+    function RenderRanksCategory() {
+        if (isTodayBtn) {
+            return (
+                <TodayCategory/>
+            ) 
+        }        
+        
+        else {
+            return <h2>Not Found Category</h2>
+        }
+    }
     return (
         <section className="RanksPage">
             <header className="RanksPage_header">
@@ -37,7 +49,15 @@ export default function RanksPage() {
                         setTimeBtn(false);
                     }} 
                     >This Month <span></span></button>
-                    <button>All Time <span></span></button>
+                    <button
+                    className={isTimeBtn ? "activ": ""}
+                    onClick={() => {
+                        setIsTodayBtn(false);
+                        setIsWeekBtn(false);
+                        setIsMonthBtn(false);
+                        setTimeBtn(true);
+                    }}
+                    >All Time <span></span></button>
                 </header>
 
                 <section className="RanksPages_content_info">
@@ -47,6 +67,9 @@ export default function RanksPage() {
                         <h3>NFTs Sold</h3>
                         <h3>Volume</h3>
                     </section>
+                </section>
+                <section className="RanksPages_content_users">
+                    <RenderRanksCategory />
                 </section>
             </section>
         </section>

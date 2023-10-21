@@ -3,13 +3,14 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
+    padding: 40px 0;
 
     .RanksPage_header {
         display: flex;
         flex-direction: column;
         gap: 20px;
         width: 70%;
-        padding: 80px 0px;
+        padding: 40px 0px;
         
         h2 {
             font-size: 52px;
@@ -84,11 +85,11 @@
             flex-direction: row;
             align-items: center;
             justify-content: space-between;
-            width: 67%;
+            width: 80%;
             height: 46px;
             border: 1px solid #3B3B3B;
             margin: 40px 0 20px 0;
-            padding: 0 20px;
+            padding: 0 120px 0 20px;
             border-radius: 20px;
 
             & > h3 {
@@ -107,6 +108,77 @@
                     font-size: 16px;
                     font-weight: 400;
                     color: #858584;
+                }
+            }
+        }
+
+        .RanksPages_content_users {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            width: 80%;
+
+            h2 {
+                font-size: 35px;
+                padding: 80px 0;
+                color: white;
+            }
+
+            .RanksPages_content_user_block {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                height: 84px;
+                background-color: #3B3B3B;
+                border-radius: 20px;
+                padding: 0 120px 0 20px;
+                transition: 0.5s ease;
+
+                &:hover {
+                    transform: scale(1.03);
+                }
+
+                .RanksPages_content_user_block_header {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 20px;
+
+                    span {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 16px;
+                        font-weight: 400;
+                        color: #858584;
+                        width: 30px;
+                        height: 30px;
+                        background-color: #2B2B2B;
+                        border-radius: 50%;
+                    }
+
+                    h2 {
+                        font-size: 22px;
+                        font-weight: 600;
+                        color: white;
+                    }
+                }
+
+                .RanksPages_content_user_block_right {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 120px;
+
+                    span {
+                        font-size: 16px;
+                        font-weight: 400;
+                        color: white;
+                    }
                 }
             }
         }
