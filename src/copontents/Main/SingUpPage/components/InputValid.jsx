@@ -7,12 +7,12 @@ export default function InputValid() {
     const [Password, setPassword] = useState('');
     const [ConfirmPassword, setConfirmPassword] = useState('');
 
-    const [ErrorMsg, setErrorMsg] = useState('');
+    // const [ErrorMsg, setErrorMsg] = useState('');
 
-    const [UserNameValid, setUserNameValid] = useState(false)
-    const [EmailValid, setEmailValid] = useState(false);
-    const [PasswordValid, setPasswordValid] = useState(false);
-    const [ConfirmPasswordValid, setConfirmPasswordValid] = useState(false)
+    // const [UserNameValid, setUserNameValid] = useState(false)
+    // const [EmailValid, setEmailValid] = useState(false);
+    // const [PasswordValid, setPasswordValid] = useState(false);
+    // const [ConfirmPasswordValid, setConfirmPasswordValid] = useState(false)
 
     const placeholderName = {
         UserName: "Username",
@@ -21,19 +21,22 @@ export default function InputValid() {
         ConfirmPassword: "Confirm Password"
     }
 
-    function submitClick(event) {
-        if (UserName == "") {
-            setUserNameValid(true);
-            setErrorMsg("The field can't be empty")
-            console.log("test_1")
-        }
+    // function submitClick() {
+    //     if (UserName == "") {
+    //         setUserNameValid(true);
+    //         setErrorMsg("The field can't be empty")
+    //         console.log("test_1")
+    //     }
 
-        else if (UserName < 15) {
-            setUserNameValid(true);
-            setErrorMsg("Username min 15 symbols");
-            console.log("test_1")
-        }
-    }
+    //     else if (UserName < 15) {
+    //         setUserNameValid(true);
+    //         setErrorMsg("Username min 15 symbols");
+    //         console.log("test_1")
+    //     } else {
+    //         setUserNameValid(false);
+    //         setErrorMsg(null);
+    //     }
+    // }
 
     return (
         <>
@@ -48,7 +51,7 @@ export default function InputValid() {
                         backgroundImage: `url(${assets.SingUp.svg.User})`
                     }}
                 />
-                {UserNameValid ? <span>*{ErrorMsg}</span>: ""}
+                {/* {UserNameValid ? <span>*{ErrorMsg}</span>: ""} */}
             </label>
             <label htmlFor="Email">
                 <input
@@ -88,10 +91,7 @@ export default function InputValid() {
                 />
             </label>
 
-            <button 
-                type="button"
-                onClick={submitClick}
-            >Create account</button>
+            <button >Create account</button>
         </>
     )
 }

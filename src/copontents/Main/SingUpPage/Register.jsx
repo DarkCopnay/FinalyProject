@@ -6,7 +6,8 @@ export default function SingUpPage() {
     return (
         <section className="SingUp">
             <img src={assets.SingUp.singup_img1} alt="singup_img_1"/>
-            <form className="SingUp_right">
+            <form className="SingUp_right"
+                onSubmit={(event) => {event.preventDefault()}}>
                 <header>
                     <h2>Create account</h2>
                     <p>Welcome! enter your details and start creating, 
