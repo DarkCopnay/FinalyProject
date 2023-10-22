@@ -1872,7 +1872,7 @@ main {
   top: 60px;
 }
 
-.Sing_Up {
+.SingUp {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1880,183 +1880,132 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   width: 100%;
-  margin: 80px 0;
+  height: 100vh;
 }
-.Sing_Up img {
-  max-width: 80%;
+.SingUp img {
+  width: 80%;
+  max-width: 90%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.Sing_Up .Sing_Up_content {
+.SingUp .SingUp_right {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 100px 60px;
+  width: 100%;
+  color: white;
+}
+.SingUp .SingUp_right header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+.SingUp .SingUp_right header h2 {
+  font-size: 51px;
+  font-weight: 600;
+  text-transform: capitalize;
+  text-align: center;
+}
+.SingUp .SingUp_right header p {
+  max-width: 460px;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 160%;
+  text-align: center;
+}
+.SingUp .SingUp_right .SingUp_right_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 50%;
-  height: 50%;
-}
-.Sing_Up .Sing_Up_content .Sing_Up_right {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  justify-self: flex-start;
-}
-.Sing_Up .Sing_Up_content .Sing_Up_right h2 {
-  font-size: 51px;
-  font-weight: 600;
-  text-transform: capitalize;
-  color: white;
-  margin-bottom: 20px;
-}
-.Sing_Up .Sing_Up_content .Sing_Up_right p {
-  font-size: 22px;
-  font-weight: 400;
-  line-height: 160%;
-  text-transform: capitalize;
-  max-width: 460px;
-  color: white;
-  margin-bottom: 40px;
-}
-.Sing_Up .Sing_Up_content .Sing_Up_right .Sing_Up_right_content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  margin-top: 40px;
   gap: 15px;
 }
-.Sing_Up .Sing_Up_content .Sing_Up_right .Sing_Up_right_content .input_box {
+.SingUp .SingUp_right .SingUp_right_content label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  position: relative;
-  -webkit-transition: 0.5s ease;
-  transition: 0.5s ease;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 50%;
 }
-.Sing_Up .Sing_Up_content .Sing_Up_right .Sing_Up_right_content .input_box input {
+.SingUp .SingUp_right .SingUp_right_content label input {
   width: 100%;
   height: 46px;
+  padding: 0 20px 0 52px;
+  background-image: url("/src/assets/img/icon.svg");
+  background-position: 10px 9px;
+  background-size: auto 60%;
+  background-repeat: no-repeat;
   border: none;
-  padding-left: 52px;
+  border-radius: 20px;
   outline: none;
-  border-radius: 20px;
 }
-.Sing_Up .Sing_Up_content .Sing_Up_right .Sing_Up_right_content .input_box input::-webkit-input-placeholder {
+.SingUp .SingUp_right .SingUp_right_content label input::-webkit-input-placeholder {
   font-size: 16px;
-  font-weight: 400;
-  line-height: 140%;
-  color: #2B2B2B;
-  position: relative;
-  top: 0px;
-  -webkit-transition: 0.5s ease;
-  transition: 0.5s ease;
+  color: black;
 }
-.Sing_Up .Sing_Up_content .Sing_Up_right .Sing_Up_right_content .input_box input::-moz-placeholder {
+.SingUp .SingUp_right .SingUp_right_content label input::-moz-placeholder {
   font-size: 16px;
-  font-weight: 400;
-  line-height: 140%;
-  color: #2B2B2B;
-  position: relative;
-  top: 0px;
-  -moz-transition: 0.5s ease;
-  transition: 0.5s ease;
+  color: black;
 }
-.Sing_Up .Sing_Up_content .Sing_Up_right .Sing_Up_right_content .input_box input:-ms-input-placeholder {
+.SingUp .SingUp_right .SingUp_right_content label input:-ms-input-placeholder {
   font-size: 16px;
-  font-weight: 400;
-  line-height: 140%;
-  color: #2B2B2B;
-  position: relative;
-  top: 0px;
-  -ms-transition: 0.5s ease;
-  transition: 0.5s ease;
+  color: black;
 }
-.Sing_Up .Sing_Up_content .Sing_Up_right .Sing_Up_right_content .input_box input::-ms-input-placeholder {
+.SingUp .SingUp_right .SingUp_right_content label input::-ms-input-placeholder {
   font-size: 16px;
-  font-weight: 400;
-  line-height: 140%;
-  color: #2B2B2B;
-  position: relative;
-  top: 0px;
-  -ms-transition: 0.5s ease;
-  transition: 0.5s ease;
+  color: black;
 }
-.Sing_Up .Sing_Up_content .Sing_Up_right .Sing_Up_right_content .input_box input::placeholder {
+.SingUp .SingUp_right .SingUp_right_content label input::placeholder {
   font-size: 16px;
-  font-weight: 400;
-  line-height: 140%;
-  color: #2B2B2B;
-  position: relative;
-  top: 0px;
-  -webkit-transition: 0.5s ease;
-  transition: 0.5s ease;
+  color: black;
 }
-.Sing_Up .Sing_Up_content .Sing_Up_right .Sing_Up_right_content .input_box input:focus::-webkit-input-placeholder {
-  opacity: 0;
+.SingUp .SingUp_right .SingUp_right_content label span {
+  margin-top: 10px;
+  margin-left: 25px;
+  font-size: 18px;
+  font-weight: 500;
+  color: red;
 }
-.Sing_Up .Sing_Up_content .Sing_Up_right .Sing_Up_right_content .input_box input:focus::-moz-placeholder {
-  opacity: 0;
-}
-.Sing_Up .Sing_Up_content .Sing_Up_right .Sing_Up_right_content .input_box input:focus:-ms-input-placeholder {
-  opacity: 0;
-}
-.Sing_Up .Sing_Up_content .Sing_Up_right .Sing_Up_right_content .input_box input:focus::-ms-input-placeholder {
-  opacity: 0;
-}
-.Sing_Up .Sing_Up_content .Sing_Up_right .Sing_Up_right_content .input_box input:focus::placeholder {
-  opacity: 0;
-}
-.Sing_Up .Sing_Up_content .Sing_Up_right .Sing_Up_right_content .input_box span {
-  position: absolute;
-  left: 16px;
-  z-index: 10;
-  color: #BDBDBD;
-}
-.Sing_Up .Sing_Up_content .Sing_Up_right .Sing_Up_right_content button {
-  width: 100%;
+.SingUp .SingUp_right .SingUp_right_content button {
+  width: 34%;
   height: 46px;
-  border-radius: 20px;
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 140%;
   border: none;
+  border-radius: 20px;
   background-color: #A259FF;
   color: white;
-  -webkit-transition: 0.6s ease;
-  transition: 0.6s ease;
+  font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
-}
-.Sing_Up .Sing_Up_content .Sing_Up_right .Sing_Up_right_content button:hover {
-  -webkit-transform: scale(1.06);
-          transform: scale(1.06);
 }
 
 .MarketPlace {

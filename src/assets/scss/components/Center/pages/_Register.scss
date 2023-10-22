@@ -1,0 +1,98 @@
+.SingUp {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100vh;
+
+    img {
+        width: 80%;
+        max-width: 90%;
+        object-fit: cover;
+    }
+
+    .SingUp_right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 100px 60px;
+        width: 100%;
+        color: white;
+
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            h2 {
+                font-size: 51px;
+                font-weight: 600;
+                text-transform: capitalize;
+                text-align: center;
+            }
+            
+            p {
+                max-width: 460px;
+                font-size: 22px;
+                font-weight: 400;
+                line-height: 160%;
+                text-align: center;
+            }
+        }
+        
+
+        .SingUp_right_content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 40px;
+            gap: 15px;
+
+            label {
+                display: flex;
+                flex-direction: column;
+                width: 50%;
+
+                input {
+                    width: 100%;
+                    height: 46px;
+                    padding: 0 20px 0 52px;
+                    background-image: url('/src/assets/img/icon.svg');
+                    background-position: 10px 9px;
+                    background-size: auto 60%;
+                    background-repeat: no-repeat;
+                    border: none;
+                    border-radius: 20px;
+                    outline: none;
+    
+                    &::placeholder {
+                        font-size: 16px;
+                        color: black;
+                    }
+                }
+
+                span {
+                    margin-top: 10px;
+                    margin-left: 25px;
+                    font-size: 18px;
+                    font-weight: 500;
+                    color: red;
+                }
+    
+            }
+
+            button {
+                width: 34%;
+                height: 46px;
+                border: none;
+                border-radius: 20px;
+                background-color: #A259FF;
+                color: white;
+                font-size: 16px;
+                font-weight: 600;
+                cursor: pointer;
+            }
+        }
+
+    }
+}

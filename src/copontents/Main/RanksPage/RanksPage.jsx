@@ -50,7 +50,7 @@ export default function RanksPage() {
                     }} 
                     >This Month <span></span></button>
                     <button
-                    className={isTimeBtn ? "activ": ""}
+                    className={isTimeBtn ? "acitv": ""}
                     onClick={() => {
                         setIsTodayBtn(false);
                         setIsWeekBtn(false);

@@ -82,6 +82,14 @@ import YoutubeLogo from './img/MinePage/footer/YoutubeLogo.svg';
 import TwitterLogo from './img/MinePage/footer/TwitterLogo.svg';
 import InstagramLogo from './img/MinePage/footer/InstagramLogo.svg';
 
+//SingUp
+import singup_img_1 from './img/SingUp/singup_img_1.png';
+//SingUp - svg
+import User from './img/SingUp/svg/User.svg';
+import Email from './img/SingUp/svg/Email.svg';
+import Password from './img/SingUp/svg/password.svg';
+
+
 export const assets = {
     icon: Icon,
     logo: Logo,
@@ -159,5 +167,14 @@ export const assets = {
 
     Step_8: {
         step_8_form: step_8_form
+    },
+
+    SingUp: {
+        singup_img1: singup_img_1,
+        svg: {
+            User: User,
+            Email: Email,
+            Password: Password
+        }
     }
 }
