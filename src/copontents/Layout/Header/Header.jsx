@@ -32,9 +32,14 @@ export default function Headers() {
                     </NavLink>
 
                     <NavLink className="topnav_sign_up" to={urls.login}>
-                        <span class="material-symbols-outlined">login</span>
+                        <span className="material-symbols-outlined">login</span>
                         Login
                     </NavLink>
+
+                    {/* <NavLink to="/profile" className="topnav_Profile">
+                        <img src={assets.avatars.avatar_1} />
+                        <h4>Nickname</h4>
+                    </NavLink> */}
 
                 </section>
                 <NavMenu />

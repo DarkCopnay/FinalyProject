@@ -107,6 +107,10 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  width: 100%;
   gap: 30px;
 }
 .topnav .topnav_right ul {
@@ -392,6 +396,44 @@ main {
 }
 #topnan_menu_button:hover {
   background-color: gray;
+}
+
+.topnav_Profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #A259FF;
+  width: 16%;
+  height: 60px;
+  border-radius: 20px;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+.topnav_Profile:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+  background-color: #7a44c1;
+}
+.topnav_Profile h4 {
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+  padding-left: 15px;
+}
+.topnav_Profile img {
+  width: 35px;
+  height: 35px;
+  border-radius: 10px;
 }
 
 #welcome_preloader {
@@ -1872,6 +1914,50 @@ main {
   top: 60px;
 }
 
+.Profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+.Profile .Profile_Avatar {
+  width: 120px;
+  height: 120px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 2px solid black;
+  border-radius: 20px;
+}
+.Profile .Profile_header {
+  width: 70%;
+}
+.Profile .Profile_header .Profile_header_left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.Profile .Profile_header .Profile_header_left .Profile_header_left_stat {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 10%;
+}
+
 .SingUp {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2248,6 +2334,41 @@ main {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+.MarketPlace .MarketPlace_medium .MarketPlace_medium_content .step_5_edit .step_5_box_edit {
+  width: 45%;
+}
+.MarketPlace .MarketPlace_medium .MarketPlace_medium_content .step_5_edit .step_5_box_edit .step_5_not_loaded_img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 220px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  background-color: rgba(128, 128, 128, 0.509);
+}
+.MarketPlace .MarketPlace_medium .MarketPlace_medium_content .step_5_edit .step_5_box_edit .step_5_not_loaded_img span {
+  font-size: 70px;
+  color: #858584;
+}
+.MarketPlace .MarketPlace_medium .MarketPlace_medium_content .step_5_edit .step_5_box_edit > img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  height: 220px;
 }
 .MarketPlace .MarketPlace_medium .MarketPlace_medium_content .step_5_edit .step_5_box_edit .step_5_box_content_edit {
   background-color: #2B2B2B;

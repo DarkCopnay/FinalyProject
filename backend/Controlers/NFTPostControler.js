@@ -4,15 +4,13 @@ export const getAll = async (req, res) => {
     try {
         const postsNft = await NFTpostModel.find().populate('Author').exec();
 
-        // if (postsNft.length == 0) {
-        //     res.json({
-        //         EmptyMsg: "Nft's Empty"
-        //     })
-        // } else {
-        //     res.json(postsNft);
-        // }
-
-        res.json(postsNft);
+        if (postsNft.length === 0 ) {
+            return res.status(404).json({
+                ErrorMsg: "NFTs not found"
+            })
+        } else {
+            res.json(postsNft);
+        }
     } catch (error) {
         console.log(error);
         res.status(500).json({
@@ -23,10 +21,10 @@ export const getAll = async (req, res) => {
 
 export const GetOne = async (req, res) => {
     try {
-        const postId = req.params.id;
+        const NFTId = req.params.id;
 
         NFTpostModel.findById({
-            _id: postId
+            _id: NFTId
         })
 
         .then((doc) => {
@@ -40,7 +38,7 @@ export const GetOne = async (req, res) => {
         })
         .catch((err) => {
             console.log(err);
-            res.status(500).json({
+            return res.status(500).json({
                 ErrorMsg: "Failed to retrieve NFT"
             });
         });
@@ -48,8 +46,41 @@ export const GetOne = async (req, res) => {
         // res.json(randerNFTOnId);
     } catch (error) {
         console.log(error);
-        res.status(500).json({
+        return res.status(500).json({
             ErrorMsg: "Failed to retrieve the NFT's"
+        })
+    }
+}
+
+export const remove = async (req, res) => {
+    try {
+        const NFTid = req.params.id;
+
+        NFTpostModel.findByIdAndDelete(NFTid)
+        .then((doc) => {
+            if (!doc) {
+                return res.status(404).json({
+                    ErrorMsg: "NFT not find"
+                })
+            } else {
+                res.json({
+                    comp: true
+                })
+            }
+        })
+
+        .catch((err) => {
+            if (err) {
+                console.log(err);
+                return res.status(500).json({
+                    ErrorMsg: "Failed to delete NFT"
+                })
+            }
+        })
+    } catch(error) {
+        console.log(error);
+        res.status(500).json({
+            ErrorMsg: "Couldn't find the NFT"
         })
     }
 }
@@ -69,6 +100,43 @@ export const create = async (req, res) => {
     } catch (error) {
         res.status(500).json({
             ErrorMsg: "Couldn't create a post"
+        })
+    }
+}
+
+export const update = async (req, res) => {
+    try {
+        const NFTId = req.params.id;
+
+        await NFTpostModel.updateOne(
+            {
+                _id: NFTId,
+            },
+            {
+                title: req.body.title,
+                price: req.body.price,
+                Author: req.userId
+            }
+        )
+        .then((doc) => {
+            if (!doc) {
+                return res.json({
+                    complete: "Update complete"
+                })
+            }
+        })
+
+        .catch((err) => {
+            if (err) {
+                return res.status(500).json({
+                    ErrorMsg: "Couldn't update a post"
+                })
+            }
+        })
+
+    } catch(error) {
+        res.status(500).json({
+            ErrorMsg: "Couldn't update a post"
         })
     }
 }

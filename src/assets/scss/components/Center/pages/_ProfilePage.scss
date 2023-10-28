@@ -1,0 +1,29 @@
+.Profile {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+    .Profile_Avatar {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        border: 2px solid black;
+        border-radius: 20px;
+    }
+
+    .Profile_header {
+        width: 70%;
+        .Profile_header_left {
+            display: flex;
+            flex-direction: column;
+
+            .Profile_header_left_stat {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                width: 10%;
+            }
+
+        }
+    }
+}

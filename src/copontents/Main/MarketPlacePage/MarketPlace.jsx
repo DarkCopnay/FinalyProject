@@ -1,15 +1,25 @@
-import { useState, useEffect } from "react"
-import NFTdata from './components/data/NFT.json'
-import CollectionsData from './components/data/Collections.json';
+import { useState } from "react"
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from 'react';
+import { fetchNFTposts } from '../../../redux/sliceRedux/SlicePosts';
+
 import NFTCatalog from "./components/NFTCatalog";
 import CollectionsCatalog from "./components/CollectionsCatalog";
-
 
 export default function MarketPlace() {
     const [NFTactiv, setNFTactiv] = useState(true);
     const [CollectionsActiv, setCollectionActiv] = useState(false);
     const [Search, SetSearch] = useState("");
-    const data = NFTdata;
+
+    const { NFT } = useSelector((state) => state.Market)
+    const dispatch = useDispatch();
+
+    const isLoading = NFT.status === 'loading';
+    const idError = NFT.status === 'rejeact'
+
+    useEffect(() => {
+        dispatch(fetchNFTposts())
+    }, [])
 
     return (
         <section className="MarketPlace">
@@ -34,16 +44,18 @@ export default function MarketPlace() {
                         setCollectionActiv(false);
                     }}
 
-                    className={NFTactiv ? "activ": ""}> NFTs <span>{data.length}</span> <span className="line"></span></button>
+                    className={NFTactiv ? "activ": ""}> NFTs <span>{NFT.items.length}</span> <span className="line"></span></button>
                     <button onClick={() => {
                         setCollectionActiv(true);
                         setNFTactiv(false);
                     }} 
 
-                    className={CollectionsActiv ? "activ": ""}>Collections <span>{CollectionsData.length}</span> <span className="line"></span></button>
+                    className={CollectionsActiv ? "activ": ""}>Collections <span>0</span> <span className="line"></span></button>
                 </header>
                 <section className="MarketPlace_medium_content">
-                    {NFTactiv ? <NFTCatalog SearchInfo={Search}/> : <CollectionsCatalog SearchInfo={Search}/>}
+                    {NFTactiv ? 
+                            isLoading ? <h2>Loading...</h2> : <NFTCatalog SearchInfo={Search} items={NFT.items}/>
+                        : <CollectionsCatalog SearchInfo={Search}/>}
                 </section>
             </section>
         </section>

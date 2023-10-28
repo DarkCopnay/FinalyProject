@@ -18,6 +18,8 @@
         display: flex;
         flex-direction: row;
         align-items: center;
+        justify-content: flex-end;
+        width: 100%;
         gap: 30px;
 
         ul {
@@ -227,4 +229,35 @@
     &:hover {
         background-color: gray;
     }
+}
+
+.topnav_Profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #A259FF;
+    width: 16%;
+    height: 60px;
+    border-radius: 20px;
+    transition: 0.3s ease;
+
+    &:hover {
+        transform: scale(1.02);
+        background-color: #7a44c1;
+    }
+
+    h4 {
+        font-size: 18px;
+        font-weight: 500;
+        color: white;
+        padding-left: 15px;
+    }
+
+    img {
+        width: 35px;
+        height: 35px;
+        border-radius: 10px;
+    }
+
 }

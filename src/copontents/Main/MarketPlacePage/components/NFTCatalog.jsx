@@ -1,38 +1,39 @@
-import { assets } from '../../../../assets/Assets';
-import NFTdata from './data/NFT.json'
+import { assets } from "../../../../assets/Assets"
 
-export default function NFTCatalog( {SearchInfo} ) {
-    const data = NFTdata;
+export default function NFTCatalog( {SearchInfo, items} ) {
     return (
         <section className="step_5 step_5_edit">
             <section className="step_5_content step_5_content_edit">
+            <section className="step_5 step_5_edit">
+            <section className="step_5_content step_5_content_edit">
                 {
-                    data.filter(data => data.name.includes(SearchInfo) ||
-                                        data.name.toLowerCase().includes(SearchInfo) ||
-                                        data.name.toUpperCase().includes(SearchInfo)
-                                                                                    ).map(data =>
-                        
-                        <section className='step_5_box step_5_box_edit' key={data.id}>
-                                <img src={assets.Step_5.step_5_box1} alt='step_5'/>
-                                <section className='step_5_box_content step_5_box_content_edit'>
-                                    <section>
-                                        <h2>{data.name}</h2>
-                                        <a href="#"><img src={assets.avatars.avatar_16} alt="avatar_16" /> {data.AuthorName}</a>
-                                    </section>
-                                    <section className='step_5_box_footer step_5_box_footer_edit'>
-                                        <section>
-                                            <h4>Price</h4>
-                                            <p>{data.price} ETH</p>
-                                        </section>
-                                        <section style={ {textAlign:'end'} }>
-                                            <h4>Highest Bid</h4>
-                                            <p>{data.sell} ETH</p>
-                                        </section>
-                                    </section>
+                    items.length === 0 ?
+                    <h2>NFT not found</h2>
+                    :
+                    items.map((obj, index) => 
+                    <section className='step_5_box step_5_box_edit' key={index}>
+                            {obj.ImgURL ? <img src={obj.ImgURL} alt={obj.ImgURL}/> : <section className="step_5_not_loaded_img"><span className="material-symbols-outlined">image</span></section>}
+                            <section className='step_5_box_content step_5_box_content_edit'>
+                                <section>
+                                    <h2>{obj.title}</h2>
+                                    <a href="#"><img src={assets.avatars.avatar_16} alt="avatar_16" /> {obj.Author.nickname}</a>
                                 </section>
-                        </section>
+                                <section className='step_5_box_footer step_5_box_footer_edit'>
+                                    <section>
+                                        <h4>Price</h4>
+                                        <p>{2} ETH</p>
+                                    </section>
+                                    <section style={ {textAlign:'end'} }>
+                                        <h4>Highest Bid</h4>
+                                        <p>0 ETH</p>
+                                     </section>
+                                </section>
+                            </section>
+                    </section>
                     )
                 }
+            </section>
+        </section>
             </section>
         </section>
     )

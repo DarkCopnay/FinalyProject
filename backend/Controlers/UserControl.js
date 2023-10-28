@@ -1,15 +1,9 @@
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt"
-import { validationResult } from "express-validator";
 import Users from "../models/Users.js";
 
 export const register = async (req, res) => {
     try {
-        const validError = validationResult(req);
-
-        if (!validError.isEmpty()) {
-            return res.status(400).json(validError.array())
-        }
 
         const passwordValid = req.body.password;
         const salt = await bcrypt.genSalt(10);
@@ -83,18 +77,28 @@ export const login = async (req, res) => {
     }
 }
 
-export const AuthMe = async (req, res) => {
+export const Profile = async (req, res) => {
     try {
-        const user = await Users.findOne(res.userId);
+        // const User = Users.find({password: req.body.password})
+        const userID = req.params.id;
 
-        if (!user) {
-            return res.status(404).json({
-                ErrorMsg: "User not found"
-            })
-        }
-        const {password, ...userData} = user._doc
+        
+        Users.findById({
+            _id: userID
+        })
+        .then((profileID) => {
+            if (!profileID) {
+                return res.status(404).json({
+                    ErrorMsg: "User not found"
+                })
+            } else {
+                const {password, ...userData} = profileID._doc;
+                res.json({
+                    ...userData
+                });
+            }
+        })
 
-        res.json({userData,});
     } catch (error) {
 
         console.log(error);

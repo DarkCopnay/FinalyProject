@@ -89,6 +89,9 @@ import User from './img/SingUp/svg/User.svg';
 import Email from './img/SingUp/svg/Email.svg';
 import Password from './img/SingUp/svg/password.svg';
 
+//upload test
+
+import uplodaAvater from './upload/9057b7d1c0dd2719adaf8c394d7db896.jpg';
 
 export const assets = {
     icon: Icon,
@@ -176,5 +179,9 @@ export const assets = {
             Email: Email,
             Password: Password
         }
+    },
+
+    upload: {
+        uplodaAvater: uplodaAvater
     }
 }

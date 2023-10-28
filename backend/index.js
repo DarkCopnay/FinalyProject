@@ -1,9 +1,13 @@
 import express from "express";
 import mongoose from "mongoose";
+import multer from "multer";
+import cors from 'cors'
+
 import { RegisterValid, LoginValid, NFTPostValid } from "./validator/Validation.js";
 import CheckAuth from "./utils/CheckAuth.js";
 import * as UserControl from './Controlers/UserControl.js';
 import * as NFTPostControler from './Controlers/NFTPostControler.js'
+import HandelErrors from "./utils/HandelErrors.js";
 
 mongoose.connect(
     'mongodb+srv://nftmarketplace:2010665KEEek@cluster0.yh04arc.mongodb.net/nftmarket?retryWrites=true&w=majority'
@@ -13,15 +17,36 @@ mongoose.connect(
 
 const app = express();
 
+const storage = multer.diskStorage({
+    destination: (_, __, disk) => {
+        disk(null, './src/assets/upload')
+    },
+    filename: (_, file, disk) => {
+        disk(null, file.originalname);
+    },
+})
+
+const upload = multer( {storage} )
+
 app.use(express.json())
+app.use(cors());
+app.use('/src/assets', express.static('upload'))
 
-app.post('/register', RegisterValid, UserControl.register)
-app.post('/login', UserControl.login)
-app.get('/login/me', CheckAuth, UserControl.AuthMe)
+app.post('/register', RegisterValid, HandelErrors, UserControl.register)
+app.post('/login', LoginValid, UserControl.login)
+app.get('/profile/:id', UserControl.Profile)
 
-app.get('/nfts', NFTPostControler.getAll);
-app.get('/nfts/nft/:id', NFTPostControler.GetOne)
-app.post('/nfts/create', CheckAuth, NFTPostValid, NFTPostControler.create);
+app.post('/upload', CheckAuth, upload.single('image'), async (req, res) => {
+    res.json({
+        url: `/src/assets/upload/${req.file.originalname}`,
+    })
+})
+
+app.get('/market', NFTPostControler.getAll);
+app.get('/market/nft/:id', NFTPostControler.GetOne)
+app.post('/market/create', CheckAuth, NFTPostValid, NFTPostControler.create);
+app.patch("/market/nft/:id/edit", CheckAuth, NFTPostControler.update)
+app.delete('/market/nft/:id', CheckAuth, NFTPostControler.remove)
 
 
 app.listen(4444, (err) => {
