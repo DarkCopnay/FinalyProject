@@ -79,9 +79,7 @@ export const login = async (req, res) => {
 
 export const Profile = async (req, res) => {
     try {
-        // const User = Users.find({password: req.body.password})
         const userID = req.params.id;
-
         
         Users.findById({
             _id: userID

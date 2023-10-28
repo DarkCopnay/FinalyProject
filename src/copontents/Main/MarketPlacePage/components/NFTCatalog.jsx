@@ -1,4 +1,6 @@
 import { assets } from "../../../../assets/Assets"
+import { NavLink } from "react-router-dom"
+
 
 export default function NFTCatalog( {SearchInfo, items} ) {
     return (
@@ -16,7 +18,7 @@ export default function NFTCatalog( {SearchInfo, items} ) {
                             <section className='step_5_box_content step_5_box_content_edit'>
                                 <section>
                                     <h2>{obj.title}</h2>
-                                    <a href="#"><img src={assets.avatars.avatar_16} alt="avatar_16" /> {obj.Author.nickname}</a>
+                                    <NavLink to={`/profile/${obj.Author._id}`} ><img src={assets.avatars.avatar_16} alt="avatar_16" /> {obj.Author.nickname}</NavLink>
                                 </section>
                                 <section className='step_5_box_footer step_5_box_footer_edit'>
                                     <section>
