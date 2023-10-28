@@ -1,6 +1,5 @@
 import { assets } from "../../../assets/Assets";
 import { useState, useEffect } from "react";
-// import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import AxiosInit from "../../../axios/axiosInit";
 
