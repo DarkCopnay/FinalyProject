@@ -1,6 +1,6 @@
 import { assets } from "../../../assets/Assets";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 import AxiosInit from "../../../axios/axiosInit";
 
 export default function ProfilePage() {
@@ -26,8 +26,8 @@ export default function ProfilePage() {
                     </section>
                     <header className="Profile_header">
                         <section className="Profile_header_left">
-                        <img className="Profile_Avatar" src={assets.upload.uplodaAvater} alt="Test"/>
-                            <h2>{data.nickname}</h2>
+                        <img className="Profile_Avatar" src={!data.avatarURL ? assets.Profile.NonAvatar : data.avatarURL} alt="Test"/>
+                            <h2>{data.nickname} {data.verify ? <span contextMenu="User verifed" className="material-symbols-outlined">verified</span>: null}</h2>
                             <ul className="Profile_header_left_stat_box">
                                 <li>
                                     <h3>0</h3>
@@ -38,36 +38,70 @@ export default function ProfilePage() {
                                     <span>NFTs Create</span>
                                 </li>
                                 <li>
-                                    <h3>0</h3>
+                                    <h3>{data.stat.followers}</h3>
                                     <span>Followers</span>
                                 </li>
                             </ul>
 
                             <section className="Profile_header_left_bio">
                                 <h3>Bio</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, dicta. 
-                                Ea cumque quia quidem minima sed aspernatur repellendus voluptatibus, modi 
-                                perferendis tenetur numquam nostrum provident, 
-                                iure culpa quisquam nemo necessitatibus.</p>
+                                {
+                                    data.Bio == "" ?
+                                    <span>Bio not found</span>
+                                    :
+                                    <p>{data.Bio}</p>
+                                }
                             </section>
 
-                            <section className="Profile_header_left_social">
+                            {
+                                data.social.DiscordLink == "#" &&
+                                data.social.YouTubeLink == "#" &&
+                                data.social.TwitterLink == "#" &&
+                                data.social.InstagrmLink == "#" 
+                                ?
+                                null
+                                :
+                                <section className="Profile_header_left_social">
                                 <h3>Links</h3>
                                 <section>
-                                    <a href="#" target="_blank">
-                                        <img src={assets.SocialLogo.Discord} alt="Discord"/>
-                                    </a>
-                                    <a href="#" target="_blank">
-                                    <img src={assets.SocialLogo.YouTube} alt="YouTube"/>
-                                    </a>
-                                    <a href="#" target="_blank">
-                                    <img src={assets.SocialLogo.Twitter} alt="Twitter"/>
-                                    </a>
-                                    <a href="#" target="_blank">
-                                    <img src={assets.SocialLogo.Instagram} alt="Instagram"/>
-                                    </a>
+                                    {
+                                        data.social.DiscordLink == "#" ? 
+                                        null 
+                                        :
+                                        <a href={data.social.DiscordLink} target="_blank">
+                                            <img src={assets.SocialLogo.Discord} alt="Discord"/>
+                                        </a>
+                                    }
+                                    {
+                                        data.social.YouTubeLink == "#" ?
+                                        null
+                                        :
+                                        <a href={data.social.YouTubeLink} target="_blank">
+                                            <img src={assets.SocialLogo.YouTube} alt="YouTube"/>
+                                        </a>
+                                    }
+                                    {
+                                        data.social.TwitterLink == "#" ?
+                                        null
+                                        :
+                                        <a href={data.social.TwitterLink} target="_blank">
+                                            <img src={assets.SocialLogo.Twitter} alt="Twitter"/>
+                                        </a>
+                                    }
+                                    {
+                                        data.social.InstagrmLink == "#" ?
+                                        null
+                                        :
+                                        <a href={data.social.InstagrmLink} target="_blank">
+                                            <img src={assets.SocialLogo.Instagram} alt="Instagram"/>
+                                        </a>
+                                    }
                                 </section>
-                            </section>
+                            </section> 
+                            }
+                        </section>
+                        <section className="Profile_header_right">
+                            <button><span className="material-symbols-outlined">add</span>Follow</button>
                         </section>
                     </header>
                 </section>

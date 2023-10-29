@@ -18,7 +18,7 @@ export default function NFTCatalog( {SearchInfo, items} ) {
                             <section className='step_5_box_content step_5_box_content_edit'>
                                 <section>
                                     <h2>{obj.title}</h2>
-                                    <NavLink to={`/profile/${obj.Author._id}`} ><img src={assets.avatars.avatar_16} alt="avatar_16" /> {obj.Author.nickname}</NavLink>
+                                    <NavLink to={`/profile/${obj.Author._id}`} ><img src={!obj.Author.avatarURL ? assets.Profile.NonAvatar : obj.Author.avatarURL} alt="avatar_16" /> {obj.Author.nickname}</NavLink>
                                 </section>
                                 <section className='step_5_box_footer step_5_box_footer_edit'>
                                     <section>

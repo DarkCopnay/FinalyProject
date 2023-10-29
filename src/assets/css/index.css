@@ -1945,6 +1945,16 @@ main {
   background-color: #A259FF;
 }
 .Profile .Profile_header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   width: 80%;
 }
 .Profile .Profile_header .Profile_header_left {
@@ -1957,6 +1967,7 @@ main {
           flex-direction: column;
   padding: 80px 0 40px 0;
   gap: 30px;
+  width: 35%;
   position: relative;
 }
 .Profile .Profile_header .Profile_header_left .Profile_Avatar {
@@ -1970,10 +1981,25 @@ main {
   top: -60px;
 }
 .Profile .Profile_header .Profile_header_left > h2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 10px;
   font-size: 51px;
   font-weight: 600;
   text-transform: capitalize;
   color: white;
+}
+.Profile .Profile_header .Profile_header_left > h2 span {
+  font-size: 30px;
+  color: #00c5ff;
 }
 .Profile .Profile_header .Profile_header_left .Profile_header_left_stat_box {
   display: -webkit-box;
@@ -1989,7 +2015,9 @@ main {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 40%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
 }
 .Profile .Profile_header .Profile_header_left .Profile_header_left_stat_box li h3 {
   font-family: "Space Mono", monospace;
@@ -2026,6 +2054,10 @@ main {
   color: white;
   font-size: 22px;
 }
+.Profile .Profile_header .Profile_header_left .Profile_header_left_bio span {
+  font-size: 18px;
+  color: #858584;
+}
 .Profile .Profile_header .Profile_header_left .Profile_header_left_social {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2052,6 +2084,57 @@ main {
       -ms-flex-direction: row;
           flex-direction: row;
   gap: 10px;
+}
+.Profile .Profile_header .Profile_header_right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-top: 100px;
+}
+.Profile .Profile_header .Profile_header_right button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 10px;
+  width: 145px;
+  height: 60px;
+  border: 2px solid #A259FF;
+  font-size: 18px;
+  color: white;
+  border-radius: 20px;
+  background: none;
+  cursor: pointer;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+.Profile .Profile_header .Profile_header_right button span {
+  color: #A259FF;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+.Profile .Profile_header .Profile_header_right button:hover {
+  color: white;
+  background-color: #A259FF;
+}
+.Profile .Profile_header .Profile_header_right button:hover span {
+  color: white;
 }
 
 .SingUp {
@@ -2469,6 +2552,13 @@ main {
 }
 .MarketPlace .MarketPlace_medium .MarketPlace_medium_content .step_5_edit .step_5_box_edit .step_5_box_content_edit {
   background-color: #2B2B2B;
+}
+.MarketPlace .MarketPlace_medium .MarketPlace_medium_content .step_5_edit .step_5_box_edit .step_5_box_content_edit section a img {
+  width: 24px;
+  height: 24px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
 }
 .MarketPlace .MarketPlace_medium .MarketPlace_medium_content .step_2 .step_2_content_edit {
   -webkit-box-pack: center;

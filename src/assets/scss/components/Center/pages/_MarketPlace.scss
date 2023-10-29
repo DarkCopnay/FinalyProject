@@ -189,6 +189,17 @@
                     
                     .step_5_box_content_edit {
                         background-color: #2B2B2B;
+
+                        section {
+                            a {
+                                img {
+                                    width: 24px;
+                                    height: 24px;
+                                    object-fit: cover;
+                                    border-radius: 50%;
+                                }
+                            }
+                        }
                     }
                 }
             }

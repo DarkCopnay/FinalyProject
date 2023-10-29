@@ -4,6 +4,7 @@ const userSchema = new mongoose.Schema({
     username: {
         type: String,
         require: true,
+        unique: true,
     },
 
     password: {
@@ -13,7 +14,8 @@ const userSchema = new mongoose.Schema({
 
     nickname: {
         type: String,
-        require: true
+        require: true,
+        unique: true,
     },
 
     email: {
@@ -21,8 +23,42 @@ const userSchema = new mongoose.Schema({
         require: true,
         unique: true,
     },
-    
-    verify: Boolean,
+
+    Bio: {
+        type: String,
+        default: ""
+    },
+
+    stat: {
+        followers: {
+            type: Number,
+            default: 0,
+        },
+    },
+
+    social: {
+        DiscordLink: {
+            type: String,
+            default: "#"
+        },
+        YouTubeLink: {
+            type: String,
+            default: "#"
+        },
+        TwitterLink: {
+            type: String,
+            default: "#"
+        },
+        InstagrmLink: {
+            type: String,
+            default: "#"
+        }
+    },
+
+    verify: {
+        type: Boolean,
+        default: false
+    },
 
     avatarURL: String,
 }, {

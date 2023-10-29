@@ -32,7 +32,7 @@ app.use(express.json())
 app.use(cors());
 app.use('/src/assets', express.static('upload'))
 
-app.post('/register', RegisterValid, HandelErrors, UserControl.register)
+app.post('/register', HandelErrors, RegisterValid, UserControl.register)
 app.post('/login', LoginValid, UserControl.login)
 app.get('/profile/:id', UserControl.Profile)
 
@@ -44,7 +44,7 @@ app.post('/upload', CheckAuth, upload.single('image'), async (req, res) => {
 
 app.get('/market', NFTPostControler.getAll);
 app.get('/market/nft/:id', NFTPostControler.GetOne)
-app.post('/market/create', CheckAuth, NFTPostValid, NFTPostControler.create);
+app.post('/market/create', CheckAuth, HandelErrors, NFTPostValid, NFTPostControler.create);
 app.patch("/market/nft/:id/edit", CheckAuth, NFTPostControler.update)
 app.delete('/market/nft/:id', CheckAuth, NFTPostControler.remove)
 

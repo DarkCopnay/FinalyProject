@@ -89,8 +89,10 @@ import User from './img/SingUp/svg/User.svg';
 import Email from './img/SingUp/svg/Email.svg';
 import Password from './img/SingUp/svg/password.svg';
 
-//upload test
+//Profile
+import NonAvatar from "./img/NonAvatar.svg";
 
+//upload test
 import uplodaAvater from './upload/9057b7d1c0dd2719adaf8c394d7db896.jpg';
 
 export const assets = {
@@ -104,6 +106,10 @@ export const assets = {
         avatar_10, avatar_11, avatar_12,
         avatar_13, avatar_14, avatar_15,
         avatar_16, avatar_17
+    },
+
+    Profile: {
+        NonAvatar: NonAvatar
     },
 
     SocialLogo: {
