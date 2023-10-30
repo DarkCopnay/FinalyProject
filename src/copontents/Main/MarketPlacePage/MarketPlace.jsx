@@ -15,7 +15,6 @@ export default function MarketPlace() {
     const dispatch = useDispatch();
 
     const isLoading = NFT.status === 'loading';
-    // const idError = NFT.status === 'rejeact'
 
     useEffect(() => {
         dispatch(fetchNFTposts())

@@ -11,7 +11,7 @@ export default function RoutesComponent( {Components} ) {
             <Route path={urls.market} element={<PageTemplate Layout={Root_Layout} Content={MarketPlace}/>} />
             <Route path={urls.rank} element={<PageTemplate Layout={Root_Layout} Content={RanksPage}/>}/>
             <Route path='/profile/:id' element={<PageTemplate Layout={Root_Layout} Content={ProfilePage}/>}/>
-            {/* <Route path={urls.login} element={<PageTemplate Layout={Root_Layout} Content={Login} />}/> */}
+            <Route path={urls.login} element={<PageTemplate Layout={Root_Layout} Content={Login} />}/>
             <Route path={urls.register} element={<PageTemplate Layout={Root_Layout} Content={Register}/>}/>
             <Route path="*" element={<Navigate to="/404"/>}/>
             <Route path="/404" element={<Page404 />}/>

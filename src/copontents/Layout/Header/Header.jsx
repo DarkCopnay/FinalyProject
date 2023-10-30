@@ -13,6 +13,7 @@ export const urls = {
 }
 
 export default function Headers() {
+    const isAuth = window.localStorage.getItem('token');
     return (
         <>
             {/* <PreLoader /> */}
@@ -26,20 +27,32 @@ export default function Headers() {
                     </ul>
 
 
-                    <NavLink to={urls.register} className="topnav_sign_up">
-                        <span className="material-symbols-outlined">person</span>
-                        Sign Up
-                    </NavLink>
+                    {
+                        isAuth ?
+                        null
+                        :
+                        <>
+                            <NavLink to={urls.register} className="topnav_sign_up">
+                                <span className="material-symbols-outlined">person</span>
+                                Sign Up
+                            </NavLink>
 
-                    <NavLink className="topnav_sign_up" to={urls.login}>
-                        <span className="material-symbols-outlined">login</span>
-                        Login
-                    </NavLink>
+                            <NavLink className="topnav_sign_up" to={urls.login}>
+                                <span className="material-symbols-outlined">login</span>
+                                Login
+                            </NavLink>
+                        </>
+                    }
 
-                    {/* <NavLink to="/profile" className="topnav_Profile">
-                        <img src={assets.avatars.avatar_1} />
-                        <h4>Nickname</h4>
-                    </NavLink> */}
+                    {
+                        isAuth ?
+                        <NavLink to="/profile" className="topnav_Profile">
+                            <img src={assets.avatars.avatar_1} />
+                            <h4>Nickname</h4>
+                        </NavLink>
+                        :
+                        null
+                    }
 
                 </section>
                 <NavMenu />
