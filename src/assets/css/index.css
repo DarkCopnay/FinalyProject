@@ -2676,6 +2676,10 @@ main {
      object-fit: cover;
   border-radius: 50%;
 }
+.MarketPlace .MarketPlace_medium .MarketPlace_medium_content .step_5_edit .step_5_box_edit .step_5_box_content_edit section a span {
+  font-size: 20px;
+  color: #00c5ff;
+}
 .MarketPlace .MarketPlace_medium .MarketPlace_medium_content .step_2 .step_2_content_edit {
   -webkit-box-pack: center;
       -ms-flex-pack: center;

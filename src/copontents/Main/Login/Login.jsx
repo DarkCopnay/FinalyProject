@@ -1,6 +1,7 @@
-import AxiosInit from "../../../axios/axiosInit";
 import { Navigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import { useState } from "react"
+import { fetchLoginData } from "../../../redux/sliceRedux/SliceAuth";
 
 export default function Login() {
     const [username, setUsername] = useState("");
@@ -8,44 +9,38 @@ export default function Login() {
 
     const [IsError, setIsError] = useState(false);
     const [ErrorMsg, setErrorMsg] = useState("");
+    const isAuth = window.localStorage.getItem('token');
 
-    const isAuth = window.localStorage.getItem("token");
+    const Dispatch = useDispatch();
 
-    function PostLogin(event) {
+
+    async function PostLogin(event) {
         event.preventDefault()
-        AxiosInit.post('/login', {username, password})
-        .then((res) => {
-            const dataUser = res.data;
+        const data = await Dispatch(fetchLoginData({username, password}));
 
-            if ('token' in dataUser) {
-                window.localStorage.setItem('token', dataUser.token);
-            }
+        if ('token' in data.payload) {
+            window.localStorage.setItem('token', data.payload.token);
+            
             setIsError(false);
-            setErrorMsg("")
-
-            return (
-                <Navigate to='/'/>
-            )
-
-        })
-        .catch((err) => {
-            const ErrorMsg = err.response.data.ErrorMsg;
+        } else {
             setIsError(true);
-            setErrorMsg(ErrorMsg)
-        })
+            setErrorMsg(data.payload.ErrorMsg)
+        }
+
+        return <Navigate to='/' />
+
     }
 
     if (isAuth) {
         return (
-            <Navigate to="/"/>
+            <Navigate to='/' />
         )
     }
-
 
     return (
         <section className="Login">
             <h2>Login Account</h2>
-            <form className="Login_content" onSubmit={(event) => PostLogin(event)}>
+            <form className="Login_content" onSubmit={(event) => {PostLogin(event)}}>
                 <label htmlFor="username_input">
                     <input id="username_input" type="text" name="username" placeholder="Username" value={username}
                         onChange={(event) => {setUsername(event.target.value)}}
@@ -58,7 +53,7 @@ export default function Login() {
                     />
                 </label>
                 {IsError ? <span>*{ErrorMsg}</span>: null}
-                <button>Login</button>
+                <button type="submit">Login</button>
             </form>
         </section>
     )

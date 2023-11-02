@@ -18,12 +18,13 @@ export default function NFTCatalog( {SearchInfo, items} ) {
                             <section className='step_5_box_content step_5_box_content_edit'>
                                 <section>
                                     <h2>{obj.title}</h2>
-                                    <NavLink to={`/profile/${obj.Author._id}`} ><img src={!obj.Author.avatarURL ? assets.Profile.NonAvatar : obj.Author.avatarURL} alt="avatar_16" /> {obj.Author.nickname}</NavLink>
+                                    <NavLink to={`/profile/${obj.Author._id}`} ><img src={!obj.Author.avatarURL ? assets.Profile.NonAvatar : obj.Author.avatarURL} alt="avatar_16" /> {obj.Author.nickname} 
+                                    {obj.Author.verify ? <span contextMenu="User verifed" className="material-symbols-outlined">verified</span> : null}</NavLink>
                                 </section>
                                 <section className='step_5_box_footer step_5_box_footer_edit'>
                                     <section>
                                         <h4>Price</h4>
-                                        <p>{2} ETH</p>
+                                        <p>{obj.price} ETH</p>
                                     </section>
                                     <section style={ {textAlign:'end'} }>
                                         <h4>Highest Bid</h4>

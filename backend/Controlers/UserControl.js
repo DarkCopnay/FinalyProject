@@ -46,7 +46,7 @@ export const login = async (req, res) => {
 
         if (!userValid) {
             return (res.status(404).json({
-                ErrorMsg: "User not found"
+                ErrorMsg: "Invalid login or password"
             }))
         }
 

@@ -1,12 +1,15 @@
 import { assets } from "../../../assets/Assets";
 import { useState, useEffect } from "react";
-import { useParams, Navigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import AxiosInit from "../../../axios/axiosInit";
 
 export default function ProfilePage() {
     const [data, setData] = useState();
     const [IsLoading, setIsLoading] = useState(true);
+
     const { id } = useParams();
+
+    console.log(id)
 
     useEffect(() => {
         AxiosInit.get(`profile/${id}`)

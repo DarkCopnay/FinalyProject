@@ -11,7 +11,8 @@ export default function MarketPlace() {
     const [CollectionsActiv, setCollectionActiv] = useState(false);
     const [Search, SetSearch] = useState("");
 
-    const { NFT } = useSelector((state) => state.Market)
+    const { NFT } = useSelector((state) => state.Market);
+
     const dispatch = useDispatch();
 
     const isLoading = NFT.status === 'loading';

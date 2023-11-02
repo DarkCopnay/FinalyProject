@@ -1,7 +1,10 @@
-import { NavLink } from "react-router-dom"
+import { NavLink, useParams } from "react-router-dom"
+import { useEffect, useState } from "react"
 import { assets } from "../../../assets/Assets"
+import { jwtDecode } from "jwt-decode"
 import NavMenu from "./copontents/NavMenu"
-import PreLoader from "./copontents/PreLoader"
+import AxiosInit from "../../../axios/axiosInit"
+// import PreLoader from "./copontents/PreLoader"
 
 export const urls = {
     home: "/" ,
@@ -14,6 +17,16 @@ export const urls = {
 
 export default function Headers() {
     const isAuth = window.localStorage.getItem('token');
+    const [nickname, setNickName] = useState();
+    const [avatarURL, setAvatarURL] = useState();
+
+    if (isAuth) {
+        AxiosInit.get(`/profile/${jwtDecode(isAuth)._id}`)
+            .then((res) => {
+                setNickName(res.data.nickname);
+                setAvatarURL(res.data.avatarURL);
+        })
+    }
     return (
         <>
             {/* <PreLoader /> */}
@@ -46,9 +59,9 @@ export default function Headers() {
 
                     {
                         isAuth ?
-                        <NavLink to="/profile" className="topnav_Profile">
-                            <img src={assets.avatars.avatar_1} />
-                            <h4>Nickname</h4>
+                        <NavLink to={`/profile/${jwtDecode(isAuth)._id}`} className="topnav_Profile">
+                            <img src={!avatarURL ? assets.Profile.NonAvatar : avatarURL} />
+                            <h4>{nickname}</h4>
                         </NavLink>
                         :
                         null
