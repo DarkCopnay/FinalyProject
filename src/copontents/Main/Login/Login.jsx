@@ -23,12 +23,11 @@ export default function Login() {
             window.localStorage.setItem('token', data.payload.token);
             
             setIsError(false);
+            navigate("/");
         } else {
             setIsError(true);
             setErrorMsg(data.payload.ErrorMsg)
         }
-
-        navigate("/");
 
     }
 

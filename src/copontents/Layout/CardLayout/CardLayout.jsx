@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 export default function CardLayout( {_id, index, isNeedAuthor=true, NFTname, AuthorName, AuthorAvatar, Price} ) {
 
     return (
-        <section className="NFTcard" key={index}>
+        <section className="NFTcard" key={index + 1}>
             <img src={assets.Step_4.bgBox_1}/>
             <section className="NFTcard_contnet">
                 <section>

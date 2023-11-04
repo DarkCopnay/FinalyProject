@@ -21,7 +21,6 @@ export default function ProfilePage() {
             setIsLoading(false);
         })
     }, [])
-    
     function OnlyUserAuthRender() {
         if (token) {
             const decodeToken = jwtDecode(token)._id;
@@ -137,7 +136,7 @@ export default function ProfilePage() {
                             <OnlyUserAuthRender/>
                         </section>
                     </header>
-                    <ProfilePageContent />
+                    <ProfilePageContent ProfileData={data}/>
                 </section>
             }
         </>
