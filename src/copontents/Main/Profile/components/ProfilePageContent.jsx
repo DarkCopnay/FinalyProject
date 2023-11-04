@@ -26,9 +26,9 @@ export default function ProfilePageContent( {ProfileData} ) {
                     <h2>Loading...</h2>
                     :
                     data.filter((UserData) => UserData.Author.username === ProfileData.username).map((data, index) => 
-                        <CardLayout 
+                        <CardLayout
+                            key={index + 1}
                             _id={data._id}
-                            index={index + 1}
                             isNeedAuthor={false}
                             NFTname={data.title}
                             AuthorName={data.Author.nickname}
