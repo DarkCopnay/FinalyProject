@@ -35,6 +35,7 @@ app.use('/src/assets', express.static('upload'))
 app.post('/register', HandelErrors, RegisterValid, UserControl.register)
 app.post('/login', LoginValid, UserControl.login)
 app.get('/profile/:id', UserControl.Profile)
+app.get('/ranks', UserControl.Ranks);
 
 app.post('/upload', CheckAuth, upload.single('image'), async (req, res) => {
     res.json({

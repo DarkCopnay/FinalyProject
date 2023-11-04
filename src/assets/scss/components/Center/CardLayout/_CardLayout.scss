@@ -1,0 +1,57 @@
+.NFTcard {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+
+    img {
+        object-fit: cover;
+    }
+
+    .NFTcard_contnet {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        height: 173px;
+        background-color: #3B3B3B;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        padding: 20px 30px 25px 30px;
+
+        h2 {
+            font-size: 22px;
+            font-weight: 600;
+            text-transform: capitalize;
+            color: white;
+        }
+
+        a {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 12px;
+            font-size: 16px;
+            font-weight: 400;
+            color: white;
+            margin-top: 5px;
+        }
+
+        .NFTcard_contnet_footer {
+            display: flex;
+            flex-direction: column;
+            font-family: 'Space Mono', monospace;
+            gap: 5px;
+            h4 {
+                font-size: 16px;
+                font-weight: 400;
+                color: #858584;
+            }
+
+            span {
+                font-size: 16px;
+                font-weight: 400;
+                color: white;
+            }
+        }
+    }
+}

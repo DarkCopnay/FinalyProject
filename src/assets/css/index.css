@@ -2096,9 +2096,10 @@ main {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  gap: 15px;
   margin-top: 100px;
 }
-.Profile .Profile_header .Profile_header_right button {
+.Profile .Profile_header .Profile_header_right button, .Profile .Profile_header .Profile_header_right a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2124,16 +2125,186 @@ main {
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
 }
-.Profile .Profile_header .Profile_header_right button span {
+.Profile .Profile_header .Profile_header_right button span, .Profile .Profile_header .Profile_header_right a span {
   color: #A259FF;
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
 }
-.Profile .Profile_header .Profile_header_right button:hover {
+.Profile .Profile_header .Profile_header_right button:hover, .Profile .Profile_header .Profile_header_right a:hover {
   color: white;
   background-color: #A259FF;
 }
-.Profile .Profile_header .Profile_header_right button:hover span {
+.Profile .Profile_header .Profile_header_right button:hover span, .Profile .Profile_header .Profile_header_right a:hover span {
+  color: white;
+}
+.Profile .Profile_header .Profile_header_right .Logout {
+  border: 2px solid red;
+}
+.Profile .Profile_header .Profile_header_right .Logout:hover {
+  background-color: red;
+}
+.Profile .Profile_medium {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+.Profile .Profile_medium .Profile_medium_header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 80%;
+}
+.Profile .Profile_medium .Profile_medium_header button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 10px;
+  width: 350px;
+  height: 60px;
+  font-size: 22px;
+  color: white;
+  font-weight: 600;
+  background: none;
+  border: none;
+  border-bottom: 2px solid #858584;
+}
+.Profile .Profile_medium .Profile_medium_header button span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: "Space Mono", monospace;
+  font-size: 16px;
+  font-weight: 400;
+  width: 50px;
+  height: 32px;
+  background-color: #858584;
+  border-radius: 20px;
+}
+.Profile .Profile_medium .Profile_medium_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 90%;
+  margin-top: 20px;
+}
+
+.NFTcard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 25%;
+}
+.NFTcard img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.NFTcard .NFTcard_contnet {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  height: 173px;
+  background-color: #3B3B3B;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 20px 30px 25px 30px;
+}
+.NFTcard .NFTcard_contnet h2 {
+  font-size: 22px;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: white;
+}
+.NFTcard .NFTcard_contnet a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  font-weight: 400;
+  color: white;
+  margin-top: 5px;
+}
+.NFTcard .NFTcard_contnet .NFTcard_contnet_footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Space Mono", monospace;
+  gap: 5px;
+}
+.NFTcard .NFTcard_contnet .NFTcard_contnet_footer h4 {
+  font-size: 16px;
+  font-weight: 400;
+  color: #858584;
+}
+.NFTcard .NFTcard_contnet .NFTcard_contnet_footer span {
+  font-size: 16px;
+  font-weight: 400;
   color: white;
 }
 

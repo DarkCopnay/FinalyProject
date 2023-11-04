@@ -60,6 +60,12 @@ const userSchema = new mongoose.Schema({
         default: false
     },
 
+    // OwnerNFT: {
+    //     type: mongoose.Schema.Types.Array,
+    //     ref: "NFTpost",
+    //     require: true
+    // },
+
     avatarURL: String,
 }, {
     timestamps: true,

@@ -105,3 +105,17 @@ export const Profile = async (req, res) => {
         })
     }
 }
+
+export const Ranks = async (req, res) => {
+    try {
+        const UserList = await Users.find()
+
+        res.json(UserList);
+
+    } catch (err) {
+        console.log(err)
+        res.status(404).json({
+            ErrorMsg: "Users not found"
+        })
+    }
+}

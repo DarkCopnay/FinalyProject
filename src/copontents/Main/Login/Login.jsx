@@ -1,4 +1,4 @@
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useState } from "react"
 import { fetchLoginData } from "../../../redux/sliceRedux/SliceAuth";
@@ -12,6 +12,7 @@ export default function Login() {
     const isAuth = window.localStorage.getItem('token');
 
     const Dispatch = useDispatch();
+    const navigate = useNavigate();
 
 
     async function PostLogin(event) {
@@ -27,14 +28,12 @@ export default function Login() {
             setErrorMsg(data.payload.ErrorMsg)
         }
 
-        return <Navigate to='/' />
+        navigate("/");
 
     }
 
     if (isAuth) {
-        return (
-            <Navigate to='/' />
-        )
+        navigate("/")
     }
 
     return (

@@ -1,15 +1,18 @@
 import { assets } from "../../../assets/Assets";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, NavLink, useNavigate } from "react-router-dom";
 import AxiosInit from "../../../axios/axiosInit";
+import { jwtDecode } from "jwt-decode";
+import { urls } from "../../Layout/Header/Header";
+import ProfilePageContent from "./components/ProfilePageContent";
 
 export default function ProfilePage() {
     const [data, setData] = useState();
+    const navigate = useNavigate();
+    const token = window.localStorage.getItem("token");
     const [IsLoading, setIsLoading] = useState(true);
 
     const { id } = useParams();
-
-    console.log(id)
 
     useEffect(() => {
         AxiosInit.get(`profile/${id}`)
@@ -18,6 +21,33 @@ export default function ProfilePage() {
             setIsLoading(false);
         })
     }, [])
+    
+    function OnlyUserAuthRender() {
+        if (token) {
+            const decodeToken = jwtDecode(token)._id;
+            if (decodeToken === id) {
+                return (
+                    <>
+                        <NavLink to={`/profile/${id}/edit`}>Edit</NavLink>
+                        <button className="Logout" onClick={onLogout}>Logout</button>
+                    </>
+                )
+            } else {
+                return (
+                    <button><span className="material-symbols-outlined">add</span>Follow</button>
+                )
+            }
+        } else {
+            return (
+                <button><span className="material-symbols-outlined">add</span>Follow</button>
+            )
+        }
+
+        function onLogout() {
+            window.localStorage.removeItem('token');
+            navigate('/')
+        }
+    }
 
     return (
         <>
@@ -104,9 +134,10 @@ export default function ProfilePage() {
                             }
                         </section>
                         <section className="Profile_header_right">
-                            <button><span className="material-symbols-outlined">add</span>Follow</button>
+                            <OnlyUserAuthRender/>
                         </section>
                     </header>
+                    <ProfilePageContent />
                 </section>
             }
         </>
