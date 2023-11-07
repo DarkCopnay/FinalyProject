@@ -20,6 +20,10 @@ export default function ProfilePage() {
             setData(res.data);
             setIsLoading(false);
         })
+        .catch((err) => {
+            console.error(err);
+            navigate('/404');
+        })
     }, [])
     function OnlyUserAuthRender() {
         if (token) {
