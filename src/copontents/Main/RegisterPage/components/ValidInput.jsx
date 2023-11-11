@@ -13,7 +13,8 @@ export default function ValidInput( {Id, Type, Value, Placehloder, GetStyle, Con
             
             case Value.length < 5:
                 setIsError(true);
-                setErrorMsg("")
+                setErrorMsg(`${Placehloder}, less than 5 characters`)
+                break;
         }
 
         return (

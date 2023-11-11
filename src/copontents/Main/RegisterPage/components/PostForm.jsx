@@ -1,8 +1,9 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { assets } from "../../../../assets/Assets";
 import { fetchRegister } from "../../../../redux/sliceRedux/SliceAuth";
+import ValidInput from "./ValidInput";
 
 export default function PostForm() {
     const [username, setUserName] = useState('');
@@ -37,8 +38,6 @@ export default function PostForm() {
             password,
         }));
 
-        console.log(RegisterData);
-
         if ('token' in RegisterData.payload) {
             localStorage.setItem('token', RegisterData.payload.token);
             navigate('/')
@@ -48,12 +47,29 @@ export default function PostForm() {
             setErrorMsg(RegisterData.payload.ErrorMsg);
         }
     }
-    
     return (
         <form className="SingUp_right_content" onSubmit={(event) => {
             event.preventDefault();
             RegisterPost(event)
         }}>
+            <ValidInput 
+                    Id={"Username"}
+                    Type={"text"}
+                    Value={username}
+                    Placehloder={placeholderName.UserName}
+                    ContorlInput={(event) => {
+                        getChange(event)
+                    }}
+                    GetStyle={{
+                        backgroundImage: `url(${assets.SingUp.svg.User})`
+                    }}
+            />
+            {console.log(ValidInput)}
+            {/* <input 
+                type="text"
+                value={username}
+                onChange={(event) => {setUserName(event.target.value)}}
+            /> */}
             {/* <label htmlFor="Username">
                 <input
                     id="Username"
