@@ -17,11 +17,6 @@ export default function PostForm() {
     const [ErrorMsg, setErrorMsg] = useState('');
     const [IsError, setIsError] = useState(false);
 
-    // const [UserNameValid, setUserNameValid] = useState(false)
-    // const [EmailValid, setEmailValid] = useState(false);
-    // const [PasswordValid, setPasswordValid] = useState(false);
-    // const [ConfirmPasswordValid, setConfirmPasswordValid] = useState(false)
-
     const placeholderName = {
         UserName: "Username",
         NickName: "Nickname",
@@ -52,19 +47,17 @@ export default function PostForm() {
             event.preventDefault();
             RegisterPost(event)
         }}>
-            <ValidInput 
-                    Id={"Username"}
-                    Type={"text"}
-                    Value={username}
-                    Placehloder={placeholderName.UserName}
-                    ContorlInput={(event) => {
-                        getChange(event)
-                    }}
-                    GetStyle={{
-                        backgroundImage: `url(${assets.SingUp.svg.User})`
-                    }}
+            <ValidInput
+                Id={"Username"}
+                Type={"text"}
+                UnderTpye={'Nickname'}
+                Value={username}
+                Placehloder={'Username'}
+                ContorlInput={setUserName}
+                GetStyle={{
+                    backgroundImage: `url(${assets.SingUp.svg.User})`
+                }}
             />
-            {console.log(ValidInput)}
             {/* <input 
                 type="text"
                 value={username}

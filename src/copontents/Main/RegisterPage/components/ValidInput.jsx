@@ -1,39 +1,50 @@
 import { useState } from "react"
 
-export default function ValidInput( {Id, Type, Value, Placehloder, GetStyle, ContorlInput} ) {
-    const [IsError, setIsError] = useState(false);
-    const [ErrorMsg, setErrorMsg] = useState("");
+export default function ValidInput( {Id, Type, UnderTpye, Value, Placehloder, GetStyle, ContorlInput} ) {
+    function TextValid({UnderTpye}) {
+        const [IsError, setIsError] = useState(false);
+        const [ErrorMsg, setErrorMsg] = useState("");
+        const lowerOutput = UnderTpye.toLowerCase();
 
-    function TextInput() {
-        switch (Value) {
-            case "" || " ":
-                setIsError(true);
-                setErrorMsg("Input is Empty");
-                break;
-            
-            case Value.length < 5:
-                setIsError(true);
-                setErrorMsg(`${Placehloder}, less than 5 characters`)
+        switch (lowerOutput) {
+            case "nickname":
+                NicknameValid();
                 break;
         }
 
-        return (
-            <label htmlFor={Id}>
-                <input 
-                    id={Id}
-                    type="text"
-                    value={Value}
-                    placeholder={Placehloder}
-                    onChange={ContorlInput}
-                    style={GetStyle}
-                />
-                {IsError ? <span>*{ErrorMsg}</span> : null}
-            </label>
-        )
+        async function NicknameValid() {
+
+            return (
+                <label htmlFor={Id}>
+                    <input 
+                        id={Id}
+                        type={Type}
+                        value={Value}
+                        placeholder={Placehloder}
+                        onChange={(event) => {ContorlInput(event.target.value)}}
+                        style={GetStyle}
+                    />
+                    {IsError ? <span>*{ErrorMsg}</span> : null}
+                </label>
+            )
+        }
     }
 
     switch (Type) {
-        case "text":
-            return <TextInput/>;
+        case 'text':
+            return <TextValid UnderTpye={UnderTpye}/>
+            
     }
+    // return (
+    //     <label htmlFor={Id}>
+    //         <input 
+    //             id={Id}
+    //             type={Type}
+    //             value={Value}
+    //             placeholder={Placehloder}
+    //             onChange={(event) => {ContorlInput(event.target.value)}}
+    //             style={GetStyle}
+    //         />
+    //     </label>
+    // )
 }
