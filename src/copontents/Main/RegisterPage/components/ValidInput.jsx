@@ -1,50 +1,62 @@
 import { useState } from "react"
 
 export default function ValidInput( {Id, Type, UnderTpye, Value, Placehloder, GetStyle, ContorlInput} ) {
-    function TextValid({UnderTpye}) {
-        const [IsError, setIsError] = useState(false);
-        const [ErrorMsg, setErrorMsg] = useState("");
-        const lowerOutput = UnderTpye.toLowerCase();
+    const [IsError, setIsError] = useState(false);
+    const [ErrorMsg, setErrorMsg] = useState("");
+    const [name, setName] = useState("")
 
-        switch (lowerOutput) {
-            case "nickname":
-                NicknameValid();
-                break;
-        }
+    document.addEventListener("submit", function() {
+        const controler = new AbortController();
 
-        async function NicknameValid() {
+        if (Value === "") {
+            setIsError(true);
+            setErrorMsg("Faild is empty");
+            controler.abort();
 
-            return (
-                <label htmlFor={Id}>
-                    <input 
-                        id={Id}
-                        type={Type}
-                        value={Value}
-                        placeholder={Placehloder}
-                        onChange={(event) => {ContorlInput(event.target.value)}}
-                        style={GetStyle}
-                    />
-                    {IsError ? <span>*{ErrorMsg}</span> : null}
-                </label>
-            )
-        }
-    }
-
-    switch (Type) {
-        case 'text':
-            return <TextValid UnderTpye={UnderTpye}/>
+        } else {
+            setIsError(false);
             
-    }
-    // return (
-    //     <label htmlFor={Id}>
-    //         <input 
-    //             id={Id}
-    //             type={Type}
-    //             value={Value}
-    //             placeholder={Placehloder}
-    //             onChange={(event) => {ContorlInput(event.target.value)}}
-    //             style={GetStyle}
-    //         />
-    //     </label>
-    // )
+        }
+        
+        function TextValid() {
+            function NicknameValid() {
+
+                if (Value.length > 1 && Value.length < 4) {
+                    setIsError(true);
+                    setName("Nickname");
+                    setErrorMsg(`${name} must be longer than 4 symbols.`)
+                }  
+            }
+        
+
+             switch (UnderTpye) {
+                 case "nickname":
+                     NicknameValid();
+                     break;
+             }
+        }
+
+        switch (Type) {
+            case "text":
+                TextValid();
+                break;
+                
+        }
+        
+    })
+
+    return (
+        <label htmlFor={Id}>
+            <input 
+                id={Id}
+                type={Type}
+                value={Value}
+                placeholder={Placehloder}
+                onChange={(event) => {ContorlInput(event.target.value)}}
+                style={GetStyle}
+            />
+
+            {IsError ? <span>*{ErrorMsg}</span>: null}
+        </label>
+    )
 }

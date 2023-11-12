@@ -50,10 +50,21 @@ export default function PostForm() {
             <ValidInput
                 Id={"Username"}
                 Type={"text"}
-                UnderTpye={'Nickname'}
                 Value={username}
-                Placehloder={'Username'}
+                Placehloder={placeholderName.UserName}
                 ContorlInput={setUserName}
+                GetStyle={{
+                    backgroundImage: `url(${assets.SingUp.svg.User})`
+                }}
+            />
+
+            <ValidInput
+                Id={"nickname"}
+                Type={"text"}
+                UnderTpye={"nickname"}
+                Value={nickname}
+                Placehloder={placeholderName.NickName}
+                ContorlInput={setNickName}
                 GetStyle={{
                     backgroundImage: `url(${assets.SingUp.svg.User})`
                 }}

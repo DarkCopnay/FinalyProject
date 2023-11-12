@@ -12,6 +12,7 @@ export const fetchLoginData = createAsyncThunk('Auth', async (UserReq) => {
 export const fetchRegister = createAsyncThunk('Register', async (UserReq) => {
     const { data } = await AxiosInit.post('/register', UserReq)
     .catch((err) => {
+        controler.abort();
         return err.response
     })
     return data;
