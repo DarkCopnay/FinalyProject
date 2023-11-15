@@ -7,7 +7,6 @@ import { RegisterValid, LoginValid, NFTPostValid } from "./validator/Validation.
 import CheckAuth from "./utils/CheckAuth.js";
 import * as UserControl from './Controlers/UserControl.js';
 import * as NFTPostControler from './Controlers/NFTPostControler.js'
-import HandelErrors from "./utils/HandelErrors.js";
 
 mongoose.connect(
     'mongodb+srv://nftmarketplace:2010665KEEek@cluster0.yh04arc.mongodb.net/nftmarket?retryWrites=true&w=majority'
@@ -32,9 +31,10 @@ app.use(express.json())
 app.use(cors());
 app.use('/src/assets', express.static('upload'))
 
-app.post('/register', HandelErrors, RegisterValid, UserControl.register)
+app.post('/register', RegisterValid, UserControl.register)
 app.post('/login', LoginValid, UserControl.login)
-app.get('/profile/:id', UserControl.Profile)
+app.get('/profile/:id', UserControl.Profile);
+app.get('/users', UserControl.UsersDataList);
 app.get('/ranks', UserControl.Ranks);
 
 app.post('/upload', CheckAuth, upload.single('image'), async (req, res) => {
@@ -45,7 +45,7 @@ app.post('/upload', CheckAuth, upload.single('image'), async (req, res) => {
 
 app.get('/market', NFTPostControler.getAll);
 app.get('/market/nft/:id', NFTPostControler.GetOne)
-app.post('/market/create', CheckAuth, HandelErrors, NFTPostValid, NFTPostControler.create);
+app.post('/market/create', CheckAuth, NFTPostValid, NFTPostControler.create);
 app.patch("/market/nft/:id/edit", CheckAuth, NFTPostControler.update)
 app.delete('/market/nft/:id', CheckAuth, NFTPostControler.remove)
 

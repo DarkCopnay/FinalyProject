@@ -10,12 +10,13 @@ export default function TodayCategory() {
         AxiosInit.get("/ranks")
         .then((res) => {
             setData(res.data)
+            console.log(res.data);
         })
         .catch((err) => {
             console.log(err);
             setData(err);
         })
-    })
+    }, [])
     return (
         <>            
             {
@@ -26,7 +27,7 @@ export default function TodayCategory() {
                         <header className="RanksPages_content_user_block_header">
                             <span>{index + 1}</span>
                             <img src={assets.avatars.avatar_4} width={60}/>
-                            <h2>{data.username}</h2>
+                            <h2>{data.nickname}</h2>
                         </header>
                         <section className="RanksPages_content_user_block_right">
                             <span style={{color: "green"}}>+{0}%</span>

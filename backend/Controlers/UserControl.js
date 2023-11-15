@@ -1,9 +1,15 @@
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt"
 import Users from "../models/Users.js";
+import { validationResult } from "express-validator"
 
 export const register = async (req, res) => {
     try {
+        const error = validationResult(req);
+
+        if (!error.isEmpty()) {
+            return res.status(400).json(error.array());
+        }
 
         const passwordValid = req.body.password;
         const salt = await bcrypt.genSalt(10);
@@ -108,7 +114,7 @@ export const Profile = async (req, res) => {
 
 export const Ranks = async (req, res) => {
     try {
-        const UserList = await Users.find()
+        const UserList = await Users.find().select('nickname');
 
         res.json(UserList);
 
@@ -116,6 +122,19 @@ export const Ranks = async (req, res) => {
         console.log(err)
         res.status(404).json({
             ErrorMsg: "Users not found"
+        })
+    }
+}
+
+export const UsersDataList = async (req, res) => {
+    try {
+        const DataUser = await Users.find().select('username nickname email');
+        
+        res.json(DataUser);
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({
+            ErrorMsg: "Users is Empty"
         })
     }
 }

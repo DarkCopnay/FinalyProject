@@ -12,7 +12,6 @@ export const fetchLoginData = createAsyncThunk('Auth', async (UserReq) => {
 export const fetchRegister = createAsyncThunk('Register', async (UserReq) => {
     const { data } = await AxiosInit.post('/register', UserReq)
     .catch((err) => {
-        controler.abort();
         return err.response
     })
     return data;
@@ -36,8 +35,8 @@ const AuthSlice = createSlice({
             state.data = action.payload;
             state.status = 'loaded';
         }, 
-        [fetchLoginData.rejected]: (state, action) => {
-            state.err = action
+        [fetchLoginData.rejected]: (state) => {
+            state.err = null
             state.status = 'error';
         },
         
@@ -49,8 +48,8 @@ const AuthSlice = createSlice({
             state.data = action.payload;
             state.status = "loaded";
         },
-        [fetchRegister.rejected]: (state, action) => {
-            state.data = action;
+        [fetchRegister.rejected]: (state) => {
+            state.data = null;
             state.status = "error";
         }
     }

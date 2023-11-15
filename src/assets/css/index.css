@@ -2507,6 +2507,7 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  text-align: center;
   width: 50%;
 }
 .SingUp .SingUp_right .SingUp_right_content label input {
@@ -2543,7 +2544,6 @@ main {
 }
 .SingUp .SingUp_right .SingUp_right_content label span {
   margin-top: 10px;
-  margin-left: 25px;
   font-size: 18px;
   font-weight: 500;
   color: red;

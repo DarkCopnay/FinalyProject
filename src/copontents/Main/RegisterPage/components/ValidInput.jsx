@@ -1,17 +1,30 @@
-import { useState } from "react"
+import { useState, useEffect, useContext } from "react"
+import AxiosInit from "../../../../axios/axiosInit";
 
-export default function ValidInput( {Id, Type, UnderTpye, Value, Placehloder, GetStyle, ContorlInput} ) {
+
+export default function ValidInput( {Id, Type, UnderTpye, Value, Placehloder, GetStyle, ContorlInput, isConfirm} ) {
+    const [data, setData] = useState();
     const [IsError, setIsError] = useState(false);
     const [ErrorMsg, setErrorMsg] = useState("");
-    const [name, setName] = useState("")
 
-    document.addEventListener("submit", function() {
-        const controler = new AbortController();
+    useEffect(() => {
+        AxiosInit.get("/users")
+            .then(async (res) => {
+                const responseData = res.data;
+                await responseData.map((data) => {
+                    setData(data);
+                })
+            })
+    
+            .catch((err) => {
+                console.error(err);
+            })
+    }, [])
 
+    const Validation = () => {
         if (Value === "") {
             setIsError(true);
-            setErrorMsg("Faild is empty");
-            controler.abort();
+            setErrorMsg("Field is empty");
 
         } else {
             setIsError(false);
@@ -20,39 +33,82 @@ export default function ValidInput( {Id, Type, UnderTpye, Value, Placehloder, Ge
         
         function TextValid() {
             function NicknameValid() {
-
                 if (Value.length > 1 && Value.length < 4) {
                     setIsError(true);
-                    setName("Nickname");
-                    setErrorMsg(`${name} must be longer than 4 symbols.`)
-                }  
+                    setErrorMsg(`Nickname must be longer than 4 symbols.`)
+                }
+
+                if (!data) {
+                    console.log(" ");
+                } else {
+                    if (Value == data.nickname) {
+                        setIsError(true);
+                        setErrorMsg(`That's the nickname already in use`)
+                    }
+                }
+
             }
-        
+
+            function UsernameValid() {
+                if (Value.length > 1 && Value.length < 4) {
+                    setIsError(true);
+                    setErrorMsg(`Nickname must be longer than 4 symbols.`)
+                }
+
+                if (!data) {
+                    console.log("");
+                } else {
+                    if (Value == data.username) {
+                        setIsError(true);
+                        setErrorMsg(`That's the nickname already in use`)
+                    }
+                }
+            }
+
 
              switch (UnderTpye) {
-                 case "nickname":
+                case "nickname":
                      NicknameValid();
                      break;
+
+                case "username":
+                    UsernameValid();
+                    break;
              }
+        }
+
+        function EmailValid() {
+            const EmailRegax = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+
+            if (EmailRegax.test(Value)) {
+                setIsError(false);
+            } else {
+                setIsError(true);
+                setErrorMsg("Invalid water email")
+            }
         }
 
         switch (Type) {
             case "text":
                 TextValid();
                 break;
+            
+            case "email":
+                EmailValid();
+                break;
                 
         }
-        
-    })
+    }
 
     return (
         <label htmlFor={Id}>
             <input 
                 id={Id}
+                name={Id}
                 type={Type}
                 value={Value}
                 placeholder={Placehloder}
-                onChange={(event) => {ContorlInput(event.target.value)}}
+                onChange={ContorlInput}
                 style={GetStyle}
             />
 

@@ -1,4 +1,5 @@
 import NFTpostModel from "../models/NFTpostModel.js"
+import { validationResult } from "express-validator";
 
 export const getAll = async (req, res) => {
     try {
@@ -87,14 +88,20 @@ export const remove = async (req, res) => {
 
 export const create = async (req, res) => {
     try {
+        const error = validationResult(req);
+
         const NFTpostDoc = new NFTpostModel({
             title: req.body.title,
             price: req.body.price,
             ImgURL: req.body.ImgURL,
             Author: req.userId,
         })
-
+        
         const NftPostCreate = await NFTpostDoc.save();
+
+        if (!error.isEmpty()) {
+            return res.status(400).json(error.array())
+        }
 
         res.json(NftPostCreate)
     } catch (error) {

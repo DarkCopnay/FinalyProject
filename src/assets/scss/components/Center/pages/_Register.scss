@@ -51,6 +51,7 @@
             label {
                 display: flex;
                 flex-direction: column;
+                text-align: center;
                 width: 50%;
 
                 input {
@@ -73,7 +74,6 @@
 
                 span {
                     margin-top: 10px;
-                    margin-left: 25px;
                     font-size: 18px;
                     font-weight: 500;
                     color: red;

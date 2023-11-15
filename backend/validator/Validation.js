@@ -9,8 +9,8 @@ export const RegisterValid = [
 ];
 
 export const LoginValid = [
-    body("username", "Username Error").isLength({min: 3}),
-    body("password", "Password Error").isLength({min: 5}),
+    body("username", "Username Error").isString().isLength({min: 3}),
+    body("password", "Password Error").isString().isLength({min: 5}),
 ];
 
 export const NFTPostValid = [
