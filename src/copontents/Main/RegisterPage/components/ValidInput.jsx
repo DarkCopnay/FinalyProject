@@ -14,9 +14,8 @@ export default function ValidInput( {Id, Type, UnderTpye, Value, Placehloder, Ge
         AxiosInit.get("/users")
             .then(async (res) => {
                 const responseData = await res.data;
-                responseData.map((data) => 
-                    setData(data),
-                )
+                
+                setData(responseData);
             })
     
             .catch((err) => {
@@ -38,65 +37,75 @@ export default function ValidInput( {Id, Type, UnderTpye, Value, Placehloder, Ge
         }
         
         function TextValid() {
-            function NicknameValid() {
-                if (Value.length >= 1 && Value.length < 4) {
-                    setIsError(true);
-                    setErrorMsg(`Nickname must be longer than 4 symbols.`)
-                }
-
-                if (!data) {
-                    console.log("");
-                } else {
-                    if (Value === data.nickname) {
+            data.map(data => {
+                function NicknameValid() {
+                    if (Value.length >= 1 && Value.length < 4) {
                         setIsError(true);
-                        setErrorMsg(`That's the nickname already in use`)
+                        setErrorMsg(`Nickname must be longer than 4 symbols.`)
+                    }
+    
+                    if (!data) {
+                        console.log("");
+                    } else {
+                        if (Value === data.nickname) {
+                            setIsError(true);
+                            setErrorMsg(`That's the nickname already in use`)
+                        }
+                    }
+    
+                }
+    
+                function UsernameValid() {
+                    if (Value.length > 1 && Value.length < 4) {
+                        setIsError(true);
+                        setErrorMsg(`Nickname must be longer than 4 symbols.`)
+                    }
+    
+                    if (!data) {
+                        console.log("");
+                    } else {
+                        if (Value === data.username) {
+                            setIsError(true);
+                            setErrorMsg(`That's the nickname already in use`)
+                        }
                     }
                 }
-
-            }
-
-            function UsernameValid() {
-                if (Value.length > 1 && Value.length < 4) {
-                    setIsError(true);
-                    setErrorMsg(`Nickname must be longer than 4 symbols.`)
+    
+    
+                switch (UnderTpye) {
+                    case "nickname":
+                         NicknameValid();
+                         break;
+    
+                    case "username":
+                        UsernameValid();
+                        break;
                 }
-
-                if (!data) {
-                    console.log("");
-                } else {
-                    if (Value === data.username) {
-                        setIsError(true);
-                        setErrorMsg(`That's the nickname already in use`)
-                    }
-                }
-            }
-
-
-             switch (UnderTpye) {
-                case "nickname":
-                     NicknameValid();
-                     break;
-
-                case "username":
-                    UsernameValid();
-                    break;
-             }
+            })
         }
+
 
         function EmailValid() {
             const EmailRegax = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
 
-            if (EmailRegax.test(Value)) {
-                setIsError(false);
-            } else {
-                setIsError(true);
-                setErrorMsg("Invalid water email")
-            }
+            data.map(async (data) => {
+                if (EmailRegax.test(Value)) {
+                    await setIsError(false);
+                } else {
+                    await setIsError(true);
+                    await setErrorMsg("Invalid water email")
+                }
 
-            if (Value === data.email) {
-                setIsError(true);
-                setErrorMsg("Invalid water email")
-            }
+                if (!data) {
+                    console.log(data)
+                } else {
+                    await setIsError(true);
+                    await setErrorMsg("The email is already in use.");
+                }
+            })
+        }
+
+        function PasswordValid() {
         }
 
         switch (Type) {
@@ -106,6 +115,10 @@ export default function ValidInput( {Id, Type, UnderTpye, Value, Placehloder, Ge
             
             case "email":
                 EmailValid();
+                break;
+            
+            case "password":
+                PasswordValid();
                 break;
                 
         }
