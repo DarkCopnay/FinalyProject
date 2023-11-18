@@ -25,6 +25,8 @@ const initialState = {
 const AuthSlice = createSlice({
     name: "Auth",
     initialState,
+
+    reducers: {},
     
     extraReducers: {
         [fetchLoginData.pending]: (state) => {

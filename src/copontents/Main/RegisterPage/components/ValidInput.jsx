@@ -1,25 +1,32 @@
 import { useState, useEffect, useContext } from "react"
 import AxiosInit from "../../../../axios/axiosInit";
+import { FormContext } from "./PostForm";
 
 
 export default function ValidInput( {Id, Type, UnderTpye, Value, Placehloder, GetStyle, ContorlInput, isConfirm} ) {
     const [data, setData] = useState();
     const [IsError, setIsError] = useState(false);
     const [ErrorMsg, setErrorMsg] = useState("");
+    const GetValue = useContext(FormContext);
+
 
     useEffect(() => {
         AxiosInit.get("/users")
             .then(async (res) => {
-                const responseData = res.data;
-                await responseData.map((data) => {
-                    setData(data);
-                })
+                const responseData = await res.data;
+                responseData.map((data) => 
+                    setData(data),
+                )
             })
     
             .catch((err) => {
                 console.error(err);
             })
-    }, [])
+
+            if (GetValue) {
+                Validation();
+            }
+    }, [GetValue])
 
     const Validation = () => {
         if (Value === "") {
@@ -28,20 +35,19 @@ export default function ValidInput( {Id, Type, UnderTpye, Value, Placehloder, Ge
 
         } else {
             setIsError(false);
-            
         }
         
         function TextValid() {
             function NicknameValid() {
-                if (Value.length > 1 && Value.length < 4) {
+                if (Value.length >= 1 && Value.length < 4) {
                     setIsError(true);
                     setErrorMsg(`Nickname must be longer than 4 symbols.`)
                 }
 
                 if (!data) {
-                    console.log(" ");
+                    console.log("");
                 } else {
-                    if (Value == data.nickname) {
+                    if (Value === data.nickname) {
                         setIsError(true);
                         setErrorMsg(`That's the nickname already in use`)
                     }
@@ -58,7 +64,7 @@ export default function ValidInput( {Id, Type, UnderTpye, Value, Placehloder, Ge
                 if (!data) {
                     console.log("");
                 } else {
-                    if (Value == data.username) {
+                    if (Value === data.username) {
                         setIsError(true);
                         setErrorMsg(`That's the nickname already in use`)
                     }
@@ -83,6 +89,11 @@ export default function ValidInput( {Id, Type, UnderTpye, Value, Placehloder, Ge
             if (EmailRegax.test(Value)) {
                 setIsError(false);
             } else {
+                setIsError(true);
+                setErrorMsg("Invalid water email")
+            }
+
+            if (Value === data.email) {
                 setIsError(true);
                 setErrorMsg("Invalid water email")
             }
