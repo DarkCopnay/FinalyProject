@@ -3,8 +3,9 @@ import AxiosInit from "../../../../axios/axiosInit";
 import { FormContext } from "./PostForm";
 
 
-export default function ValidInput( {Id, Type, UnderTpye, Value, Placehloder, GetStyle, ContorlInput, isConfirm} ) {
+export default function ValidInput( {Id, Type, UnderTpye, Value, Placehloder, GetStyle, ContorlInput, isDobule} ) {
     const [data, setData] = useState();
+    const [dataEmail, setDataEmail] = useState();
     const [IsError, setIsError] = useState(false);
     const [ErrorMsg, setErrorMsg] = useState("");
     const GetValue = useContext(FormContext);
@@ -14,8 +15,14 @@ export default function ValidInput( {Id, Type, UnderTpye, Value, Placehloder, Ge
         AxiosInit.get("/users")
             .then(async (res) => {
                 const responseData = await res.data;
-                
-                setData(responseData);
+
+                responseData.map(async (data) => {
+                    const dataAwn = await data
+                    setData(dataAwn);
+                });
+
+                setDataEmail(responseData);
+
             })
     
             .catch((err) => {
@@ -37,70 +44,69 @@ export default function ValidInput( {Id, Type, UnderTpye, Value, Placehloder, Ge
         }
         
         function TextValid() {
-            data.map(data => {
-                function NicknameValid() {
-                    if (Value.length >= 1 && Value.length < 4) {
+            function NicknameValid() {
+                if (Value.length >= 1 && Value.length < 4) {
+                    setIsError(true);
+                    setErrorMsg(`Nickname must be longer than 4 symbols.`)
+                }
+
+                if (!data) {
+                    console.log("");
+                } else {
+                    if (Value === data.nickname) {
                         setIsError(true);
-                        setErrorMsg(`Nickname must be longer than 4 symbols.`)
+                        setErrorMsg(`That's the nickname already in use`)
                     }
-    
-                    if (!data) {
-                        console.log("");
-                    } else {
-                        if (Value === data.nickname) {
-                            setIsError(true);
-                            setErrorMsg(`That's the nickname already in use`)
-                        }
-                    }
-    
                 }
-    
-                function UsernameValid() {
-                    if (Value.length > 1 && Value.length < 4) {
+
+            }
+
+            function UsernameValid() {
+                if (Value.length > 1 && Value.length < 4) {
+                    setIsError(true);
+                    setErrorMsg(`Nickname must be longer than 4 symbols.`)
+                }
+
+                if (!data) {
+                    console.log("");
+                } else {
+                    if (Value === data.username) {
                         setIsError(true);
-                        setErrorMsg(`Nickname must be longer than 4 symbols.`)
-                    }
-    
-                    if (!data) {
-                        console.log("");
-                    } else {
-                        if (Value === data.username) {
-                            setIsError(true);
-                            setErrorMsg(`That's the nickname already in use`)
-                        }
+                        setErrorMsg(`That's the nickname already in use`)
                     }
                 }
-    
-    
-                switch (UnderTpye) {
-                    case "nickname":
-                         NicknameValid();
-                         break;
-    
-                    case "username":
-                        UsernameValid();
-                        break;
-                }
-            })
+            }
+
+
+            switch (UnderTpye) {
+                case "nickname":
+                     NicknameValid();
+                     break;
+
+                case "username":
+                    UsernameValid();
+                    break;
+            }
         }
 
 
         function EmailValid() {
             const EmailRegax = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+            if (EmailRegax.test(Value)) {
+                setIsError(false);
+            } else {
+                setIsError(true);
+                setErrorMsg("Invalid water email")
+            }
 
-            data.map(async (data) => {
-                if (EmailRegax.test(Value)) {
-                    await setIsError(false);
-                } else {
-                    await setIsError(true);
-                    await setErrorMsg("Invalid water email")
-                }
-
+            dataEmail.map((data) => {
                 if (!data) {
-                    console.log(data)
+                console.log("")
                 } else {
-                    await setIsError(true);
-                    await setErrorMsg("The email is already in use.");
+                    if (Value === data.email) {
+                        setIsError(true);
+                        setErrorMsg("The email is already in use.");
+                    }
                 }
             })
         }

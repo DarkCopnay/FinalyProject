@@ -129,7 +129,7 @@ export const Ranks = async (req, res) => {
 export const UsersDataList = async (req, res) => {
     try {
         const DataUser = await Users.find().select('username nickname email');
-        
+
         res.json(DataUser);
     } catch (err) {
         console.log(err);

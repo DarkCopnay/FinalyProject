@@ -96,6 +96,17 @@ export default function PostForm() {
                     backgroundImage: `url(${assets.SingUp.svg.Password})`
                 }}
             />
+            <ValidInput
+                Id={"password_confirm"}
+                Type={"password"}
+                Value={FormData.ConfirmPassword}
+                Placehloder={placeholderName.ConfirmPassword}
+                ContorlInput={HeadControlerInput}
+                GetStyle={{
+                    backgroundImage: `url(${assets.SingUp.svg.Password})`
+                }}
+                isDobule={true}
+            />
 
             <button type="submit">Create account</button>
             </FormContext.Provider>
