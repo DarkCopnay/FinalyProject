@@ -293,6 +293,19 @@ main {
   -webkit-transform: translateY(3px);
           transform: translateY(3px);
 }
+#topnav_menu .topnav_center section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+}
 #topnav_menu .topnav_center .topnav_sign_up {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2433,13 +2446,14 @@ main {
       -ms-flex-direction: row;
           flex-direction: row;
   width: 100%;
-  height: 100vh;
 }
 .SingUp img {
   width: 80%;
   max-width: 90%;
   -o-object-fit: cover;
      object-fit: cover;
+  margin: 20px;
+  border-radius: 50px;
 }
 .SingUp .SingUp_right {
   display: -webkit-box;
@@ -2452,7 +2466,9 @@ main {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 100px 60px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 100px 0px;
   width: 100%;
   color: white;
 }
@@ -2519,7 +2535,7 @@ main {
   background-size: auto 60%;
   background-repeat: no-repeat;
   border: none;
-  border-radius: 20px;
+  border-radius: 15px;
   outline: none;
 }
 .SingUp .SingUp_right .SingUp_right_content label input::-webkit-input-placeholder {
@@ -2552,12 +2568,19 @@ main {
   width: 34%;
   height: 46px;
   border: none;
-  border-radius: 20px;
+  border-radius: 15px;
   background-color: #A259FF;
   color: white;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+.SingUp .SingUp_right .SingUp_right_content button:hover {
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
+  background-color: #8022fa;
 }
 
 .MarketPlace {
@@ -3391,15 +3414,24 @@ main {
   .step_8 .step_8_form .step_8_form_right {
     text-align: center;
   }
-  .Sing_Up {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+  .SingUp {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
     margin: 80px 0;
     gap: 35px;
   }
-  .Sing_Up .Sing_Up_content .Sing_Up_right {
+  .SingUp img {
+    -ms-flex-item-align: center;
+        align-self: center;
+    margin: 0px;
+  }
+  .SingUp .SingUp_right {
     text-align: center;
+  }
+  .Login .Login_content {
+    width: 65%;
   }
 }
 @media screen and (max-width: 768px) {
@@ -3523,6 +3555,12 @@ main {
   .MarketPlace .MarketPlace_header p {
     font-size: 20px;
   }
+  .Login .Login_content {
+    width: 65%;
+  }
+  .Login .Login_content button {
+    width: 70%;
+  }
 }
 @media screen and (max-width: 425px) {
   .topnav {
@@ -3607,34 +3645,51 @@ main {
   .Footer .footer_content .footer_right {
     text-align: center;
   }
-  .Sing_Up .Sing_Up_content .Sing_Up_right h2 {
-    font-size: 28px;
+  .SingUp .SingUp_right {
+    padding: 0 0px !important;
   }
-  .Sing_Up .Sing_Up_content .Sing_Up_right p {
+  .SingUp .SingUp_right header h2 {
+    font-size: 35px;
+  }
+  .SingUp .SingUp_right header p {
+    font-size: 14px;
+    padding: 0 15px;
+    word-break: keep-all;
+  }
+  .SingUp .SingUp_right .SingUp_right_content label {
+    width: 90%;
+  }
+  .SingUp .SingUp_right .SingUp_right_content label input::-webkit-input-placeholder {
+    font-size: 16px;
+  }
+  .SingUp .SingUp_right .SingUp_right_content label input::-moz-placeholder {
+    font-size: 16px;
+  }
+  .SingUp .SingUp_right .SingUp_right_content label input:-ms-input-placeholder {
+    font-size: 16px;
+  }
+  .SingUp .SingUp_right .SingUp_right_content label input::-ms-input-placeholder {
+    font-size: 16px;
+  }
+  .SingUp .SingUp_right .SingUp_right_content label input::placeholder {
+    font-size: 16px;
+  }
+  .SingUp .SingUp_right .SingUp_right_content button {
+    width: 90%;
     font-size: 14px;
   }
-  .Sing_Up .Sing_Up_content .Sing_Up_right .Sing_Up_right_content .input_box input::-webkit-input-placeholder {
-    font-size: 12px;
-    font-weight: 600;
+  .Login h2 {
+    font-size: 30px;
+    text-align: center;
   }
-  .Sing_Up .Sing_Up_content .Sing_Up_right .Sing_Up_right_content .input_box input::-moz-placeholder {
-    font-size: 12px;
-    font-weight: 600;
+  .Login .Login_content {
+    width: 90%;
   }
-  .Sing_Up .Sing_Up_content .Sing_Up_right .Sing_Up_right_content .input_box input:-ms-input-placeholder {
-    font-size: 12px;
-    font-weight: 600;
+  .Login .Login_content span {
+    font-size: 18px;
   }
-  .Sing_Up .Sing_Up_content .Sing_Up_right .Sing_Up_right_content .input_box input::-ms-input-placeholder {
-    font-size: 12px;
-    font-weight: 600;
-  }
-  .Sing_Up .Sing_Up_content .Sing_Up_right .Sing_Up_right_content .input_box input::placeholder {
-    font-size: 12px;
-    font-weight: 600;
-  }
-  .Sing_Up .Sing_Up_content .Sing_Up_right .Sing_Up_right_content button {
-    font-size: 14px;
+  .Login .Login_content button {
+    width: 80%;
   }
   .Error404 .bg_error {
     font-size: 21vmax;

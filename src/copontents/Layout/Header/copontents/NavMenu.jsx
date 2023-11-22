@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import { assets } from "../../../../assets/Assets";
 import { urls } from "../Header";
 
@@ -31,18 +31,24 @@ export default function NavMenu() {
                         <span className="material-symbols-outlined" id="topnav_menu_close" onClick={CloseMenu}>close</span>
                     </section>
 
-                    <Link onClick={CloseMenu} to={urls.home}><img src={assets.logo} /></Link>
+                    <NavLink onClick={CloseMenu} to={urls.home}><img src={assets.logo} /></NavLink>
 
                     <section className="topnav_center">
                         <ul>
-                            <li><Link onClick={CloseMenu} to={urls.market}>Marketplace <span></span></Link></li>
-                            <li><Link onClick={CloseMenu} to={urls.rank}>Rankings <span></span></Link></li>
-                            <li><Link to={urls.contact}>Connect a wallet <span></span></Link></li>
+                            <li><NavLink onClick={CloseMenu} to={urls.market}>Marketplace <span></span></NavLink></li>
+                            <li><NavLink onClick={CloseMenu} to={urls.rank}>Rankings <span></span></NavLink></li>
+                            {/* <li><NavLink to={urls.contact}>Connect a wallet <span></span></NavLink></li> */}
                         </ul>
-                        <Link to={urls.singup} className="topnav_sign_up">
+                        <section>
+                            <NavLink onClick={CloseMenu} to="/register" className="topnav_sign_up">
                             <span className="material-symbols-outlined">person</span>
-                            Sign Up
-                        </Link>
+                                Sign Up
+                            </NavLink>
+                            <NavLink onClick={CloseMenu} className="topnav_sign_up" to={urls.login}>
+                                <span className="material-symbols-outlined">login</span>
+                                Login
+                            </NavLink>
+                        </section>
                     </section>
             </section> :
             null
