@@ -1,9 +1,14 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom"
+import { jwtDecode } from "jwt-decode";
 import { assets } from "../../../../assets/Assets";
 import { urls } from "../Header";
+import AxiosInit from "../../../../axios/axiosInit";
 
 export default function NavMenu() {
+    const isAuth = localStorage.getItem('token');
+    const [nickname, setNickname] = useState('');
+    const [avatarURL, setAvatarURL] = useState('');
     const [IsOpenMenu, SetIsOpenMenu] = useState(false);
 
     function OpenMenu() {
@@ -18,6 +23,17 @@ export default function NavMenu() {
         setTimeout(() => {
             SetIsOpenMenu(false);
         }, 1000)
+    }
+
+    if (isAuth) {
+        AxiosInit.get(`/profile/${jwtDecode(isAuth)._id}`)
+        .then((res) => {
+            setNickname(res.data.nickname);
+            setAvatarURL(res.data.avatarURL);
+        })
+        .catch((err) => {
+            console.log(err);
+        })
     }
 
     return (
@@ -40,14 +56,26 @@ export default function NavMenu() {
                             {/* <li><NavLink to={urls.contact}>Connect a wallet <span></span></NavLink></li> */}
                         </ul>
                         <section>
-                            <NavLink onClick={CloseMenu} to="/register" className="topnav_sign_up">
-                            <span className="material-symbols-outlined">person</span>
-                                Sign Up
-                            </NavLink>
-                            <NavLink onClick={CloseMenu} className="topnav_sign_up" to={urls.login}>
-                                <span className="material-symbols-outlined">login</span>
-                                Login
-                            </NavLink>
+                            {
+                                !isAuth ?
+                                <>
+                                    <NavLink onClick={CloseMenu} to="/register" className="topnav_sign_up">
+                                        <span className="material-symbols-outlined">person</span>
+                                        Sign Up
+                                    </NavLink>
+                                    <NavLink onClick={CloseMenu} className="topnav_sign_up" to={urls.login}>
+                                        <span className="material-symbols-outlined">login</span>
+                                        Login
+                                     </NavLink>
+                                </>
+                                :
+                                <>
+                                    <NavLink reloadDocument to={`/profile/${jwtDecode(isAuth)._id}`} className="topnav_Profile">
+                                        <img src={!avatarURL ? assets.Profile.NonAvatar : avatarURL} />
+                                        <h4>{nickname}</h4>
+                                    </NavLink>
+                                </>
+                            }
                         </section>
                     </section>
             </section> :
