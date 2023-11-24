@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react"
+import { useState, useEffect, useContext, useRef } from "react"
 import AxiosInit from "../../../../axios/axiosInit";
 import { FormContext } from "./PostForm";
 
@@ -8,6 +8,7 @@ export default function ValidInput( {Id, Type, UnderTpye, Value, Placehloder, Ge
     const [dataEmail, setDataEmail] = useState();
     const [IsError, setIsError] = useState(false);
     const [ErrorMsg, setErrorMsg] = useState("");
+    const ErrorRefInput = useRef();
     const GetValue = useContext(FormContext);
 
 
@@ -47,7 +48,7 @@ export default function ValidInput( {Id, Type, UnderTpye, Value, Placehloder, Ge
             function NicknameValid() {
                 if (Value.length >= 1 && Value.length < 4) {
                     setIsError(true);
-                    setErrorMsg(`Nickname must be longer than 4 symbols.`)
+                    setErrorMsg(`Nickname must be longer than 8 symbols.`)
                 }
 
                 if (!data) {
@@ -64,7 +65,7 @@ export default function ValidInput( {Id, Type, UnderTpye, Value, Placehloder, Ge
             function UsernameValid() {
                 if (Value.length > 1 && Value.length < 4) {
                     setIsError(true);
-                    setErrorMsg(`Nickname must be longer than 4 symbols.`)
+                    setErrorMsg(`Username must be longer than 8 symbols.`)
                 }
 
                 if (!data) {
@@ -92,11 +93,18 @@ export default function ValidInput( {Id, Type, UnderTpye, Value, Placehloder, Ge
 
         function EmailValid() {
             const EmailRegax = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
-            if (EmailRegax.test(Value)) {
-                setIsError(false);
-            } else {
+
+            if (Value === "") {
                 setIsError(true);
-                setErrorMsg("Invalid water email")
+                setErrorMsg("Field is empty");
+    
+            } else {
+                if (EmailRegax.test(Value)) {
+                    setIsError(false);
+                } else {
+                    setIsError(true);
+                    setErrorMsg("Invalid water email")
+                }
             }
 
             dataEmail.map((data) => {
@@ -112,6 +120,16 @@ export default function ValidInput( {Id, Type, UnderTpye, Value, Placehloder, Ge
         }
 
         function PasswordValid() {
+            if (Value === "") {
+                setIsError(true);
+                setErrorMsg("Field is empty");
+    
+            } else {
+                if (Value.length < 8) {
+                    setIsError(true);
+                    setErrorMsg("Password must be more than 8 characters")
+                }
+            } 
         }
 
         switch (Type) {
@@ -140,6 +158,7 @@ export default function ValidInput( {Id, Type, UnderTpye, Value, Placehloder, Ge
                 placeholder={Placehloder}
                 onChange={ContorlInput}
                 style={GetStyle}
+                ref={ErrorRefInput}
             />
 
             {IsError ? <span>*{ErrorMsg}</span>: null}
