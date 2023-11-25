@@ -2243,6 +2243,11 @@ main {
   width: 90%;
   margin-top: 20px;
 }
+.Profile .Profile_medium .Profile_medium_content > h2 {
+  color: #858584;
+  font-size: 30px;
+  margin: 20px 0;
+}
 
 .NFTcard {
   display: -webkit-box;

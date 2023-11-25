@@ -229,6 +229,12 @@
             flex-wrap: wrap;
             width: 90%;
             margin-top: 20px;
+
+            & > h2 {
+                color: #858584;
+                font-size: 30px;
+                margin: 20px 0;
+            }
         }
     }
 }

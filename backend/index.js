@@ -34,6 +34,7 @@ app.use('/src/assets', express.static('upload'))
 app.post('/register', RegisterValid, UserControl.register)
 app.post('/login', LoginValid, UserControl.login)
 app.get('/profile/:id', UserControl.Profile);
+// app.post('/profile/:id/edit')
 app.get('/users', UserControl.UsersDataList);
 app.get('/ranks', UserControl.Ranks);
 

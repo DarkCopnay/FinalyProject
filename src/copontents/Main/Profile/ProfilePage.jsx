@@ -25,12 +25,14 @@ export default function ProfilePage() {
             navigate('/404');
         })
     }, [])
+
     function OnlyUserAuthRender() {
         if (token) {
             const decodeToken = jwtDecode(token)._id;
             if (decodeToken === id) {
                 return (
                     <>
+                        <NavLink to={`/market/create`}>Create NFT</NavLink>
                         <NavLink to={`/profile/${id}/edit`}>Edit</NavLink>
                         <button className="Logout" onClick={onLogout}>Logout</button>
                     </>

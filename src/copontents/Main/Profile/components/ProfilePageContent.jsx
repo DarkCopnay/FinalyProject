@@ -23,7 +23,7 @@ export default function ProfilePageContent( {ProfileData} ) {
             <section className="Profile_medium_content">
                 {
                     !data ?
-                    <h2>Loading...</h2>
+                    <h2>You don't own any nft</h2>
                     :
                     data.filter((UserData) => UserData.Author.username === ProfileData.username).map((data, index) => 
                         <CardLayout
@@ -40,7 +40,3 @@ export default function ProfilePageContent( {ProfileData} ) {
         </section>
     )
 }
-
-{/* data.map((data) => {
-                        console.log(data);
-                    }) */}
