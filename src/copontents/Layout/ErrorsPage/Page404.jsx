@@ -1,7 +1,7 @@
-import { NavLink } from "react-router-dom"
-import { urls } from "../Header/Header"
+import { NavLink, useNavigate } from "react-router-dom"
 
 export default function Page404() {
+    const navigate = useNavigate()
     return (
         <>
             <section className="Error404">
@@ -9,7 +9,7 @@ export default function Page404() {
                 <section className="Error404_content">
                     <h1>Page not found</h1>
                     <p>Check the link above the site</p>
-                    <NavLink to={urls.home}>Return Home</NavLink>
+                    <NavLink to={navigate(-2)}>Return</NavLink>
                 </section>
             </section>
         </>

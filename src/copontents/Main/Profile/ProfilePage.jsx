@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { useParams, NavLink, useNavigate } from "react-router-dom";
 import AxiosInit from "../../../axios/axiosInit";
 import { jwtDecode } from "jwt-decode";
-import { urls } from "../../Layout/Header/Header";
 import ProfilePageContent from "./components/ProfilePageContent";
 
 export default function ProfilePage() {
@@ -21,7 +20,7 @@ export default function ProfilePage() {
             setIsLoading(false);
         })
         .catch((err) => {
-            console.error(err);
+            console.log(err)
             navigate('/404');
         })
     }, [])

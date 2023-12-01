@@ -158,6 +158,14 @@
 
                 .step_5_content_edit {
                     justify-content: center;
+
+                    & > h2 {
+                        font-size: 45px;
+                        color: #858585;
+                        text-shadow: -8px 10px 6px #2B2B2B;
+                        transform: rotateX(15deg) rotateY(30deg);
+                    }
+
                 }
 
                 .step_5_box_edit {
@@ -189,6 +197,10 @@
                     
                     .step_5_box_content_edit {
                         background-color: #2B2B2B;
+
+                        & > h2 {
+                            color: white;
+                        }
 
                         section {
                             a {

@@ -52,7 +52,7 @@ export default function NavMenu() {
                     <section className="topnav_center">
                         <ul>
                             <li><NavLink onClick={CloseMenu} to={urls.market}>Marketplace <span></span></NavLink></li>
-                            <li><NavLink onClick={CloseMenu} to={urls.rank}>Rankings <span></span></NavLink></li>
+                            {/* <li><NavLink onClick={CloseMenu} to={urls.rank}>Rankings <span></span></NavLink></li> */}
                             {/* <li><NavLink to={urls.contact}>Connect a wallet <span></span></NavLink></li> */}
                         </ul>
                         <section>

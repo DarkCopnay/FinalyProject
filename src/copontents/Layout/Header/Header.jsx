@@ -36,7 +36,7 @@ export default function Headers() {
                 <section className="topnav_right">
                     <ul>
                         <li><NavLink to={urls.market}>Marketplace <span></span></NavLink></li>
-                        <li><NavLink to={urls.rank}>Rankings <span></span></NavLink></li>
+                        {/* <li><NavLink to={urls.rank}>Rankings <span></span></NavLink></li> */}
                     </ul>
 
 
