@@ -2109,11 +2109,6 @@ main {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   gap: 15px;
   margin-top: 100px;
 }
@@ -2835,13 +2830,6 @@ main {
       -ms-flex-pack: center;
           justify-content: center;
 }
-.MarketPlace .MarketPlace_medium .MarketPlace_medium_content .step_5_edit .step_5_content_edit > h2 {
-  font-size: 45px;
-  color: #858585;
-  text-shadow: -8px 10px 6px #2B2B2B;
-  -webkit-transform: rotateX(15deg) rotateY(30deg);
-          transform: rotateX(15deg) rotateY(30deg);
-}
 .MarketPlace .MarketPlace_medium .MarketPlace_medium_content .step_5_edit .step_5_box_edit {
   width: 45%;
 }
@@ -2879,9 +2867,6 @@ main {
 }
 .MarketPlace .MarketPlace_medium .MarketPlace_medium_content .step_5_edit .step_5_box_edit .step_5_box_content_edit {
   background-color: #2B2B2B;
-}
-.MarketPlace .MarketPlace_medium .MarketPlace_medium_content .step_5_edit .step_5_box_edit .step_5_box_content_edit > h2 {
-  color: white;
 }
 .MarketPlace .MarketPlace_medium .MarketPlace_medium_content .step_5_edit .step_5_box_edit .step_5_box_content_edit section a img {
   width: 24px;
