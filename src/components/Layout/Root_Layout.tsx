@@ -1,3 +1,4 @@
+import { Footer } from "./Footer/Footer"
 import { Header } from "./Header/Header"
 import { RootLayoutProps } from "./Interfaces"
 
@@ -8,7 +9,7 @@ export const Root_Layout = ( {children}:RootLayoutProps ) => {
                 <main>
                     {children}
                 </main>
-            <h2>DOWN</h2>
+            <Footer />
         </>
     )
 }

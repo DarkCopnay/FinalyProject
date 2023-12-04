@@ -5,5 +5,5 @@ import { Root_Layout } from "./Layout/Root_Layout";
 export const Componetns = {
     Home,
     Page404,
-    Root_Layout
+    Root_Layout,
 }

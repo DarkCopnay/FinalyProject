@@ -7,7 +7,7 @@ export const RoutesComponetns = ({Components}:any ) => {
     return (
         <Routes>
             <Route index element={<PageTemplate Layout={Root_Layout} Content={Home}/>} />
-            <Route path="/404" element={Page404}/>
+            <Route path="/404" element={<Page404/>} />
             <Route path="*" element={<Navigate to='/404'/>}/>
         </Routes>
     )
