@@ -7,9 +7,9 @@ import ProfilePageContent from "./components/ProfilePageContent";
 
 export default function ProfilePage() {
     const [data, setData] = useState();
+    const [IsLoading, setIsLoading] = useState(true);
     const navigate = useNavigate();
     const token = window.localStorage.getItem("token");
-    const [IsLoading, setIsLoading] = useState(true);
 
     const { id } = useParams();
 
@@ -20,10 +20,10 @@ export default function ProfilePage() {
             setIsLoading(false);
         })
         .catch((err) => {
-            console.log(err)
-            navigate('/404');
+            console.log(err);
         })
     }, [])
+
 
     function OnlyUserAuthRender() {
         if (token) {
@@ -57,6 +57,8 @@ export default function ProfilePage() {
         <>
             {
                 IsLoading ? <h2>Profile Loading...</h2>
+                :
+                data.ErrorMsg ? navigate("/404")
                 :
                 <section className="Profile">
                     <section className="Profile_header_BG">

@@ -83,24 +83,20 @@ export const login = async (req, res) => {
     }
 }
 
-export const Profile = async (req, res) => {
+export const ProfileView = async (req, res) => {
     try {
         const userID = req.params.id;
         
         Users.findById({
             _id: userID
-        })
+        }).select("-password")
         .then((profileID) => {
-            if (!profileID) {
-                return res.status(404).json({
-                    ErrorMsg: "User not found"
-                })
-            } else {
-                const {password, ...userData} = profileID._doc;
-                res.json({
-                    ...userData
-                });
-            }
+            res.json(profileID);
+        })
+        .catch((err) => {
+            return res.json({
+                ErrorMsg: "User not found"
+            })
         })
 
     } catch (error) {
