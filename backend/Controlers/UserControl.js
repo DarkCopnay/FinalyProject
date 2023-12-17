@@ -5,9 +5,9 @@ import { validationResult } from "express-validator"
 
 export const register = async (req, res) => {
     try {
-        const error = validationResult(req);
+        const RegisterError = validationResult(req);
 
-        if (!error.isEmpty()) {
+        if (!RegisterError.isEmpty()) {
             return res.status(400).json(error.array());
         }
 
@@ -47,7 +47,6 @@ export const register = async (req, res) => {
 
 export const login = async (req, res) => {
     try {
-        //Проверка 
         const userValid = await Users.findOne({ username: req.body.username })
 
         if (!userValid) {

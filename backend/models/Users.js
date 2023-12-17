@@ -36,6 +36,13 @@ const userSchema = new mongoose.Schema({
         },
     },
 
+    permissions: {
+        role: {
+            type: String,
+            default: "User"
+        }
+    },
+
     social: {
         DiscordLink: {
             type: String,
