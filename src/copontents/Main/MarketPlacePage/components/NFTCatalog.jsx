@@ -1,42 +1,31 @@
 import { assets } from "../../../../assets/Assets"
 import { NavLink } from "react-router-dom"
-
+import { CardLayout } from "../../../Layout/CardLayout/CardLayout"
 
 export default function NFTCatalog( {SearchInfo, items} ) {
     return (
         <section className="step_5 step_5_edit">
             <section className="step_5_content step_5_content_edit">
-            <section className="step_5 step_5_edit">
-            <section className="step_5_content step_5_content_edit">
-                {
-                    items.length === 0 ?
-                    <h2>NFT not found</h2>
-                    :
-                    items.map((obj, index) => 
-                    <section className='step_5_box step_5_box_edit' key={index}>
-                            {obj.ImgURL ? <img src={obj.ImgURL} alt={obj.ImgURL}/> : <section className="step_5_not_loaded_img"><span className="material-symbols-outlined">image</span></section>}
-                            <section className='step_5_box_content step_5_box_content_edit'>
-                                <section>
-                                    <h2>{obj.title}</h2>
-                                    <NavLink to={`/profile/${obj.Author._id}`} ><img src={!obj.Author.avatarURL ? assets.Profile.NonAvatar : obj.Author.avatarURL} alt="avatar_16" /> {obj.Author.nickname} 
-                                    {obj.Author.verify ? <span contextMenu="User verifed" className="material-symbols-outlined">verified</span> : null}</NavLink>
-                                </section>
-                                <section className='step_5_box_footer step_5_box_footer_edit'>
-                                    <section>
-                                        <h4>Price</h4>
-                                        <p>{obj.price} ETH</p>
-                                    </section>
-                                    <section style={ {textAlign:'end'} }>
-                                        <h4>Highest Bid</h4>
-                                        <p>0 ETH</p>
-                                     </section>
-                                </section>
-                            </section>
+                <section className="step_5 step_5_edit">
+                    <section className="step_5_content step_5_content_edit">
+                        {
+                            items.length === 0 ?
+                            <h2>NFT not found</h2>
+                            :
+                            items.map((obj, index) => 
+                                <CardLayout
+                                    key={index}
+                                    _id={obj.Author._id}
+                                    NFTname={obj.title}
+                                    AuthorName={obj.Author.nickname}
+                                    VerifyCheck={obj.Author.verify}
+                                    Color={"#464343"}
+                                    Price={100}
+                                />,
+                            )
+                        }
                     </section>
-                    )
-                }
-            </section>
-        </section>
+                </section>
             </section>
         </section>
     )

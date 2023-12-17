@@ -1,10 +1,10 @@
 import AxiosInit from "../../../../axios/axiosInit";
-import CardLayout from "../../../Layout/CardLayout/CardLayout";
+import { CardLayout } from "../../../Layout/CardLayout/CardLayout";
 import { useEffect, useState } from "react";
 
 export default function ProfilePageContent( {ProfileData} ) {
     const [data, setData] = useState();
-    const [NFT, setNFT] = useState();
+    // const [NFT, setNFT] = useState();
 
     useEffect(() => {
         AxiosInit.get('/market')
