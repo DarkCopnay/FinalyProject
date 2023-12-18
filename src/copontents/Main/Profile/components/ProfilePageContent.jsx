@@ -1,4 +1,4 @@
-import AxiosInit from "../../../../axios/axiosInit";
+import { AxiosInit } from "../../../../axios/axiosInit";
 import { CardLayout } from "../../../Layout/CardLayout/CardLayout";
 import { useEffect, useState } from "react";
 

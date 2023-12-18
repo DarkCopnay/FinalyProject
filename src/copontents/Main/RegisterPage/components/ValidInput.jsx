@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext, useRef } from "react"
-import AxiosInit from "../../../../axios/axiosInit";
+import { AxiosInit } from "../../../../axios/axiosInit";
 import { FormContext } from "./PostForm";
 
 

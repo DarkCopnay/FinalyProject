@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom"
 import { jwtDecode } from "jwt-decode";
 import { assets } from "../../../../assets/Assets";
 import { urls } from "../Header";
-import AxiosInit from "../../../../axios/axiosInit";
+import { AxiosInit } from "../../../../axios/axiosInit";
 
 export default function NavMenu() {
     const isAuth = localStorage.getItem('token');

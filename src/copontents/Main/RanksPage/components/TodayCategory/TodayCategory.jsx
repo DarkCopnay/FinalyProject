@@ -1,7 +1,7 @@
 import { assets } from "../../../../../assets/Assets";
 import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
-import AxiosInit from "../../../../../axios/axiosInit";
+import { AxiosInit } from "../../../../../axios/axiosInit";
 
 export default function TodayCategory() {
     const [data, setData] = useState();

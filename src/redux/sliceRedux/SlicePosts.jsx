@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import AxiosInit from '../../axios/axiosInit';
+import { AxiosInit } from '../../axios/axiosInit';
 
 export const fetchNFTposts = createAsyncThunk('market/fetchNFTposts', async () => {
     const { data } = await AxiosInit.get('/market');

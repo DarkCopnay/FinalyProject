@@ -2,8 +2,9 @@ import { NavLink, useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 import { assets } from "../../../assets/Assets"
 import { jwtDecode } from "jwt-decode"
+import { AxiosInit } from "../../../axios/axiosInit"
 import NavMenu from "./copontents/NavMenu"
-import AxiosInit from "../../../axios/axiosInit"
+import { motion } from "framer-motion"
 // import PreLoader from "./copontents/PreLoader"
 
 export const urls = {
@@ -32,7 +33,8 @@ export default function Headers() {
             {/* <PreLoader /> */}
             <header>
                 <nav className="topnav">
-                <NavLink to="/"><img src={assets.logo}/></NavLink>
+                    <NavLink to="/"><motion.img src={assets.logo} /></NavLink>
+                    
                 <section className="topnav_right">
                     <ul>
                         <li><NavLink to={urls.market}>Marketplace <span></span></NavLink></li>

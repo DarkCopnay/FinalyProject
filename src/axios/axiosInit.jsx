@@ -9,4 +9,4 @@ AxiosInit.interceptors.request.use((config) => {
     return config;
 })
 
-export default AxiosInit;
+export {AxiosInit};

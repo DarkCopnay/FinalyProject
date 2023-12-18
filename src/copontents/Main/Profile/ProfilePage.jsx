@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { useParams, NavLink, useNavigate } from "react-router-dom";
 import { assets } from "../../../assets/Assets";
 import { jwtDecode } from "jwt-decode";
-import { motion } from "framer-motion";
-import AxiosInit from "../../../axios/axiosInit";
+// import { motion } from "framer-motion";
+import { AxiosInit } from "../../../axios/axiosInit";
 import ProfilePageContent from "./components/ProfilePageContent";
 
 export default function ProfilePage() {
