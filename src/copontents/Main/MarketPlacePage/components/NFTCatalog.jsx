@@ -12,14 +12,14 @@ export default function NFTCatalog( {SearchInfo, items} ) {
                             items.length === 0 ?
                             <h2>NFT not found</h2>
                             :
-                            items.map((obj, index) => 
+                            items.map((data, index) => 
                                 <CardLayout
                                     key={index}
-                                    _id={obj.Author._id}
-                                    NFTname={obj.title}
-                                    AuthorName={obj.Author.nickname}
-                                    VerifyCheck={obj.Author.verify}
+                                    _AuthorID={data.Author._id}
+                                    NFTname={data.title}
+                                    AuthorName={data.Author.nickname}
                                     Color={"#464343"}
+                                    VerifyMe={data.Author.verify}
                                     Price={100}
                                 />,
                             )
