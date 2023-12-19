@@ -3,7 +3,7 @@ import { validationResult } from "express-validator";
 
 export const getAll = async (req, res) => {
     try {
-        const postsNft = await NFTpostModel.find().populate('Author').exec();
+        const postsNft = await NFTpostModel.find().populate("Author").exec();
 
         if (postsNft.length === 0 ) {
             return res.status(404).json({

@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 
 export default function ProfilePageContent( {ProfileData} ) {
     const [data, setData] = useState();
-    // const [NFT, setNFT] = useState();
 
     useEffect(() => {
         AxiosInit.get('/market')
@@ -14,12 +13,12 @@ export default function ProfilePageContent( {ProfileData} ) {
         .catch((err) => {
             console.log(err)
         })
-    }, [])
+    }, []);
     return (
         <section className="Profile_medium">
-            <header className="Profile_medium_header">
-                <button>Created <span>{0}</span></button>
-            </header>
+            {/* <header className="Profile_medium_header">
+                <button>Created <span>{data ? console.log(" "): data.length}</span></button>
+            </header> */}
             <section className="Profile_medium_content">
                 {
                     !data ?
@@ -32,6 +31,8 @@ export default function ProfilePageContent( {ProfileData} ) {
                             isNeedAuthor={false}
                             NFTname={data.title}
                             AuthorName={data.Author.nickname}
+                            Data={data}
+                            IsDelButton={true}
                             Price={data.price}
                         />
                     )

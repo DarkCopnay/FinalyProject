@@ -2241,8 +2241,10 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 30px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   width: 90%;
@@ -2263,10 +2265,47 @@ main {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 25%;
+  position: relative;
 }
 .NFTcard img {
   -o-object-fit: cover;
      object-fit: cover;
+}
+.NFTcard .NFTcard_control_menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -ms-flex-item-align: center;
+      align-self: center;
+  gap: 10px;
+  width: 90%;
+  position: absolute;
+  top: 15px;
+}
+.NFTcard .NFTcard_control_menu button {
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: red;
+}
+.NFTcard .NFTcard_control_menu button > span {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  opacity: 0;
 }
 .NFTcard .NFTcard_contnet {
   display: -webkit-box;

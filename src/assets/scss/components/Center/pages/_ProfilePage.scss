@@ -227,7 +227,8 @@
         .Profile_medium_content {
             display: flex;
             flex-direction: row;
-            justify-content: space-around;
+            justify-content: center;
+            gap: 30px;
             flex-wrap: wrap;
             width: 90%;
             margin-top: 20px;
