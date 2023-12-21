@@ -1,7 +1,7 @@
 import { assets } from "../../../assets/Assets";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
-import AxiosInit from "../../../axios/axiosInit";
+import { AxiosInit } from "../../../axios/axiosInit";
 import { jwtDecode } from "jwt-decode";
 
 export const CardLayout = ( {_id, _AuthorID, isNeedAuthor=true, IsDelButton=false, NFTname, NFTImg, AuthorName, AuthorAvatar, VerifyMe,Color, Price} ) => {
