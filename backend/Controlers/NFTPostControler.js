@@ -89,7 +89,11 @@ export const remove = async (req, res) => {
 export const create = async (req, res) => {
     try {
         const error = validationResult(req);
-
+        
+        if (!error.isEmpty()) {
+            return res.status(400).json(error.array())
+        }
+        
         const NFTpostDoc = new NFTpostModel({
             title: req.body.title,
             price: req.body.price,
@@ -99,9 +103,6 @@ export const create = async (req, res) => {
         
         const NftPostCreate = await NFTpostDoc.save();
 
-        if (!error.isEmpty()) {
-            return res.status(400).json(error.array())
-        }
 
         res.json(NftPostCreate)
     } catch (error) {

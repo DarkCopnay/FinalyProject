@@ -17,7 +17,7 @@ export default function HomePage() {
             <Step_5/>
             <Step_6/>
             <Step_7/>
-            <Step_8/>
+            {/* <Step_8/> */}
         </>
     )
 }

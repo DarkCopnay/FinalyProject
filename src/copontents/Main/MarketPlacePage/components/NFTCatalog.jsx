@@ -1,5 +1,3 @@
-import { assets } from "../../../../assets/Assets"
-import { NavLink } from "react-router-dom"
 import { CardLayout } from "../../../Layout/CardLayout/CardLayout"
 
 export default function NFTCatalog( {SearchInfo, items} ) {
@@ -21,7 +19,7 @@ export default function NFTCatalog( {SearchInfo, items} ) {
                                     Color={"#464343"}
                                     VerifyMe={data.Author.verify}
                                     Price={100}
-                                />,
+                                />
                             )
                         }
                     </section>

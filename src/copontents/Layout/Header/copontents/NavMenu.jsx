@@ -69,12 +69,10 @@ export default function NavMenu() {
                                      </NavLink>
                                 </>
                                 :
-                                <>
-                                    <NavLink reloadDocument to={`/profile/${jwtDecode(isAuth)._id}`} className="topnav_Profile">
-                                        <img src={!avatarURL ? assets.Profile.NonAvatar : avatarURL} />
+                                <NavLink reloadDocument to={`/profile/${jwtDecode(isAuth)._id}`} className="topnav_Profile">
+                                        <img  width={"15px"} height={"15px"} src={!avatarURL ? assets.Profile.NonAvatar : avatarURL} alt="avatar"/>
                                         <h4>{nickname}</h4>
-                                    </NavLink>
-                                </>
+                                </NavLink>
                             }
                         </section>
                     </section>
