@@ -1,11 +1,9 @@
-import { useState, createContext } from "react"
+import { useState } from "react"
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { assets } from "../../../../assets/Assets";
 import { fetchRegister } from "../../../../redux/sliceRedux/SliceAuth";
 import ValidInput from "./ValidInput";
-
-export const FormContext = createContext();
 
 export default function PostForm() {
     const navigate = useNavigate()
@@ -36,7 +34,7 @@ export default function PostForm() {
 
     async function RegisterPost(event) {
         event.preventDefault();
-        setValue(event);
+        setValue(event)
         const RegisterData = await dispatch(fetchRegister({
                 email: FormData.email,
                 password: FormData.password,
@@ -51,14 +49,14 @@ export default function PostForm() {
     }
     return (
         <form className="SingUp_right_content" onSubmit={RegisterPost}>
-        <FormContext.Provider value={value}>
-         <ValidInput
+        <ValidInput
                 Id={"username"}
                 Type={"text"}
                 Value={FormData.username}
                 UnderTpye={"username"}
                 Placehloder={placeholderName.UserName}
                 ContorlInput={HeadControlerInput}
+                PostEvent={value}
                 GetStyle={{
                     backgroundImage: `url(${assets.SingUp.svg.User})`
                 }}
@@ -71,6 +69,7 @@ export default function PostForm() {
                 Value={FormData.nickname}
                 Placehloder={placeholderName.NickName}
                 ContorlInput={HeadControlerInput}
+                PostEvent={value}
                 GetStyle={{
                     backgroundImage: `url(${assets.SingUp.svg.User})`
                 }}
@@ -82,6 +81,7 @@ export default function PostForm() {
                 Value={FormData.email}
                 Placehloder={placeholderName.Email}
                 ContorlInput={HeadControlerInput}
+                PostEvent={value}
                 GetStyle={{
                     backgroundImage: `url(${assets.SingUp.svg.Email})`
                 }}
@@ -92,13 +92,13 @@ export default function PostForm() {
                 Value={FormData.password}
                 Placehloder={placeholderName.Password}
                 ContorlInput={HeadControlerInput}
+                PostEvent={value}
                 GetStyle={{
                     backgroundImage: `url(${assets.SingUp.svg.Password})`
                 }}
             />
 
-            <button type="submit">Create account</button>
-            </FormContext.Provider>
+            <button type="submit" >Create account</button>
         </form>
     )
 }

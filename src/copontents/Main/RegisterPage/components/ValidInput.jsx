@@ -1,26 +1,29 @@
-import { useState, useEffect, useContext, useRef } from "react"
+import { useState, useEffect, useRef } from "react"
 import { AxiosInit } from "../../../../axios/axiosInit";
-import { FormContext } from "./PostForm";
 
 
-export default function ValidInput( {Id, Type, UnderTpye, Value, Placehloder, GetStyle, ContorlInput, isDobule} ) {
+export default function ValidInput( {
+    Id, 
+    Type, 
+    UnderTpye, 
+    Value, 
+    Placehloder, 
+    GetStyle, 
+    ContorlInput, 
+    PostEvent, 
+    isConfirmPass
+    } ) {
     const [data, setData] = useState();
     const [dataEmail, setDataEmail] = useState();
     const [IsError, setIsError] = useState(false);
     const [ErrorMsg, setErrorMsg] = useState("");
-    const ErrorRefInput = useRef();
-    const GetValue = useContext(FormContext);
-
 
     useEffect(() => {
         AxiosInit.get("/users")
             .then(async (res) => {
                 const responseData = await res.data;
 
-                responseData.map(async (data) => {
-                    const dataAwn = await data
-                    setData(dataAwn);
-                });
+                setData(responseData)
 
                 setDataEmail(responseData);
 
@@ -30,15 +33,15 @@ export default function ValidInput( {Id, Type, UnderTpye, Value, Placehloder, Ge
                 console.error(err);
             })
 
-            if (GetValue) {
-                Validation();
+            if (PostEvent) {
+                Validation()
             }
-    }, [GetValue])
+    }, [PostEvent])
 
     const Validation = () => {
-        if (Value === "") {
-            setIsError(true);
-            setErrorMsg("Field is empty");
+         if  (Value === "") {
+             setIsError(true);
+             setErrorMsg("Field is empty");
 
         } else {
             setIsError(false);
@@ -51,14 +54,13 @@ export default function ValidInput( {Id, Type, UnderTpye, Value, Placehloder, Ge
                     setErrorMsg(`Nickname must be longer than 8 symbols.`)
                 }
 
-                if (!data) {
-                    console.log("");
-                } else {
+                data.map((data) => {
                     if (Value === data.nickname) {
                         setIsError(true);
                         setErrorMsg(`That's the nickname already in use`)
                     }
-                }
+                })
+
 
             }
 
@@ -68,14 +70,13 @@ export default function ValidInput( {Id, Type, UnderTpye, Value, Placehloder, Ge
                     setErrorMsg(`Username must be longer than 8 symbols.`)
                 }
 
-                if (!data) {
-                    console.log("");
-                } else {
+                data.map((data) => {
                     if (Value === data.username) {
                         setIsError(true);
-                        setErrorMsg(`That's the nickname already in use`)
+                        setErrorMsg(`That's the username already in use`)
                     }
-                }
+                    console.log(data.username)
+                })
             }
 
 
@@ -87,6 +88,9 @@ export default function ValidInput( {Id, Type, UnderTpye, Value, Placehloder, Ge
                 case "username":
                     UsernameValid();
                     break;
+
+                default:
+                    throw new Error("UnderType is undefined")
             }
         }
 
@@ -108,13 +112,9 @@ export default function ValidInput( {Id, Type, UnderTpye, Value, Placehloder, Ge
             }
 
             dataEmail.map((data) => {
-                if (!data) {
-                console.log("")
-                } else {
-                    if (Value === data.email) {
-                        setIsError(true);
-                        setErrorMsg("The email is already in use.");
-                    }
+                if (Value === data.email) {
+                    setIsError(true);
+                    setErrorMsg("The email is already in use.");
                 }
             })
         }
@@ -158,7 +158,6 @@ export default function ValidInput( {Id, Type, UnderTpye, Value, Placehloder, Ge
                 placeholder={Placehloder}
                 onChange={ContorlInput}
                 style={GetStyle}
-                ref={ErrorRefInput}
             />
 
             {IsError ? <span>*{ErrorMsg}</span>: null}

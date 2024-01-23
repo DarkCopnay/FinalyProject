@@ -32,16 +32,19 @@ export const CardLayout = ( {_id, _AuthorID, isNeedAuthor=true, IsDelButton=fals
             <img src={NFTImg ? NFTImg : assets.Step_4.bgBox_1}/>
             {
                 IsDelButton ? 
-                     _id ? 
-                    <section className="NFTcard_control_menu">
-                        <motion.button style={{backgroundColor: "green"}} variants={DelBtnAnimation} whileHover="button">
-                            <motion.span variants={DelBtnAnimation} whileHover="span">EDIT</motion.span>
-                        </motion.button>
-                        
-                        <motion.button variants={DelBtnAnimation} whileHover="button">
-                            <motion.span variants={DelBtnAnimation} whileHover="span" onClick={DeleteNFT}>DEL</motion.span>
-                        </motion.button>
-                    </section>
+                    isAuth ?
+                        jwtDecode(isAuth)._id === _AuthorID ? 
+                            <section className="NFTcard_control_menu">
+                                <motion.button style={{backgroundColor: "green"}} variants={DelBtnAnimation} whileHover="button">
+                                    <motion.span variants={DelBtnAnimation} whileHover="span">EDIT</motion.span>
+                                </motion.button>
+                                
+                                <motion.button variants={DelBtnAnimation} whileHover="button">
+                                    <motion.span variants={DelBtnAnimation} whileHover="span" onClick={DeleteNFT}>DEL</motion.span>
+                                </motion.button>
+                            </section>
+                        :
+                        null
                     :
                     null
                 : 
