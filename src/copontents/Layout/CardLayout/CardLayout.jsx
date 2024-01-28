@@ -2,7 +2,9 @@ import { assets } from "../../../assets/Assets";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import { AxiosInit } from "../../../axios/axiosInit";
+import { Slide, toast, ToastContainer, Zoom } from "react-toastify";
 import { jwtDecode } from "jwt-decode";
+
 
 export const CardLayout = ( {_id, _AuthorID, isNeedAuthor=true, IsDelButton=false, NFTname, NFTImg, AuthorName, AuthorAvatar, VerifyMe,Color, Price} ) => {
     const isAuth = localStorage.getItem('token');
@@ -15,20 +17,43 @@ export const CardLayout = ( {_id, _AuthorID, isNeedAuthor=true, IsDelButton=fals
     function DeleteNFT() {
         AxiosInit.delete(`/market/nft/${_id}`)
         .then((res) => {
-            console.log(res);
+            toast.success("NFT has been delete!", {
+                autoClose: 2000,
+                closeButton: false,
+                pauseOnHover: false,
+                hideProgressBar: true,
+                theme: "dark",
+                transition: Slide,
+            });
+            setTimeout(() => {
+                window.location.reload(false)
+            }, 3500);
         })
+
         .catch((err) => {
-            console.warn(err);
+            toast.error("NFT has been not deleted!", {
+                autoClose: 2000,
+                closeButton: false,
+                pauseOnHover: false,
+                hideProgressBar: true,
+                theme: "dark",
+                transition: Slide,
+            });
         })
 
         console.log(AxiosInit)
+
+        
+
     }
 
     return (
-        <motion.section className="NFTcard"
-            whileHover={{scale: 1.02}}
-            transition={{ease: 'easeInOut'}}
-        >
+        <>
+            <ToastContainer />
+            <motion.section className="NFTcard"
+                whileHover={{scale: 1.02}}
+                transition={{ease: 'easeInOut'}}
+            >
             <img src={NFTImg ? NFTImg : assets.Step_4.bgBox_1}/>
             {
                 IsDelButton ? 
@@ -68,6 +93,7 @@ export const CardLayout = ( {_id, _AuthorID, isNeedAuthor=true, IsDelButton=fals
                     <span>{Price} Coin</span>
                 </footer>
             </section>
-        </motion.section>
+            </motion.section>
+        </>
     )
 }

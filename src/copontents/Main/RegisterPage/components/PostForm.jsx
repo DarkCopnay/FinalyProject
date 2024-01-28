@@ -49,54 +49,54 @@ export default function PostForm() {
     }
     return (
         <form className="SingUp_right_content" onSubmit={RegisterPost}>
-        <ValidInput
-                Id={"username"}
-                Type={"text"}
-                Value={FormData.username}
-                UnderTpye={"username"}
-                Placehloder={placeholderName.UserName}
-                ContorlInput={HeadControlerInput}
-                PostEvent={value}
-                GetStyle={{
-                    backgroundImage: `url(${assets.SingUp.svg.User})`
-                }}
-            />
+                <ValidInput
+                    Id={"username"}
+                    Type={"text"}
+                    Value={FormData.username}
+                    UnderTpye={"username"}
+                    Placehloder={placeholderName.UserName}
+                    ContorlInput={HeadControlerInput}
+                    PostEvent={value}
+                    GetStyle={{
+                        backgroundImage: `url(${assets.SingUp.svg.User})`
+                    }}
+                />
 
-            <ValidInput
-                Id={"nickname"}
-                Type={"text"}
-                UnderTpye={"nickname"}
-                Value={FormData.nickname}
-                Placehloder={placeholderName.NickName}
-                ContorlInput={HeadControlerInput}
-                PostEvent={value}
-                GetStyle={{
-                    backgroundImage: `url(${assets.SingUp.svg.User})`
-                }}
-            />
+                <ValidInput
+                    Id={"nickname"}
+                    Type={"text"}
+                    UnderTpye={"nickname"}
+                    Value={FormData.nickname}
+                    Placehloder={placeholderName.NickName}
+                    ContorlInput={HeadControlerInput}
+                    PostEvent={value}
+                    GetStyle={{
+                        backgroundImage: `url(${assets.SingUp.svg.User})`
+                    }}
+                />
 
-            <ValidInput
-                Id={"email"}
-                Type={"email"}
-                Value={FormData.email}
-                Placehloder={placeholderName.Email}
-                ContorlInput={HeadControlerInput}
-                PostEvent={value}
-                GetStyle={{
-                    backgroundImage: `url(${assets.SingUp.svg.Email})`
-                }}
-            />
-            <ValidInput
-                Id={"password"}
-                Type={"password"}
-                Value={FormData.password}
-                Placehloder={placeholderName.Password}
-                ContorlInput={HeadControlerInput}
-                PostEvent={value}
-                GetStyle={{
-                    backgroundImage: `url(${assets.SingUp.svg.Password})`
-                }}
-            />
+                <ValidInput
+                    Id={"email"}
+                    Type={"email"}
+                    Value={FormData.email}
+                    Placehloder={placeholderName.Email}
+                    ContorlInput={HeadControlerInput}
+                    PostEvent={value}
+                    GetStyle={{
+                        backgroundImage: `url(${assets.SingUp.svg.Email})`
+                    }}
+                />
+                <ValidInput
+                    Id={"password"}
+                    Type={"password"}
+                    Value={FormData.password}
+                    Placehloder={placeholderName.Password}
+                    ContorlInput={HeadControlerInput}
+                    PostEvent={value}
+                    GetStyle={{
+                        backgroundImage: `url(${assets.SingUp.svg.Password})`
+                    }}
+                />
 
             <button type="submit" >Create account</button>
         </form>
