@@ -2,7 +2,7 @@ import { assets } from "../../../assets/Assets";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import { AxiosInit } from "../../../axios/axiosInit";
-import { Slide, toast, ToastContainer, Zoom } from "react-toastify";
+import { Slide, toast, ToastContainer } from "react-toastify";
 import { jwtDecode } from "jwt-decode";
 
 
@@ -16,7 +16,7 @@ export const CardLayout = ( {_id, _AuthorID, isNeedAuthor=true, IsDelButton=fals
 
     function DeleteNFT() {
         AxiosInit.delete(`/market/nft/${_id}`)
-        .then((res) => {
+        .then(() => {
             toast.success("NFT has been delete!", {
                 autoClose: 2000,
                 closeButton: false,
@@ -30,7 +30,7 @@ export const CardLayout = ( {_id, _AuthorID, isNeedAuthor=true, IsDelButton=fals
             }, 3500);
         })
 
-        .catch((err) => {
+        .catch(() => {
             toast.error("NFT has been not deleted!", {
                 autoClose: 2000,
                 closeButton: false,
@@ -40,11 +40,6 @@ export const CardLayout = ( {_id, _AuthorID, isNeedAuthor=true, IsDelButton=fals
                 transition: Slide,
             });
         })
-
-        console.log(AxiosInit)
-
-        
-
     }
 
     return (

@@ -10,7 +10,8 @@ export default function ValidInput( {
     Placehloder, 
     GetStyle, 
     ContorlInput, 
-    PostEvent, 
+    PostEvent,
+    CustomErrorMsg,
     isConfirmPass
     } ) {
     const [data, setData] = useState();
@@ -75,7 +76,6 @@ export default function ValidInput( {
                         setIsError(true);
                         setErrorMsg(`That's the username already in use`)
                     }
-                    console.log(data.username)
                 })
             }
 
@@ -89,11 +89,17 @@ export default function ValidInput( {
                     UsernameValid();
                     break;
 
+                case "default":
+                    break;
+
                 default:
                     throw new Error("UnderType is undefined")
             }
         }
 
+        // function NumberValid() {
+
+        // }
 
         function EmailValid() {
             const EmailRegax = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
@@ -160,7 +166,7 @@ export default function ValidInput( {
                 style={GetStyle}
             />
 
-            {IsError ? <span>*{ErrorMsg}</span>: null}
+            {IsError ? <span>*{CustomErrorMsg ? CustomErrorMsg : ErrorMsg}</span>: null}
         </label>
     )
 }

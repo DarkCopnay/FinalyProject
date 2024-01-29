@@ -29,11 +29,7 @@ const upload = multer( {storage} )
 
 app.use(express.json())
 
-app.use(cors({
-    origin: "https://nft-market-rouge-sigma.vercel.app/",
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    credentials: true
-}));
+app.use(cors());
 app.use('/src/assets', express.static('upload'))
 
 app.post('/register', RegisterValid, UserControl.register)
