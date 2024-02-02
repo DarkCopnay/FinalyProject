@@ -1986,15 +1986,95 @@ main {
   width: 35%;
   position: relative;
 }
+.Profile .Profile_header .Profile_header_left input {
+  width: 50%;
+  height: 40px;
+  border: 1px solid #A259FF;
+  background: none;
+  border-radius: 10px;
+  padding: 0 10px;
+  color: white;
+  font-size: 17px;
+  font-weight: 500;
+  outline: none;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.Profile .Profile_header .Profile_header_left input:focus {
+  border-radius: 5px;
+  border-color: white;
+}
 .Profile .Profile_header .Profile_header_left .Profile_Avatar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  text-align: center;
   width: 120px;
   height: 120px;
   -o-object-fit: cover;
      object-fit: cover;
   border: 2px solid black;
   border-radius: 20px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
   position: absolute;
   top: -60px;
+}
+.Profile .Profile_header .Profile_header_left .Profile_Avatar .Profile_Avatar_blur {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(128, 128, 128, 0.427);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  border-radius: 20px;
+  opacity: 0;
+  -webkit-transition: 0.8s ease;
+  transition: 0.8s ease;
+  cursor: pointer;
+}
+.Profile .Profile_header .Profile_header_left .Profile_Avatar .Profile_Avatar_blur > h3 {
+  position: relative;
+  z-index: 2;
+  font-size: 25px;
+  font-weight: 400;
+  color: white;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+  -webkit-transition: 0.8s ease;
+  transition: 0.8s ease;
+}
+.Profile .Profile_header .Profile_header_left .Profile_Avatar .Profile_Avatar_blur:hover {
+  opacity: 1;
+}
+.Profile .Profile_header .Profile_header_left .Profile_Avatar .Profile_Avatar_blur:hover h3 {
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 .Profile .Profile_header .Profile_header_left > h2 {
   display: -webkit-box;
@@ -2012,6 +2092,10 @@ main {
   font-weight: 600;
   text-transform: capitalize;
   color: white;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .Profile .Profile_header .Profile_header_left > h2 span {
   font-size: 30px;

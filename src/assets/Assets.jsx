@@ -94,6 +94,7 @@ import NonAvatar from "./img/NonAvatar.svg";
 
 //upload test
 import uplodaAvater from './upload/9057b7d1c0dd2719adaf8c394d7db896.jpg';
+import file_save from './img/MinePage/file_save_icon.svg'
 
 export const assets = {
     icon: Icon,
@@ -188,6 +189,7 @@ export const assets = {
     },
 
     upload: {
-        uplodaAvater: uplodaAvater
+        uplodaAvater: uplodaAvater,
+        file_save: file_save
     }
 }

@@ -7,10 +7,15 @@ import { AxiosInit } from "../../../axios/axiosInit";
 import ProfilePageContent from "./components/ProfilePageContent";
 
 export default function ProfilePage() {
-    const [data, setData] = useState();
-    const [IsLoading, setIsLoading] = useState(true);
     const navigate = useNavigate();
     const token = window.localStorage.getItem("token");
+    const [IsLoading, setIsLoading] = useState(true);
+    const [IsEditMode, SetIsEditMode] = useState(false);
+    const [data, setData] = useState();
+    const [NewDataForm, setNewDataFrom] = useState({
+
+    })
+
 
     const { id } = useParams();
 
@@ -25,6 +30,13 @@ export default function ProfilePage() {
         })
     }, [])
 
+    function ButtonEditMode() {
+        SetIsEditMode(true);
+        if (IsEditMode) {
+            SetIsEditMode(false);
+        }
+    }
+
 
     function OnlyUserAuthRender() {
         if (token) {
@@ -33,7 +45,8 @@ export default function ProfilePage() {
                 return (
                     <>
                         <NavLink to={`/market/create`}>Create NFT</NavLink>
-                        <NavLink to={`/profile/${id}/edit`}>Edit</NavLink>
+                        {/* <NavLink to={`/profile/${id}/edit`}>{IsEditMode ? "Edit Off" : "Edit"}</NavLink> */}
+                        <button onClick={ButtonEditMode}>{IsEditMode ? "Edit Off" : "Edit"}</button>
                         <button className="Logout" onClick={onLogout}>Logout</button>
                     </>
                 )
@@ -66,8 +79,21 @@ export default function ProfilePage() {
                     </section>
                     <header className="Profile_header">
                         <section className="Profile_header_left">
-                        <img className="Profile_Avatar" src={!data.avatarURL ? assets.Profile.NonAvatar : data.avatarURL} alt="Test"/>
-                            <h2>{data.nickname} {data.verify ? <span contextMenu="User verifed" className="material-symbols-outlined">verified</span>: null}</h2>
+                            <section className="Profile_Avatar" style={{backgroundImage: !data.avatarURL ? `url(${assets.Profile.NonAvatar})` : `url(${data.avatarURL})`}}>
+                                {
+                                    IsEditMode ?
+                                    <section className="Profile_Avatar_blur"> 
+                                        <h3>Photo</h3>
+                                    </section>
+                                    :
+                                    null
+                                }
+                            </section>
+                            {
+                                IsEditMode ? <input type="text" value={data.nickname}/> 
+                                :
+                                <h2>{data.nickname} {data.verify ? <span contextMenu="User verifed" className="material-symbols-outlined">verified</span>: null}</h2>
+                            }
                             <ul className="Profile_header_left_stat_box">
                                 <li>
                                     <h3>0</h3>
@@ -91,13 +117,19 @@ export default function ProfilePage() {
                                     :
                                     <p>{data.Bio}</p>
                                 }
+                                {
+                                    IsEditMode ?
+                                        <textarea></textarea>
+                                    :
+                                    null
+                                }
                             </section>
 
                             {
                                 data.social.DiscordLink == "#" &&
                                 data.social.YouTubeLink == "#" &&
                                 data.social.TwitterLink == "#" &&
-                                data.social.InstagrmLink == "#" 
+                                data.social.InstagrmLink == "#"
                                 ?
                                 null
                                 :
