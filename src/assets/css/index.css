@@ -2343,6 +2343,51 @@ main {
   margin: 20px 0;
 }
 
+.CreateNFT {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 20px;
+  width: 80%;
+  height: 200px;
+  margin: 15% 0;
+}
+.CreateNFT .CreateNFT_left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  width: 30%;
+}
+.CreateNFT .CreateNFT_left button {
+  width: 60%;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  background-color: blueviolet;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+}
+
 .NFTcard {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2579,6 +2624,56 @@ main {
   background: none;
 }
 
+label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  width: 100%;
+}
+label input {
+  width: 100%;
+  height: 46px;
+  padding: 0 20px 0 52px;
+  background-image: url("/src/assets/img/icon.svg");
+  background-position: 10px 9px;
+  background-size: auto 60%;
+  background-repeat: no-repeat;
+  border: none;
+  border-radius: 15px;
+  outline: none;
+}
+label input::-webkit-input-placeholder {
+  font-size: 16px;
+  color: black;
+}
+label input::-moz-placeholder {
+  font-size: 16px;
+  color: black;
+}
+label input:-ms-input-placeholder {
+  font-size: 16px;
+  color: black;
+}
+label input::-ms-input-placeholder {
+  font-size: 16px;
+  color: black;
+}
+label input::placeholder {
+  font-size: 16px;
+  color: black;
+}
+label span {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  color: red;
+}
+
 .SingUp {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2608,6 +2703,9 @@ main {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   padding: 100px 0px;
@@ -2654,57 +2752,9 @@ main {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  width: 70%;
   margin-top: 40px;
   gap: 15px;
-}
-.SingUp .SingUp_right .SingUp_right_content label {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  text-align: center;
-  width: 50%;
-}
-.SingUp .SingUp_right .SingUp_right_content label input {
-  width: 100%;
-  height: 46px;
-  padding: 0 20px 0 52px;
-  background-image: url("/src/assets/img/icon.svg");
-  background-position: 10px 9px;
-  background-size: auto 60%;
-  background-repeat: no-repeat;
-  border: none;
-  border-radius: 15px;
-  outline: none;
-}
-.SingUp .SingUp_right .SingUp_right_content label input::-webkit-input-placeholder {
-  font-size: 16px;
-  color: black;
-}
-.SingUp .SingUp_right .SingUp_right_content label input::-moz-placeholder {
-  font-size: 16px;
-  color: black;
-}
-.SingUp .SingUp_right .SingUp_right_content label input:-ms-input-placeholder {
-  font-size: 16px;
-  color: black;
-}
-.SingUp .SingUp_right .SingUp_right_content label input::-ms-input-placeholder {
-  font-size: 16px;
-  color: black;
-}
-.SingUp .SingUp_right .SingUp_right_content label input::placeholder {
-  font-size: 16px;
-  color: black;
-}
-.SingUp .SingUp_right .SingUp_right_content label span {
-  margin-top: 10px;
-  font-size: 18px;
-  font-weight: 500;
-  color: red;
 }
 .SingUp .SingUp_right .SingUp_right_content button {
   width: 34%;

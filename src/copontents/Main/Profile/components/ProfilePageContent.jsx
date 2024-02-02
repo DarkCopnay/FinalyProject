@@ -28,6 +28,7 @@ export default function ProfilePageContent( {ProfileData} ) {
                         <CardLayout
                             key={index + 1}
                             _id={data._id}
+                            _AuthorID={data.Author._id}
                             isNeedAuthor={false}
                             NFTname={data.title}
                             AuthorName={data.Author.nickname}

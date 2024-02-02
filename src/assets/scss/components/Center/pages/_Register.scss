@@ -1,3 +1,38 @@
+//ValidInput block
+label {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+
+    input {
+        width: 100%;
+        height: 46px;
+        padding: 0 20px 0 52px;
+        background-image: url('/src/assets/img/icon.svg');
+        background-position: 10px 9px;
+        background-size: auto 60%;
+        background-repeat: no-repeat;
+        border: none;
+        border-radius: 15px;
+        outline: none;
+
+        &::placeholder {
+            font-size: 16px;
+            color: black;
+        }
+    }
+
+    span {
+        margin-top: 10px;
+        font-size: 18px;
+        font-weight: 500;
+        color: red;
+    }
+
+}
+//ValidInput endblock
+
 .SingUp {
     display: flex;
     flex-direction: row;
@@ -15,6 +50,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
         flex-wrap: wrap;
         padding: 100px 0px;
         width: 100%;
@@ -40,48 +76,15 @@
                 text-align: center;
             }
         }
-        
 
         .SingUp_right_content {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            width: 70%;
             margin-top: 40px;
             gap: 15px;
-
-            label {
-                display: flex;
-                flex-direction: column;
-                text-align: center;
-                width: 50%;
-
-                input {
-                    width: 100%;
-                    height: 46px;
-                    padding: 0 20px 0 52px;
-                    background-image: url('/src/assets/img/icon.svg');
-                    background-position: 10px 9px;
-                    background-size: auto 60%;
-                    background-repeat: no-repeat;
-                    border: none;
-                    border-radius: 15px;
-                    outline: none;
-    
-                    &::placeholder {
-                        font-size: 16px;
-                        color: black;
-                    }
-                }
-
-                span {
-                    margin-top: 10px;
-                    font-size: 18px;
-                    font-weight: 500;
-                    color: red;
-                }
-    
-            }
 
             button {
                 width: 34%;

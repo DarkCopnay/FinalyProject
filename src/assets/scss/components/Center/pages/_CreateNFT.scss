@@ -1,0 +1,30 @@
+.CreateNFT {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 80%;
+    height: 200px;
+    margin: 15% 0;
+
+    .CreateNFT_left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        width: 30%;
+
+        button {
+            width: 60%;
+            height: 40px;
+            border: none;
+            border-radius: 10px;
+            background-color: blueviolet;
+            font-size: 18px;
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+        }
+    }
+}
