@@ -78,7 +78,7 @@ export default function ProfilePage() {
                     <section className="Profile_header_BG">
                     </section>
                     <header className="Profile_header">
-                        <section className="Profile_header_left">
+                        <form className="Profile_header_left">
                             <section className="Profile_Avatar" style={{backgroundImage: !data.avatarURL ? `url(${assets.Profile.NonAvatar})` : `url(${data.avatarURL})`}}>
                                 {
                                     IsEditMode ?
@@ -113,9 +113,9 @@ export default function ProfilePage() {
                                 <h3>Bio</h3>
                                 {
                                     data.Bio == "" ?
-                                    <span>Bio not found</span>
+                                    IsEditMode ? null : <span>Bio not found</span>
                                     :
-                                    <p>{data.Bio}</p>
+                                    IsEditMode ? null : <p>{data.Bio}</p>
                                 }
                                 {
                                     IsEditMode ?
@@ -171,7 +171,7 @@ export default function ProfilePage() {
                                 </section>
                             </section> 
                             }
-                        </section>
+                        </form>
                         <section className="Profile_header_right">
                             <OnlyUserAuthRender/>
                         </section>
