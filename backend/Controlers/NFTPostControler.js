@@ -101,9 +101,6 @@ export const create = async (req, res) => {
             Author: req.userId,
         })
         
-        // const NftPostCreate = await NFTpostDoc.save();
-
-
         if (!error.isEmpty()) {
             return res.status(400).json(error.array())
         } else {
@@ -131,20 +128,16 @@ export const update = async (req, res) => {
                 Author: req.userId
             }
         )
-        .then((doc) => {
-            if (!doc) {
-                return res.json({
-                    complete: "Update complete"
-                })
-            }
+        .then(() => {
+            return res.json({
+                complete: "Update complete"
+            })
         })
 
-        .catch((err) => {
-            if (err) {
-                return res.status(500).json({
-                    ErrorMsg: "Couldn't update a post"
-                })
-            }
+        .catch(() => {
+            return res.status(500).json({
+                ErrorMsg: "Couldn't update a post"
+            })
         })
 
     } catch(error) {

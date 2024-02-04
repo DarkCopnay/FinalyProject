@@ -17,8 +17,8 @@ export const fetchRegister = createAsyncThunk('Register', async (UserReq) => {
     return data;
 })
 
-export const fetchProfileUpdate = createAsyncThunk("ProfileUpdate", async (UpdateData) => {
-    const { data } = await AxiosInit.patch("/profile/:id/edit", UpdateData)
+export const fetchProfileUpdate = createAsyncThunk("ProfileUpdate", async (id, UpdateData) => {
+    const { data } = await AxiosInit.patch(`/profile/${id}/edit`, UpdateData)
     .catch((err) => {
         return err.response
     })
@@ -59,6 +59,19 @@ const AuthSlice = createSlice({
             state.status = "loaded";
         },
         [fetchRegister.rejected]: (state) => {
+            state.data = null;
+            state.status = "error";
+        },
+
+        [fetchProfileUpdate.pending]: (state) => {
+            state.data = null;
+            state.status = 'loading';
+        },
+        [fetchProfileUpdate.fulfilled]: (state, action) => {
+            state.data = action.payload;
+            state.status = "loaded";
+        },
+        [fetchProfileUpdate.rejected]: (state) => {
             state.data = null;
             state.status = "error";
         }

@@ -56,10 +56,10 @@ export default function ProfilePage() {
 
     async function UploadProfile(event) {
         event.preventDefault();
-        const NewDataReq = await dispatch(fetchProfileUpdate({
+        const NewDataReq = await dispatch(fetchProfileUpdate(id, {
             nickname: NewDataForm.NewName,
             Bio: NewDataForm.NewBio
-        })) 
+        }))
     }
 
 

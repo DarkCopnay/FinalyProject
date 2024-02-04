@@ -109,31 +109,34 @@ export const ProfileView = async (req, res) => {
 
 export const ProfileEdit = async (req, res) => {
     try {
-        const userID = req.params.id;
+        const ProfileID = req.params.id;
+        // const ProfileUpdateValid = validationResult(req);
 
-        Users.findByIdAndUpdate(
-        {
-            _id: userID
-        },
-        {
-            nickname: req.body.nickname,
-            avatarURL: req.body.avatarURL,
-            Bio: req.body.Bio,
-        }
-        
-        )
-        .select("nickname avatarURL Bio social")
-        .then((res) => {
-            if (!res) {
-                return res.json({
-                    complete: "Profile has been Update"
-                })
+        // if (!ProfileUpdateValid.isEmpty()) {
+        //     return res.status(400).json(error.array());
+        // }
+
+        await Users.updateOne(
+            {
+                _id: ProfileID,
+            }, 
+            {
+                nickname: req.body.nickname,
+                Bio: req.body.Bio
             }
+        )
+        .then(() => {
+            return res.json({
+                Done: "Done Update"
+            })
         })
-    } catch (err) {
-        return res.status(500).json({
-            ErrorMsg: "Couldn't updated profile"
+        .catch(() => {
+            return res.json({
+                ErrorMsg: "Cloudn't update a profile"
+            })
         })
+    } catch(err) {
+        console.log(err);
     }
 }
 
