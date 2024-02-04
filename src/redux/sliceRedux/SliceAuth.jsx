@@ -17,6 +17,14 @@ export const fetchRegister = createAsyncThunk('Register', async (UserReq) => {
     return data;
 })
 
+export const fetchProfileUpdate = createAsyncThunk("ProfileUpdate", async (UpdateData) => {
+    const { data } = await AxiosInit.patch("/profile/:id/edit", UpdateData)
+    .catch((err) => {
+        return err.response
+    })
+    return data;
+})
+
 const initialState = {
     data: null,
     status: "loading"

@@ -107,6 +107,36 @@ export const ProfileView = async (req, res) => {
     }
 }
 
+export const ProfileEdit = async (req, res) => {
+    try {
+        const userID = req.params.id;
+
+        Users.findByIdAndUpdate(
+        {
+            _id: userID
+        },
+        {
+            nickname: req.body.nickname,
+            avatarURL: req.body.avatarURL,
+            Bio: req.body.Bio,
+        }
+        
+        )
+        .select("nickname avatarURL Bio social")
+        .then((res) => {
+            if (!res) {
+                return res.json({
+                    complete: "Profile has been Update"
+                })
+            }
+        })
+    } catch (err) {
+        return res.status(500).json({
+            ErrorMsg: "Couldn't updated profile"
+        })
+    }
+}
+
 export const Ranks = async (req, res) => {
     try {
         const UserList = await Users.find().select('nickname');

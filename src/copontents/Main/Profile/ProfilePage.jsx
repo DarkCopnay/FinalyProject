@@ -1,33 +1,50 @@
 import { useState, useEffect } from "react";
 import { useParams, NavLink, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import { assets } from "../../../assets/Assets";
 import { jwtDecode } from "jwt-decode";
-// import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { AxiosInit } from "../../../axios/axiosInit";
 import ProfilePageContent from "./components/ProfilePageContent";
+import { fetchProfileUpdate } from "../../../redux/sliceRedux/SliceAuth";
 
 export default function ProfilePage() {
+    const dispatch = useDispatch();
     const navigate = useNavigate();
     const token = window.localStorage.getItem("token");
     const [IsLoading, setIsLoading] = useState(true);
     const [IsEditMode, SetIsEditMode] = useState(false);
     const [data, setData] = useState();
     const [NewDataForm, setNewDataFrom] = useState({
-
+        NewName: "",
+        NewAvatar: undefined,
+        NewBio: "",
+        DiscordLink: "",
+        YouTubeLink: "",
+        TwitterLink: "",
+        InstagramLink: "",
     })
 
+    const ContorlInput = (event) => {
+        setNewDataFrom((data) => ({
+            ...data,
+            [event.target.name]: event.target.value
+        }))
+    }
 
     const { id } = useParams();
 
     useEffect(() => {
-        AxiosInit.get(`profile/${id}`)
-        .then((res) => {
-            setData(res.data);
+         AxiosInit.get(`profile/${id}`)
+        .then(async (res) => {
+            const response = await res.data;
+            setData(response)
             setIsLoading(false);
         })
         .catch((err) => {
             console.log(err);
         })
+        
     }, [])
 
     function ButtonEditMode() {
@@ -35,6 +52,14 @@ export default function ProfilePage() {
         if (IsEditMode) {
             SetIsEditMode(false);
         }
+    }
+
+    async function UploadProfile(event) {
+        event.preventDefault();
+        const NewDataReq = await dispatch(fetchProfileUpdate({
+            nickname: NewDataForm.NewName,
+            Bio: NewDataForm.NewBio
+        })) 
     }
 
 
@@ -45,7 +70,6 @@ export default function ProfilePage() {
                 return (
                     <>
                         <NavLink to={`/market/create`}>Create NFT</NavLink>
-                        {/* <NavLink to={`/profile/${id}/edit`}>{IsEditMode ? "Edit Off" : "Edit"}</NavLink> */}
                         <button onClick={ButtonEditMode}>{IsEditMode ? "Edit Off" : "Edit"}</button>
                         <button className="Logout" onClick={onLogout}>Logout</button>
                     </>
@@ -79,18 +103,28 @@ export default function ProfilePage() {
                     </section>
                     <header className="Profile_header">
                         <form className="Profile_header_left">
-                            <section className="Profile_Avatar" style={{backgroundImage: !data.avatarURL ? `url(${assets.Profile.NonAvatar})` : `url(${data.avatarURL})`}}>
+
+                        
+                        {
+                            !IsEditMode ?
+                            <section className="Profile_Avatar" style={{backgroundImage: !data.avatarURL ? `url(${assets.Profile.NonAvatar})` : `url(${data.avatarURL})`}}></section>
+                            :
+                            <section className="Profile_Avatar" style={{backgroundImage: !NewDataForm.NewAvatar ? `url(${assets.Profile.NonAvatar})` : `url(${NewDataForm.NewAvatar})`}}>
                                 {
                                     IsEditMode ?
-                                    <section className="Profile_Avatar_blur"> 
-                                        <h3>Photo</h3>
+                                    <section className="Profile_Avatar_blur">
+                                        <input type="file" id="AvatarPhoto" name="NewAvatar" style={{display: "none"}} onChange={ContorlInput}/>
+                                        <label htmlFor="AvatarPhoto">
+                                            <h3>Photo</h3>
+                                        </label>
                                     </section>
                                     :
                                     null
                                 }
                             </section>
+                        }
                             {
-                                IsEditMode ? <input type="text" value={data.nickname}/> 
+                                IsEditMode ? <input type="text" name="NewName" defaultValue={data.nickname} onChange={ContorlInput}/> 
                                 :
                                 <h2>{data.nickname} {data.verify ? <span contextMenu="User verifed" className="material-symbols-outlined">verified</span>: null}</h2>
                             }
@@ -119,7 +153,7 @@ export default function ProfilePage() {
                                 }
                                 {
                                     IsEditMode ?
-                                        <textarea></textarea>
+                                        <textarea name="NewBio" defaultValue={data.Bio} onChange={ContorlInput}></textarea>
                                     :
                                     null
                                 }
@@ -170,6 +204,19 @@ export default function ProfilePage() {
                                     }
                                 </section>
                             </section> 
+                            }
+                            {
+                                IsEditMode ? 
+                                <section className="Profile_Button_Save">
+                                    <motion.button onClick={UploadProfile} whileHover={{
+                                        backgroundColor: "rgb(11, 171, 11)",
+                                    }}>Save</motion.button>
+                                    <motion.button  whileHover={{
+                                        backgroundColor: "rgb(231, 9, 9)",
+                                    }}>Cancel</motion.button>
+                                </section>
+                                :
+                                null
                             }
                         </form>
                         <section className="Profile_header_right">
