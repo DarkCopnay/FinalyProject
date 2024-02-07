@@ -1,28 +1,26 @@
 import { useState, useEffect } from "react";
 import { useParams, NavLink, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
 import { assets } from "../../../assets/Assets";
 import { jwtDecode } from "jwt-decode";
 import { motion } from "framer-motion";
 import { AxiosInit } from "../../../axios/axiosInit";
 import ProfilePageContent from "./components/ProfilePageContent";
-import { fetchProfileUpdate } from "../../../redux/sliceRedux/SliceAuth";
+
 
 export default function ProfilePage() {
-    const dispatch = useDispatch();
     const navigate = useNavigate();
     const token = window.localStorage.getItem("token");
     const [IsLoading, setIsLoading] = useState(true);
     const [IsEditMode, SetIsEditMode] = useState(false);
     const [data, setData] = useState();
     const [NewDataForm, setNewDataFrom] = useState({
-        NewName: "",
+        NewName: undefined,
         NewAvatar: undefined,
-        NewBio: "",
-        DiscordLink: "",
-        YouTubeLink: "",
-        TwitterLink: "",
-        InstagramLink: "",
+        NewBio: undefined,
+        DiscordLink: undefined,
+        YouTubeLink: undefined,
+        TwitterLink: undefined,
+        InstagramLink: undefined,
     })
 
     const ContorlInput = (event) => {
@@ -56,10 +54,11 @@ export default function ProfilePage() {
 
     async function UploadProfile(event) {
         event.preventDefault();
-        const NewDataReq = await dispatch(fetchProfileUpdate(id, {
+
+        AxiosInit.patch(`/profile/${id}/edit`, {
             nickname: NewDataForm.NewName,
             Bio: NewDataForm.NewBio
-        }))
+        })
     }
 
 

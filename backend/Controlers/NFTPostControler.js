@@ -90,10 +90,6 @@ export const create = async (req, res) => {
     try {
         const error = validationResult(req);
         
-        if (!error.isEmpty()) {
-            return res.status(400).json(error.array())
-        }
-        
         const NFTpostDoc = new NFTpostModel({
             title: req.body.title,
             price: req.body.price,
