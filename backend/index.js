@@ -3,13 +3,13 @@ import mongoose from "mongoose";
 import multer from "multer";
 import cors from 'cors'
 
-import { RegisterValid, LoginValid, NFTPostValid } from "./validator/Validation.js";
+import { RegisterValid, LoginValid, NFTPostValid, ProfileEditValid } from "./validator/Validation.js";
 import CheckAuth from "./utils/CheckAuth.js";
 import * as UserControl from './Controlers/UserControl.js';
 import * as NFTPostControler from './Controlers/NFTPostControler.js'
 
 mongoose.connect(
-    'mongodb+srv://nftmarketplace:2010665KEEek@cluster0.yh04arc.mongodb.net/nftmarket?retryWrites=true&w=majority'
+    `mongodb+srv://nftmarketplace:2010665KEEek@cluster0.yh04arc.mongodb.net/nftmarket?retryWrites=true&w=majority`
 )
 .then(() => {console.log("DB: connect")})
 .catch((err) => {console.log("DB: error connect", err)});
@@ -35,7 +35,7 @@ app.use('/src/assets', express.static('upload'))
 app.post('/register', RegisterValid, UserControl.register)
 app.post('/login', LoginValid, UserControl.login)
 app.get('/profile/:id', UserControl.ProfileView);
-app.patch('/profile/:id/edit', CheckAuth, UserControl.ProfileEdit)
+app.patch('/profile/:id/edit', CheckAuth, ProfileEditValid, UserControl.ProfileEdit)
 app.get('/users', UserControl.UsersDataList);
 app.get('/ranks', UserControl.Ranks);
 

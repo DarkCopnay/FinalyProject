@@ -110,11 +110,11 @@ export const ProfileView = async (req, res) => {
 export const ProfileEdit = async (req, res) => {
     try {
         const ProfileID = req.params.id;
-        // const ProfileUpdateValid = validationResult(req);
+        const ProfileUpdateValid = validationResult(req);
 
-        // if (!ProfileUpdateValid.isEmpty()) {
-        //     return res.status(400).json(error.array());
-        // }
+        if (!ProfileUpdateValid.isEmpty()) {
+            return res.status(400).json(ProfileUpdateValid.errors);
+        }
 
         await Users.updateOne(
             {
