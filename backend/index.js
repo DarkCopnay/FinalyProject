@@ -17,11 +17,11 @@ mongoose.connect(
 const app = express();
 
 const storage = multer.diskStorage({
-    destination: (_, __, disk) => {
-        disk(null, './src/assets/upload')
+    destination: (_, __, cb) => {
+        cb(null, './src/assets/upload')
     },
-    filename: (_, file, disk) => {
-        disk(null, file.originalname);
+    filename: (_, file, cb) => {
+        cb(null, file.originalname);
     },
 })
 
@@ -39,7 +39,7 @@ app.patch('/profile/:id/edit', CheckAuth, ProfileEditValid, UserControl.ProfileE
 app.get('/users', UserControl.UsersDataList);
 app.get('/ranks', UserControl.Ranks);
 
-app.post('/upload', CheckAuth, upload.single('image'), async (req, res) => {
+app.post('/upload', CheckAuth, upload.single('image'), (req, res) => {
     res.json({
         url: `/src/assets/upload/${req.file.originalname}`,
     })

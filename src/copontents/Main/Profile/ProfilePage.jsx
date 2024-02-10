@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useParams, NavLink, useNavigate } from "react-router-dom";
 import { assets } from "../../../assets/Assets";
 import { jwtDecode } from "jwt-decode";
 import { motion } from "framer-motion";
-import { AxiosInit } from "../../../axios/axiosInit";
+import { AxiosInit, UploadFile } from "../../../axios/axiosInit";
 import ProfilePageContent from "./components/ProfilePageContent";
 
 
@@ -13,9 +13,10 @@ export default function ProfilePage() {
     const [IsLoading, setIsLoading] = useState(true);
     const [IsEditMode, SetIsEditMode] = useState(false);
     const [data, setData] = useState();
+    const FileInputRef = useRef(null);
     const [NewDataForm, setNewDataFrom] = useState({
         NewName: undefined,
-        NewAvatar: undefined,
+        NewAvatar: "",
         NewBio: undefined,
         DiscordLink: undefined,
         YouTubeLink: undefined,
@@ -112,7 +113,7 @@ export default function ProfilePage() {
                                 {
                                     IsEditMode ?
                                     <section className="Profile_Avatar_blur">
-                                        <input type="file" id="AvatarPhoto" name="NewAvatar" style={{display: "none"}} onChange={ContorlInput}/>
+                                        <input type="file" ref={FileInputRef} id="AvatarPhoto" name="NewAvatar" style={{display: "none"}} onChange={ContorlInput} accept="image/*"/>
                                         <label htmlFor="AvatarPhoto">
                                             <h3>Photo</h3>
                                         </label>
