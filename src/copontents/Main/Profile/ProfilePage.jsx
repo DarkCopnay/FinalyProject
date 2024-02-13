@@ -1,9 +1,10 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { useParams, NavLink, useNavigate } from "react-router-dom";
 import { assets } from "../../../assets/Assets";
+import { AvatarRender } from "./components/AvatarRender";
 import { jwtDecode } from "jwt-decode";
 import { motion } from "framer-motion";
-import { AxiosInit, UploadFile } from "../../../axios/axiosInit";
+import { AxiosInit, UploadFileAvatar } from "../../../axios/axiosInit";
 import ProfilePageContent from "./components/ProfilePageContent";
 
 
@@ -13,16 +14,27 @@ export default function ProfilePage() {
     const [IsLoading, setIsLoading] = useState(true);
     const [IsEditMode, SetIsEditMode] = useState(false);
     const [data, setData] = useState();
-    const FileInputRef = useRef(null);
     const [NewDataForm, setNewDataFrom] = useState({
         NewName: undefined,
-        NewAvatar: "",
+        NewAvatar: undefined,
         NewBio: undefined,
         DiscordLink: undefined,
         YouTubeLink: undefined,
         TwitterLink: undefined,
         InstagramLink: undefined,
     })
+    
+    const handleChangeFile = (event) => {
+        const formData = new FormData();
+        const file = event.target.files[0];
+        formData.append("image", file);
+
+        UploadFileAvatar(formData)
+        .then((res) => {
+            NewDataForm.NewAvatar = res.url;
+            console.log(NewDataForm.NewAvatar);
+        })
+    }
 
     const ContorlInput = (event) => {
         setNewDataFrom((data) => ({
@@ -57,8 +69,9 @@ export default function ProfilePage() {
         event.preventDefault();
 
         AxiosInit.patch(`/profile/${id}/edit`, {
+            avatarURL: NewDataForm.NewAvatar,
             nickname: NewDataForm.NewName,
-            Bio: NewDataForm.NewBio
+            Bio: NewDataForm.NewBio,
         })
     }
 
@@ -102,46 +115,28 @@ export default function ProfilePage() {
                     <section className="Profile_header_BG">
                     </section>
                     <header className="Profile_header">
-                        <form className="Profile_header_left">
+                        <form className="Profile_header_left" encType="multipart/form-data">
 
-                        
-                        {
-                            !IsEditMode ?
-                            <section className="Profile_Avatar" style={{backgroundImage: !data.avatarURL ? `url(${assets.Profile.NonAvatar})` : `url(${data.avatarURL})`}}></section>
-                            :
-                            <section className="Profile_Avatar" style={{backgroundImage: !NewDataForm.NewAvatar ? `url(${assets.Profile.NonAvatar})` : `url(${NewDataForm.NewAvatar})`}}>
-                                {
-                                    IsEditMode ?
-                                    <section className="Profile_Avatar_blur">
-                                        <input type="file" ref={FileInputRef} id="AvatarPhoto" name="NewAvatar" style={{display: "none"}} onChange={ContorlInput} accept="image/*"/>
-                                        <label htmlFor="AvatarPhoto">
-                                            <h3>Photo</h3>
-                                        </label>
-                                    </section>
-                                    :
-                                    null
-                                }
-                            </section>
-                        }
+                        <AvatarRender IsEditMode={IsEditMode} imgURL={NewDataForm.NewAvatar} onChangeFunction={handleChangeFile}/>
                             {
                                 IsEditMode ? <input type="text" name="NewName" defaultValue={data.nickname} onChange={ContorlInput}/> 
                                 :
                                 <h2>{data.nickname} {data.verify ? <span contextMenu="User verifed" className="material-symbols-outlined">verified</span>: null}</h2>
                             }
-                            <ul className="Profile_header_left_stat_box">
-                                <li>
-                                    <h3>0</h3>
-                                    <span>Volume</span>
-                                </li>
-                                <li>
-                                    <h3>0</h3>
-                                    <span>NFTs Create</span>
-                                </li>
-                                <li>
-                                    <h3>{data.stat.followers}</h3>
-                                    <span>Followers</span>
-                                </li>
-                            </ul>
+                                <ul className="Profile_header_left_stat_box">
+                                    <li>
+                                        <h3>0</h3>
+                                        <span>Volume</span>
+                                    </li>
+                                    <li>
+                                        <h3>0</h3>
+                                        <span>NFTs Create</span>
+                                    </li>
+                                    <li>
+                                        <h3>{data.stat.followers}</h3>
+                                        <span>Followers</span>
+                                    </li>
+                                </ul>
 
                             <section className="Profile_header_left_bio">
                                 <h3>Bio</h3>

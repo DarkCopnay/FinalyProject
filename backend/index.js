@@ -18,19 +18,19 @@ const app = express();
 
 const storage = multer.diskStorage({
     destination: (_, __, cb) => {
-        cb(null, './src/assets/upload')
+        cb(null, './src/assets/upload/')
     },
     filename: (_, file, cb) => {
         cb(null, file.originalname);
     },
 })
 
-const upload = multer( {storage} )
+const upload = multer( {storage: storage} )
 
 app.use(express.json())
 
 app.use(cors());
-app.use('/src/assets', express.static('upload'))
+app.use('/upload', express.static('./src/assets/upload'))
 
 app.post('/register', RegisterValid, UserControl.register)
 app.post('/login', LoginValid, UserControl.login)
@@ -39,11 +39,17 @@ app.patch('/profile/:id/edit', CheckAuth, ProfileEditValid, UserControl.ProfileE
 app.get('/users', UserControl.UsersDataList);
 app.get('/ranks', UserControl.Ranks);
 
-app.post('/upload', CheckAuth, upload.single('image'), (req, res) => {
+app.post('/upload', CheckAuth, upload.single("image"), (req, res) => {
     res.json({
-        url: `/src/assets/upload/${req.file.originalname}`,
+        url: `/upload/${req.file.originalname}`,
     })
 })
+
+// app.post('/upload', CheckAuth, upload.single('file'), (req, res) => {
+//     res.json({
+//         url: `/src/assets/upload/${req.file.originalname}`,
+//     })
+// })
 
 app.get('/market', NFTPostControler.getAll);
 app.get('/market/nft/:id', NFTPostControler.GetOne)

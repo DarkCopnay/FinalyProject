@@ -1,11 +1,10 @@
-import { body, check } from "express-validator";
+import { body } from "express-validator";
 
 export const RegisterValid = [
     body("email", "Email Error").isEmail(),
     body("password", "Password Error").isLength({min: 8}),
     body("username", "Username Error").isLength({min: 8, max: 32}),
     body("nickname", "Nickname Error").isLength({min: 4, max: 32}),
-    body("avatarURL", "AvatarURL Error").optional().isURL(),
 ];
 
 export const LoginValid = [
@@ -15,7 +14,7 @@ export const LoginValid = [
 
 export const ProfileEditValid = [
     body("nickname", "Nickname Error").isString().isLength({min: 5, max: 20}).optional(),
-    body("avatarURL", "AvatarURL Error").optional().isURL(),
+    body("avatarURL", "AvatarURL Error").isURL({require_port: false, require_host: false, require_valid_protocol: false}).optional(),
     body("Bio", "Bio Error").isString().optional({checkFalsy: true}).isLength({min: 2, max: 2000}).notEmpty(),
     body("social.DiscordLink").optional().isURL(),
     body("social.YouTubeLink").optional().isURL(),

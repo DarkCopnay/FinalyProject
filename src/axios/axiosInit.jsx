@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const AxiosInit = axios.create({
+export const AxiosInit = axios.create({
     baseURL: "http://localhost:4444",
 })
 
@@ -10,7 +10,7 @@ AxiosInit.interceptors.request.use((config) => {
 })
 
 
-export const UploadFile = async (FileURL) => {
+export const UploadFileAvatar = async (FileURL) => {
     try {
         const { data } = await AxiosInit.post("/upload", FileURL)
 
@@ -19,5 +19,3 @@ export const UploadFile = async (FileURL) => {
         console.warn(err);
     }
 }
-
-export {AxiosInit};

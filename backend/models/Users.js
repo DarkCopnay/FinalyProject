@@ -1,6 +1,11 @@
 import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema({
+    avatarURL: {
+        type: String,
+        default: ""
+    },
+
     username: {
         type: String,
         require: true,
@@ -72,8 +77,6 @@ const userSchema = new mongoose.Schema({
     //     ref: "NFTpost",
     //     require: true
     // },
-
-    avatarURL: String,
 }, {
     timestamps: true,
 });
