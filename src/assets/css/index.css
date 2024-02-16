@@ -445,8 +445,8 @@ main {
   padding-left: 15px;
 }
 .topnav_Profile img {
-  width: 35px !important;
-  height: 35px !important;
+  width: 40px !important;
+  height: 40px !important;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 10px;
@@ -2523,6 +2523,12 @@ main {
   font-weight: 400;
   color: white;
   margin-top: 5px;
+}
+.NFTcard .NFTcard_contnet a img {
+  width: 15%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
 }
 .NFTcard .NFTcard_contnet a span {
   font-size: 20px;

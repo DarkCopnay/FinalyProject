@@ -75,7 +75,7 @@ export const CardLayout = ( {_id, _AuthorID, isNeedAuthor=true, IsDelButton=fals
                     <h2>{NFTname}</h2>
                     {
                         isNeedAuthor ? 
-                        <NavLink to={`/profile/${_AuthorID}`}><img src={AuthorAvatar ? AuthorAvatar : assets.avatars.avatar_1}/>{AuthorName} 
+                        <NavLink to={`/profile/${_AuthorID}`}><img src={AuthorAvatar ? `http://localhost:4444${AuthorAvatar}` : assets.avatars.avatar_1}/>{AuthorName} 
                             {VerifyMe ? <span contextMenu="User verifed" className="material-symbols-outlined">verified</span> : null}
                         </NavLink> 
                         : 

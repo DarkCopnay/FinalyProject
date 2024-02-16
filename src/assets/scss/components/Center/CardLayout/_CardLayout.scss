@@ -70,6 +70,12 @@
             color: white;
             margin-top: 5px;
 
+            img {
+                width: 15%;
+                object-fit: cover;
+                border-radius: 50%;
+            }
+
             span {
                 font-size: 20px;
                 color: #00c5ff;

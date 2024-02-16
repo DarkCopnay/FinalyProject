@@ -14,9 +14,10 @@ export default function ProfilePage() {
     const [IsLoading, setIsLoading] = useState(true);
     const [IsEditMode, SetIsEditMode] = useState(false);
     const [data, setData] = useState();
+    const [NewAvatar, SetNewAvatar] = useState("");
     const [NewDataForm, setNewDataFrom] = useState({
         NewName: undefined,
-        NewAvatar: undefined,
+        // NewAvatar: "",
         NewBio: undefined,
         DiscordLink: undefined,
         YouTubeLink: undefined,
@@ -31,8 +32,7 @@ export default function ProfilePage() {
 
         UploadFileAvatar(formData)
         .then((res) => {
-            NewDataForm.NewAvatar = res.url;
-            console.log(NewDataForm.NewAvatar);
+            SetNewAvatar(res.url);
         })
     }
 
@@ -68,10 +68,13 @@ export default function ProfilePage() {
     async function UploadProfile(event) {
         event.preventDefault();
 
-        AxiosInit.patch(`/profile/${id}/edit`, {
-            avatarURL: NewDataForm.NewAvatar,
+       await AxiosInit.patch(`/profile/${id}/edit`, {
+            avatarURL: NewAvatar,
             nickname: NewDataForm.NewName,
             Bio: NewDataForm.NewBio,
+        })
+        .then((res) => {
+            console.log(res);
         })
     }
 
@@ -117,7 +120,7 @@ export default function ProfilePage() {
                     <header className="Profile_header">
                         <form className="Profile_header_left" encType="multipart/form-data">
 
-                        <AvatarRender IsEditMode={IsEditMode} imgURL={NewDataForm.NewAvatar} onChangeFunction={handleChangeFile}/>
+                        <AvatarRender IsEditMode={IsEditMode} PreviewIMG={NewAvatar} imgURL={data.avatarURL} onChangeFunction={handleChangeFile}/>
                             {
                                 IsEditMode ? <input type="text" name="NewName" defaultValue={data.nickname} onChange={ContorlInput}/> 
                                 :
