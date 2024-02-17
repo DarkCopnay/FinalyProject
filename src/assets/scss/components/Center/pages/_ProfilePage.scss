@@ -49,6 +49,23 @@
                 }
             }
 
+            .Profile_header_left_social_inputs {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+
+                input {
+                    width: 100%;
+                    &::placeholder {transition: 0.5s ease;}
+                    
+                    &:focus {
+                        &::placeholder {
+                            opacity: 0;
+                        }
+                    }
+                }
+            }
+
             .Profile_Avatar {
                 display: flex;
                 flex-direction: column;
@@ -182,10 +199,18 @@
                     resize: vertical;
                     padding: 10px 10px;
                     border: 2px solid #A259FF;
+                    border-radius: 10px;
                     background: none;
                     font-size: 18px;
                     font-weight: 500;
                     color: white;
+                    outline: none;
+                    transition: 0.5s ease;
+
+                    &:focus {
+                        border-radius: 2px;
+                        border-color: white;
+                    }
 
                 }
             }

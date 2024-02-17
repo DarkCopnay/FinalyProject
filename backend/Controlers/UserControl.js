@@ -123,7 +123,8 @@ export const ProfileEdit = async (req, res) => {
             {
                 nickname: req.body.nickname,
                 avatarURL: req.body.avatarURL,
-                Bio: req.body.Bio
+                Bio: req.body.Bio,
+
             }
         )
         .then(() => {

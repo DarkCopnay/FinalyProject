@@ -4,7 +4,8 @@ import { assets } from "../../../assets/Assets";
 import { AvatarRender } from "./components/AvatarRender";
 import { jwtDecode } from "jwt-decode";
 import { motion } from "framer-motion";
-import { AxiosInit, UploadFileAvatar } from "../../../axios/axiosInit";
+import { AxiosInit, UploadFileAvatar, UpdateProfile } from "../../../axios/axiosInit";
+import { Bounce, toast, ToastContainer } from "react-toastify";
 import ProfilePageContent from "./components/ProfilePageContent";
 
 
@@ -17,7 +18,6 @@ export default function ProfilePage() {
     const [NewAvatar, SetNewAvatar] = useState("");
     const [NewDataForm, setNewDataFrom] = useState({
         NewName: undefined,
-        // NewAvatar: "",
         NewBio: undefined,
         DiscordLink: undefined,
         YouTubeLink: undefined,
@@ -63,18 +63,19 @@ export default function ProfilePage() {
         if (IsEditMode) {
             SetIsEditMode(false);
         }
+
+        if (data.avatarURL) {
+            SetNewAvatar(data.avatarURL);
+        }
     }
 
     async function UploadProfile(event) {
         event.preventDefault();
 
-       await AxiosInit.patch(`/profile/${id}/edit`, {
+        UpdateProfile(id, {
             avatarURL: NewAvatar,
             nickname: NewDataForm.NewName,
             Bio: NewDataForm.NewBio,
-        })
-        .then((res) => {
-            console.log(res);
         })
     }
 
@@ -109,6 +110,7 @@ export default function ProfilePage() {
 
     return (
         <>
+            <ToastContainer />
             {
                 IsLoading ? <h2>Profile Loading...</h2>
                 :
@@ -158,51 +160,61 @@ export default function ProfilePage() {
                             </section>
 
                             {
-                                data.social.DiscordLink == "#" &&
-                                data.social.YouTubeLink == "#" &&
-                                data.social.TwitterLink == "#" &&
-                                data.social.InstagrmLink == "#"
+                                IsEditMode
                                 ?
-                                null
-                                :
-                                <section className="Profile_header_left_social">
-                                <h3>Links</h3>
-                                <section>
-                                    {
-                                        data.social.DiscordLink == "#" ? 
-                                        null 
-                                        :
-                                        <a href={data.social.DiscordLink} target="_blank">
-                                            <img src={assets.SocialLogo.Discord} alt="Discord"/>
-                                        </a>
-                                    }
-                                    {
-                                        data.social.YouTubeLink == "#" ?
-                                        null
-                                        :
-                                        <a href={data.social.YouTubeLink} target="_blank">
-                                            <img src={assets.SocialLogo.YouTube} alt="YouTube"/>
-                                        </a>
-                                    }
-                                    {
-                                        data.social.TwitterLink == "#" ?
-                                        null
-                                        :
-                                        <a href={data.social.TwitterLink} target="_blank">
-                                            <img src={assets.SocialLogo.Twitter} alt="Twitter"/>
-                                        </a>
-                                    }
-                                    {
-                                        data.social.InstagrmLink == "#" ?
-                                        null
-                                        :
-                                        <a href={data.social.InstagrmLink} target="_blank">
-                                            <img src={assets.SocialLogo.Instagram} alt="Instagram"/>
-                                        </a>
-                                    }
+                                <section className="Profile_header_left_social_inputs">
+                                    <input type="text" placeholder="Discord Link"/>
+                                    <input type="text" placeholder="YouTube Link"/>
+                                    <input type="text" placeholder="Twitter Link"/>
+                                    <input type="text" placeholder="Instagrm Link"/>
                                 </section>
-                            </section> 
+                                :
+                                    data.social.DiscordLink == "#" &&
+                                    data.social.YouTubeLink == "#" &&
+                                    data.social.TwitterLink == "#" &&
+                                    data.social.InstagrmLink == "#"
+                                    ?
+                                    null
+                                    :
+                                    <section className="Profile_header_left_social">
+                                    <h3>Links</h3>
+                                    <section>
+                                        {
+                                            data.social.DiscordLink == "#" ? 
+                                            null 
+                                            :
+                                            <a href={data.social.DiscordLink} target="_blank">
+                                                <img src={assets.SocialLogo.Discord} alt="Discord"/>
+                                            </a>
+                                        }
+                                        {
+                                            data.social.YouTubeLink == "#" ?
+                                            null
+                                            :
+                                            <a href={data.social.YouTubeLink} target="_blank">
+                                                <img src={assets.SocialLogo.YouTube} alt="YouTube"/>
+                                            </a>
+                                        }
+                                        {
+                                            data.social.TwitterLink == "#" ?
+                                            null
+                                            :
+                                            <a href={data.social.TwitterLink} target="_blank">
+                                                <img src={assets.SocialLogo.Twitter} alt="Twitter"/>
+                                            </a>
+                                        }
+                                        {
+                                            data.social.InstagrmLink == "#" ?
+                                            null
+                                            :
+                                            <a href={data.social.InstagrmLink} target="_blank">
+                                                <img src={assets.SocialLogo.Instagram} alt="Instagram"/>
+                                            </a>
+                                        }
+                                    </section>
+                                </section> 
                             }
+                            
                             {
                                 IsEditMode ? 
                                 <section className="Profile_Button_Save">

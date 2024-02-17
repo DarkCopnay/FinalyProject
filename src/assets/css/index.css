@@ -2004,6 +2004,54 @@ main {
   border-radius: 5px;
   border-color: white;
 }
+.Profile .Profile_header .Profile_header_left .Profile_header_left_social_inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 15px;
+}
+.Profile .Profile_header .Profile_header_left .Profile_header_left_social_inputs input {
+  width: 100%;
+}
+.Profile .Profile_header .Profile_header_left .Profile_header_left_social_inputs input::-webkit-input-placeholder {
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+.Profile .Profile_header .Profile_header_left .Profile_header_left_social_inputs input::-moz-placeholder {
+  -moz-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+.Profile .Profile_header .Profile_header_left .Profile_header_left_social_inputs input:-ms-input-placeholder {
+  -ms-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+.Profile .Profile_header .Profile_header_left .Profile_header_left_social_inputs input::-ms-input-placeholder {
+  -ms-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+.Profile .Profile_header .Profile_header_left .Profile_header_left_social_inputs input::placeholder {
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+.Profile .Profile_header .Profile_header_left .Profile_header_left_social_inputs input:focus::-webkit-input-placeholder {
+  opacity: 0;
+}
+.Profile .Profile_header .Profile_header_left .Profile_header_left_social_inputs input:focus::-moz-placeholder {
+  opacity: 0;
+}
+.Profile .Profile_header .Profile_header_left .Profile_header_left_social_inputs input:focus:-ms-input-placeholder {
+  opacity: 0;
+}
+.Profile .Profile_header .Profile_header_left .Profile_header_left_social_inputs input:focus::-ms-input-placeholder {
+  opacity: 0;
+}
+.Profile .Profile_header .Profile_header_left .Profile_header_left_social_inputs input:focus::placeholder {
+  opacity: 0;
+}
 .Profile .Profile_header .Profile_header_left .Profile_Avatar {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2168,10 +2216,18 @@ main {
   resize: vertical;
   padding: 10px 10px;
   border: 2px solid #A259FF;
+  border-radius: 10px;
   background: none;
   font-size: 18px;
   font-weight: 500;
   color: white;
+  outline: none;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+.Profile .Profile_header .Profile_header_left .Profile_header_left_bio textarea:focus {
+  border-radius: 2px;
+  border-color: white;
 }
 .Profile .Profile_header .Profile_header_left .Profile_header_left_social {
   display: -webkit-box;
