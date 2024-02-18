@@ -48,6 +48,7 @@ const userSchema = new mongoose.Schema({
         }
     },
 
+
     social: {
         DiscordLink: {
             type: String,

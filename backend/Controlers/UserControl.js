@@ -124,6 +124,7 @@ export const ProfileEdit = async (req, res) => {
                 nickname: req.body.nickname,
                 avatarURL: req.body.avatarURL,
                 Bio: req.body.Bio,
+                'social.DiscordLink': req.body.DiscordLink
 
             }
         )

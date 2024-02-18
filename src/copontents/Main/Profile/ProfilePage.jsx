@@ -76,6 +76,7 @@ export default function ProfilePage() {
             avatarURL: NewAvatar,
             nickname: NewDataForm.NewName,
             Bio: NewDataForm.NewBio,
+            'social.DiscordLink': NewDataForm.DiscordLink
         })
     }
 
@@ -163,7 +164,7 @@ export default function ProfilePage() {
                                 IsEditMode
                                 ?
                                 <section className="Profile_header_left_social_inputs">
-                                    <input type="text" placeholder="Discord Link"/>
+                                    <input type="text" defaultValue={data.social.DiscordLink} onChange={ContorlInput} placeholder="Discord Link"/>
                                     <input type="text" placeholder="YouTube Link"/>
                                     <input type="text" placeholder="Twitter Link"/>
                                     <input type="text" placeholder="Instagrm Link"/>
