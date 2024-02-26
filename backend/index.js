@@ -3,8 +3,11 @@ import mongoose from "mongoose";
 import multer from "multer";
 import cors from 'cors'
 
+//Validation
 import { RegisterValid, LoginValid, NFTPostValid, ProfileEditValid } from "./validator/Validation.js";
+//AuthCheack
 import CheckAuth from "./utils/CheckAuth.js";
+//Controlers
 import * as UserControl from './Controlers/UserControl.js';
 import * as NFTPostControler from './Controlers/NFTPostControler.js'
 
@@ -39,7 +42,7 @@ app.patch('/profile/:id/edit', CheckAuth, ProfileEditValid, UserControl.ProfileE
 app.get('/users', UserControl.UsersDataList);
 app.get('/ranks', UserControl.Ranks);
 
-app.post('/upload', CheckAuth, upload.single("image"), (req, res) => {
+app.post('/upload/avatar', CheckAuth, upload.single("avatar"), (req, res) => {
     res.json({
         url: `/upload/${req.file.originalname}`,
     })

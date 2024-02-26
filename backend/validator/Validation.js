@@ -15,6 +15,7 @@ export const LoginValid = [
 export const ProfileEditValid = [
     body("nickname", "Nickname Error").isString().isLength({min: 5, max: 20}).optional(),
     body("avatarURL", "AvatarURL Error").isURL({require_port: false, require_host: false, require_valid_protocol: false}).optional(),
+    body("HeaderImgURL", "AvatarURL Error").isURL({require_port: false, require_host: false, require_valid_protocol: false}).optional(),
     body("Bio", "Bio Error").isString().optional({checkFalsy: true}).isLength({min: 2, max: 2000}).notEmpty(),
     body("DiscordLink", "DiscrodLinkError").isURL({require_protocol: false}).optional({checkFalsy: true}),
     body("social.YouTubeLink").optional().isURL(),

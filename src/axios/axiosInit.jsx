@@ -13,7 +13,7 @@ AxiosInit.interceptors.request.use((config) => {
 
 export const UploadFileAvatar = async (FileURL) => {
     try {
-        const { data } = await AxiosInit.post("/upload", FileURL)
+        const { data } = await AxiosInit.post("/upload/avatar", FileURL)
 
         return data;
     } catch (err) {

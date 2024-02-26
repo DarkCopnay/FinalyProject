@@ -103,6 +103,8 @@ export const create = async (req, res) => {
             res.json(await NFTpostDoc.save())
         }
 
+        
+
     } catch (error) {
         res.status(500).json({
             ErrorMsg: "Couldn't create a post"

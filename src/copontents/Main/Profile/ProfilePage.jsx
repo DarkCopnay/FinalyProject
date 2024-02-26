@@ -1,34 +1,35 @@
 import { useState, useEffect } from "react";
-import { useParams, NavLink, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { Bounce, toast, ToastContainer } from "react-toastify";
+import { motion } from "framer-motion";
 import { assets } from "../../../assets/Assets";
 import { AvatarRender } from "./components/AvatarRender";
-import { jwtDecode } from "jwt-decode";
-import { motion } from "framer-motion";
+import { BackgroundProfileRender } from "./components/BackgroundProfileRender";
 import { AxiosInit, UploadFileAvatar, UpdateProfile } from "../../../axios/axiosInit";
-import { Bounce, toast, ToastContainer } from "react-toastify";
+import { OnlyUserAuthRender } from "./components/OnlyUserAuthRender";
 import ProfilePageContent from "./components/ProfilePageContent";
 
 
 export default function ProfilePage() {
-    const navigate = useNavigate();
     const token = window.localStorage.getItem("token");
     const [IsLoading, setIsLoading] = useState(true);
     const [IsEditMode, SetIsEditMode] = useState(false);
     const [data, setData] = useState();
     const [NewAvatar, SetNewAvatar] = useState("");
+    const [newBG, setNewBG] = useState("");
     const [NewDataForm, setNewDataFrom] = useState({
         NewName: undefined,
         NewBio: undefined,
-        DiscordLink: undefined,
-        YouTubeLink: undefined,
-        TwitterLink: undefined,
-        InstagramLink: undefined,
+        NewDiscordLink: undefined,
+        NewYouTubeLink: undefined,
+        NewTwitterLink: undefined,
+        NewInstagramLink: undefined,
     })
     
     const handleChangeFile = (event) => {
         const formData = new FormData();
         const file = event.target.files[0];
-        formData.append("image", file);
+        formData.append("avatar", file);
 
         UploadFileAvatar(formData)
         .then((res) => {
@@ -76,37 +77,8 @@ export default function ProfilePage() {
             avatarURL: NewAvatar,
             nickname: NewDataForm.NewName,
             Bio: NewDataForm.NewBio,
-            'social.DiscordLink': NewDataForm.DiscordLink
+            'social.DiscordLink': NewDataForm.NewDiscordLink
         })
-    }
-
-
-    function OnlyUserAuthRender() {
-        if (token) {
-            const decodeToken = jwtDecode(token)._id;
-            if (decodeToken === id) {
-                return (
-                    <>
-                        <NavLink to={`/market/create`}>Create NFT</NavLink>
-                        <button onClick={ButtonEditMode}>{IsEditMode ? "Edit Off" : "Edit"}</button>
-                        <button className="Logout" onClick={onLogout}>Logout</button>
-                    </>
-                )
-            } else {
-                return (
-                    <button><span className="material-symbols-outlined">add</span>Follow</button>
-                )
-            }
-        } else {
-            return (
-                <button><span className="material-symbols-outlined">add</span>Follow</button>
-            )
-        }
-
-        function onLogout() {
-            window.localStorage.removeItem('token');
-            navigate('/')
-        }
     }
 
     return (
@@ -118,8 +90,7 @@ export default function ProfilePage() {
                 data.ErrorMsg ? navigate("/404")
                 :
                 <section className="Profile">
-                    <section className="Profile_header_BG">
-                    </section>
+                    <BackgroundProfileRender IsEditMode={IsEditMode}/>
                     <header className="Profile_header">
                         <form className="Profile_header_left" encType="multipart/form-data">
 
@@ -164,7 +135,7 @@ export default function ProfilePage() {
                                 IsEditMode
                                 ?
                                 <section className="Profile_header_left_social_inputs">
-                                    <input type="text" defaultValue={data.social.DiscordLink} onChange={ContorlInput} placeholder="Discord Link"/>
+                                    <input type="text" name="NewDiscordLink" defaultValue={data.social.DiscordLink} onChange={ContorlInput} placeholder="Discord Link"/>
                                     <input type="text" placeholder="YouTube Link"/>
                                     <input type="text" placeholder="Twitter Link"/>
                                     <input type="text" placeholder="Instagrm Link"/>
@@ -231,7 +202,7 @@ export default function ProfilePage() {
                             }
                         </form>
                         <section className="Profile_header_right">
-                            <OnlyUserAuthRender/>
+                            <OnlyUserAuthRender ButtonEditMode={ButtonEditMode} IsEditMode={IsEditMode}  token={token} id={id}/>
                         </section>
                     </header>
                     <ProfilePageContent ProfileData={data}/>

@@ -6,6 +6,11 @@ const userSchema = new mongoose.Schema({
         default: ""
     },
 
+    HeaderImgURL: {
+        type: String,
+        default: "",
+    },
+
     username: {
         type: String,
         require: true,
@@ -73,11 +78,11 @@ const userSchema = new mongoose.Schema({
         default: false
     },
 
-    // OwnerNFT: {
-    //     type: mongoose.Schema.Types.Array,
-    //     ref: "NFTpost",
-    //     require: true
-    // },
+    OwnerNFT: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "NFTpost",
+        require: true
+    },
 }, {
     timestamps: true,
 });

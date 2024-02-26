@@ -19,7 +19,7 @@ export default function NFTCatalog( {SearchInfo, items} ) {
                                     AuthorName={data.Author.nickname}
                                     Color={"#464343"}
                                     VerifyMe={data.Author.verify}
-                                    Price={100}
+                                    Price={data.price}
                                 />
                             )
                         }
