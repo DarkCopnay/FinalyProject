@@ -1,5 +1,3 @@
-import { assets } from "../../../../assets/Assets"
-import { NavLink } from "react-router-dom"
 import { CardLayout } from "../../../Layout/CardLayout/CardLayout"
 
 export default function NFTCatalog( {SearchInfo, items} ) {
@@ -16,12 +14,13 @@ export default function NFTCatalog( {SearchInfo, items} ) {
                                 <CardLayout
                                     key={index}
                                     _AuthorID={data.Author._id}
+                                    AuthorAvatar={data.Author.avatarURL}
                                     NFTname={data.title}
                                     AuthorName={data.Author.nickname}
                                     Color={"#464343"}
                                     VerifyMe={data.Author.verify}
-                                    Price={100}
-                                />,
+                                    Price={data.price}
+                                />
                             )
                         }
                     </section>

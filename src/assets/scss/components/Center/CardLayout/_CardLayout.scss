@@ -58,6 +58,7 @@
             font-weight: 600;
             text-transform: capitalize;
             color: white;
+            word-wrap: break-word;
         }
 
         a {
@@ -69,6 +70,12 @@
             font-weight: 400;
             color: white;
             margin-top: 5px;
+
+            img {
+                width: 15%;
+                object-fit: cover;
+                border-radius: 50%;
+            }
 
             span {
                 font-size: 20px;

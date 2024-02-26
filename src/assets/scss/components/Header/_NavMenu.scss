@@ -160,6 +160,7 @@
             flex-direction: column;
             align-items: center;
             gap: 15px;
+            width: 100% !important;
         }
 
         .topnav_sign_up {
@@ -243,7 +244,7 @@
     align-items: center;
     justify-content: center;
     background-color: #A259FF;
-    width: 16%;
+    width: 18%;
     height: 60px;
     border-radius: 20px;
     transition: 0.3s ease;
@@ -261,8 +262,9 @@
     }
 
     img {
-        width: 35px;
-        height: 35px;
+        width: 40px !important;
+        height: 40px !important;
+        object-fit: cover;
         border-radius: 10px;
     }
 

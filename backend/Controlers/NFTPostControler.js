@@ -89,7 +89,7 @@ export const remove = async (req, res) => {
 export const create = async (req, res) => {
     try {
         const error = validationResult(req);
-
+        
         const NFTpostDoc = new NFTpostModel({
             title: req.body.title,
             price: req.body.price,
@@ -97,13 +97,13 @@ export const create = async (req, res) => {
             Author: req.userId,
         })
         
-        // const NftPostCreate = await NFTpostDoc.save();
-
         if (!error.isEmpty()) {
             return res.status(400).json(error.array())
         } else {
             res.json(await NFTpostDoc.save())
         }
+
+        
 
     } catch (error) {
         res.status(500).json({
@@ -126,20 +126,16 @@ export const update = async (req, res) => {
                 Author: req.userId
             }
         )
-        .then((doc) => {
-            if (!doc) {
-                return res.json({
-                    complete: "Update complete"
-                })
-            }
+        .then(() => {
+            return res.json({
+                complete: "Update complete"
+            })
         })
 
-        .catch((err) => {
-            if (err) {
-                return res.status(500).json({
-                    ErrorMsg: "Couldn't update a post"
-                })
-            }
+        .catch(() => {
+            return res.status(500).json({
+                ErrorMsg: "Couldn't update a post"
+            })
         })
 
     } catch(error) {

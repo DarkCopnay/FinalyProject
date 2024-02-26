@@ -53,7 +53,7 @@ const AuthSlice = createSlice({
         [fetchRegister.rejected]: (state) => {
             state.data = null;
             state.status = "error";
-        }
+        },
     }
 })
 

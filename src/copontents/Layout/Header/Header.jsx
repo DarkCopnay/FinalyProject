@@ -62,7 +62,7 @@ export default function Headers() {
                     {
                         isAuth ?
                         <NavLink reloadDocument to={`/profile/${jwtDecode(isAuth)._id}`} className="topnav_Profile">
-                            <img src={!avatarURL ? assets.Profile.NonAvatar : avatarURL} />
+                            <img src={!avatarURL ? assets.Profile.NonAvatar : `http://localhost:4444${avatarURL}`} />
                             <h4>{nickname}</h4>
                         </NavLink>
                         :

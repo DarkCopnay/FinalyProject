@@ -107,6 +107,42 @@ export const ProfileView = async (req, res) => {
     }
 }
 
+export const ProfileEdit = async (req, res) => {
+    try {
+        const ProfileID = req.params.id;
+        const ProfileUpdateValid = validationResult(req);
+
+        if (!ProfileUpdateValid.isEmpty()) {
+            return res.status(400).json(ProfileUpdateValid.errors);
+        }
+
+        await Users.updateOne(
+            {
+                _id: ProfileID,
+            }, 
+            {
+                nickname: req.body.nickname,
+                avatarURL: req.body.avatarURL,
+                Bio: req.body.Bio,
+                'social.DiscordLink': req.body.DiscordLink
+
+            }
+        )
+        .then(() => {
+            return res.json({
+                Done: "Done Update"
+            })
+        })
+        .catch(() => {
+            return res.json({
+                ErrorMsg: "Cloudn't update a profile"
+            })
+        })
+    } catch(err) {
+        console.log(err);
+    }
+}
+
 export const Ranks = async (req, res) => {
     try {
         const UserList = await Users.find().select('nickname');

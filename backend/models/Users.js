@@ -1,6 +1,16 @@
 import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema({
+    avatarURL: {
+        type: String,
+        default: ""
+    },
+
+    HeaderImgURL: {
+        type: String,
+        default: "",
+    },
+
     username: {
         type: String,
         require: true,
@@ -43,6 +53,7 @@ const userSchema = new mongoose.Schema({
         }
     },
 
+
     social: {
         DiscordLink: {
             type: String,
@@ -67,13 +78,11 @@ const userSchema = new mongoose.Schema({
         default: false
     },
 
-    // OwnerNFT: {
-    //     type: mongoose.Schema.Types.Array,
-    //     ref: "NFTpost",
-    //     require: true
-    // },
-
-    avatarURL: String,
+    OwnerNFT: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "NFTpost",
+        require: true
+    },
 }, {
     timestamps: true,
 });
